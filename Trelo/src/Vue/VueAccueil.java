@@ -16,6 +16,7 @@ public class VueAccueil extends JFrame {
         // Configuration de la fen�tre
         setTitle("Accueil");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
 
         // Cr�ation des composants
         JLabel identifiantLabel = new JLabel("Identifiant:");
@@ -59,7 +60,7 @@ public class VueAccueil extends JFrame {
         seConnecterButton.setForeground(Color.WHITE);
 
         // Chargement de l'image
-        String cheminImage = "C:\\Users\\Florian\\Documents\\Cours Java bis\\Trelo\\Image\\logo.jpg";
+        String cheminImage = "C:\\Users\\abdoulaye\\OneDrive\\Bureau\\Projet\\Projet-transverse\\Trelo\\Image\\logo.jpg";
         ImageIcon logoIcon = new ImageIcon(cheminImage);
         JLabel logoLabel = new JLabel(logoIcon);
 
