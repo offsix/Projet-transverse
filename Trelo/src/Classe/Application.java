@@ -3,8 +3,11 @@ package Classe;
 import Vue.*;
 import Modele.*;
 
+import java.awt.Button;
+import java.awt.Component;
 import java.time.LocalDate;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import Modele.ModeleCalendrier;
@@ -154,6 +157,7 @@ public class Application {	//Coder par Mathieu Flesch
     //----------------------------
     // Creer un modele d'une carte
     //----------------------------
+
     JFrame fenetreCarte = new JFrame("VueCarte");
     fenetreCarte.setSize(300, 200);
     fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -193,19 +197,6 @@ public class Application {	//Coder par Mathieu Flesch
     //fenetreEspacedetravail.add(vueEspacedetravail);
     //fenetreEspacedetravail.setVisible(true);
 
-    
-  
-
-if(modeleAccueil.getIdentifiant()=="admin" && modeleAccueil.getMotDePasse()=="admin") {
-    fenetreEspacedetravail.add(vueEspacedetravail);
-    fenetreEspacedetravail.setVisible(true);
-    vueAccueil.afficherMessageBienvenue();
-  }
-  else {
-    vueAccueil.afficherMessageErreur();
-  }
 
 }
-
-
 }
