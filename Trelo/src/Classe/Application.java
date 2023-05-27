@@ -71,6 +71,23 @@ public class Application {	//Coder par Mathieu Flesch
 	    return tableauMembres;
 	}
 
+  /*public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate dateDebut, String description, LocalDate dateLimite, String statut, String couverture) {
+    ModeleCartes carte = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
+    projet.ajouterCarte(carte);
+}
+
+  public static void ajouterMembre(ModeleProjet projet, String imagePath, String nom, String prenom) {
+        ModeleMembre membre = new ModeleMembre(imagePath, nom, prenom);
+        projet.ajouterMembre(membre);
+  }
+  
+  public static void ajouterProjet(ModeleEspacedetravail espacedetravail, String titre, ModeleCartes[] cartes, ModeleMembre[] membres, String proprietaire) {
+    ModeleProjet projet = new ModeleProjet(titre, cartes, membres, proprietaire);
+    espacedetravail.ajouterProjet(projet);
+}
+*/
+
+
   public static void main(String[] args) {
 
 	  //--------------------------

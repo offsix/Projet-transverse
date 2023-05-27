@@ -46,4 +46,10 @@ public class ModeleProjet {
 		this.proprietaire = proprietaire;
 	}
 
+    /*public void ajouterCarte(ModeleCartes carte) {
+    }
+
+    public void ajouterMembre(ModeleMembre membre) {
+    }
+    */
 }
