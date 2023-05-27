@@ -1,6 +1,7 @@
 package Classe;
 
 import Vue.*;
+import Modele.*;
 
 import java.time.LocalDate;
 
@@ -71,7 +72,7 @@ public class Application {	//Coder par Mathieu Flesch
 	    return tableauMembres;
 	}
 
-  private Object seConnecterButton;
+
 
   /*public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate dateDebut, String description, LocalDate dateLimite, String statut, String couverture) {
     ModeleCartes carte = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
