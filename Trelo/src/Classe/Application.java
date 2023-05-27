@@ -15,18 +15,18 @@ import Modele.ModeleAccueil;
 
 public class Application {	//Coder par Mathieu Flesch
 
-	public static ModeleProjet[] creationProjets(int iNum) {	//Fonction pour créer des projets
+	public static ModeleProjet[] creationProjets(int iNum) {	//Fonction pour crï¿½er des projets
 	    ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
 
-	    // Création des cartes et des membres
+	    // Crï¿½ation des cartes et des membres
 	    ModeleCartes[] tableauCartes = creationCarte(iNum);
 	    ModeleMembre[] tableauMembres = creationMembres(iNum);
 
 	    for (int i = 0; i < iNum; i++) {
-	        ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le même tableau de cartes pour chaque projet
-	        ModeleMembre proprietaire = tableauMembres[i]; // Choisir un membre comme propriétaire du projet
+	        ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le mï¿½me tableau de cartes pour chaque projet
+	        ModeleMembre proprietaire = tableauMembres[i]; // Choisir un membre comme propriï¿½taire du projet
 
-	        // Créer un projet avec les cartes et le propriétaire
+	        // Crï¿½er un projet avec les cartes et le propriï¿½taire
 	        ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres,"Moi");
 	        tableauProjets[i] = projet; // Ajouter le projet dans le tableau
 	    }
@@ -34,9 +34,9 @@ public class Application {	//Coder par Mathieu Flesch
 	    return tableauProjets;
 	}
 
-	public static ModeleCartes[] creationCarte(int iNum) {		//Fonction pour créer des Cartes
+	public static ModeleCartes[] creationCarte(int iNum) {		//Fonction pour crï¿½er des Cartes
     ModeleCartes[] tableauCartes = new ModeleCartes[iNum]; // Tableau pour stocker les cartes
-    // Liste des couleurs prédéfinies
+    // Liste des couleurs prï¿½dï¿½finies
     String[] couleurs = {
       "#FBE0C3",
       "#FFBB98",
@@ -50,7 +50,7 @@ public class Application {	//Coder par Mathieu Flesch
       String description = "Description de la carte " + j;
       LocalDate dateLimite = LocalDate.now().plusDays(j);
       String statut = "En cours";
-      String couverture = couleurs[(j - 1) % couleurs.length]; // Sélectionner une couleur de manière cyclique
+      String couverture = couleurs[(j - 1) % couleurs.length]; // Sï¿½lectionner une couleur de maniï¿½re cyclique
 
       ModeleCartes carte1 = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
       tableauCartes[j - 1] = carte1; // Ajouter la carte dans le tableau
@@ -58,10 +58,10 @@ public class Application {	//Coder par Mathieu Flesch
     return tableauCartes;
   }
 
-	public static ModeleMembre[] creationMembres(int iNum) {	//Fonction pour créer des Membres
+	public static ModeleMembre[] creationMembres(int iNum) {	//Fonction pour crï¿½er des Membres
 	    ModeleMembre[] tableauMembres = new ModeleMembre[iNum];
 	    for (int i = 1; i <= iNum; i++) {
-	        String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\" + i + ".png";
+	        String imagePath = "C:\\Users\\abdoulaye\\OneDrive\\Bureau\\Projet\\Projet-transverse\\Trelo\\Image\\" + i + ".png";
 	        String nom = "Nom Membre " + i;
 	        String prenom = "Prenom Membre " + i;
 
@@ -112,8 +112,8 @@ public class Application {	//Coder par Mathieu Flesch
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
 
-//    fenetreProjet.add(vueProject);
-//    fenetreProjet.setVisible(true);
+   fenetreProjet.add(vueProject);
+    fenetreProjet.setVisible(true);
 
     //----------------------------
     // Creer un modele d'un Petitprojet
@@ -137,7 +137,7 @@ public class Application {	//Coder par Mathieu Flesch
     fenetreCarte.setSize(300, 200);
     fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte", LocalDate.now().plusDays(7), "statue étudiant", "436884");
+    ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte", LocalDate.now().plusDays(7), "statue ï¿½tudiant", "436884");
     VueCarte vueCarte = new VueCarte(carte);
 
 //        fenetreCarte.add(vueCarte);
@@ -151,7 +151,7 @@ public class Application {	//Coder par Mathieu Flesch
     fenetreMembre.setResizable(false);
     fenetreMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleMembre membre = new ModeleMembre("E:\\Image\\1335.jpg", "flesch", "mathieu");
+    ModeleMembre membre = new ModeleMembre("C:\\Image\\1335.jpg", "flesch", "mathieu");
     VuePetitMembre vueMembre = new VuePetitMembre(membre);
 
 //        fenetreMembre.add(vueMembre);
