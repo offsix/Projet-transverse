@@ -71,6 +71,8 @@ public class Application {	//Coder par Mathieu Flesch
 	    return tableauMembres;
 	}
 
+  private Object seConnecterButton;
+
   /*public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate dateDebut, String description, LocalDate dateLimite, String statut, String couverture) {
     ModeleCartes carte = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
     projet.ajouterCarte(carte);
@@ -99,7 +101,8 @@ public class Application {	//Coder par Mathieu Flesch
 
 	  ModeleAccueil modeleAccueil = new ModeleAccueil("Identifiant","motdepasse");
 	  VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
-	  
+
+   
 //	  vueAccueil.setVisible(true);
 
     //------------------------------
@@ -129,8 +132,8 @@ public class Application {	//Coder par Mathieu Flesch
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
 
-   fenetreProjet.add(vueProject);
-    fenetreProjet.setVisible(true);
+   //fenetreProjet.add(vueProject);
+    //fenetreProjet.setVisible(true);
 
     //----------------------------
     // Creer un modele d'un Petitprojet
@@ -186,10 +189,22 @@ public class Application {	//Coder par Mathieu Flesch
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(projets, membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
 
+    //fenetreEspacedetravail.add(vueEspacedetravail);
+    //fenetreEspacedetravail.setVisible(true);
+
+    
+  
+
+if(modeleAccueil.getIdentifiant()=="admin" && modeleAccueil.getMotDePasse()=="admin") {
     fenetreEspacedetravail.add(vueEspacedetravail);
     fenetreEspacedetravail.setVisible(true);
-
-
+    vueAccueil.afficherMessageBienvenue();
   }
+  else {
+    vueAccueil.afficherMessageErreur();
+  }
+
+}
+
 
 }

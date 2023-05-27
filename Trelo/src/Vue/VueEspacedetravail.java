@@ -19,6 +19,7 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+import Modele.ModeleAccueil;
 import Modele.ModeleEspacedetravail;
 import Modele.ModeleProjet;
 
@@ -39,7 +40,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     gbcFirst.gridy = 0;
     gbcFirst.weightx = 0.1;
     gbcFirst.weighty = 1.0;
-    gbcFirst.gridwidth = 1; // Fixer la largeur à 1
+    gbcFirst.gridwidth = 1; // Fixer la largeur ï¿½ 1
     gbcFirst.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
@@ -61,10 +62,10 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
-    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'accès réel vers votre image
+    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'accï¿½s rï¿½el vers votre image
     ImageIcon logoIcon = new ImageIcon(imagePath);
 
-    // Redimensionner l'image à une taille spécifique (par exemple, 50x50)
+    // Redimensionner l'image ï¿½ une taille spï¿½cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
     JLabel logoLabel = new JLabel(scaledLogoIcon);
@@ -113,12 +114,12 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
 
     JPanel section21 = new JPanel();
     section21.setBackground(Color.white);
-    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Définir une marge vide autour du panneau
+    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Dï¿½finir une marge vide autour du panneau
 
-    //Récupération du nom du projet
+    //Rï¿½cupï¿½ration du nom du projet
     String nomProjet = ("Voici les projets de : ") + espacedetravail.getProprietaire().getPrenom() +(" ") + espacedetravail.getProprietaire().getNom();
 
-    //Création du JLabel pour afficher le nom du projet en grand au milieu
+    //Crï¿½ation du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
     labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
@@ -140,23 +141,23 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     gbcSection22.weighty = 0.95;
     gbcSection22.fill = GridBagConstraints.BOTH;
 
-    // Création du conteneur pour les cartes
+    // Crï¿½ation du conteneur pour les cartes
     JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
     section22.setBackground(Color.white);
 
     // Ajout des cartes dans le conteneur
     for (ModeleProjet projet: espacedetravail.getProject()) {
       VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
-      Dimension carteSize = new Dimension(200, 150); // Définir la taille des cartes souhaitée
+      Dimension carteSize = new Dimension(200, 150); // Dï¿½finir la taille des cartes souhaitï¿½e
       vuePetitProjet.setPreferredSize(carteSize);
 
-      Border border1 = new LineBorder(Color.BLACK, 1); // Crée une bordure avec une ligne noire d'épaisseur 1
+      Border border1 = new LineBorder(Color.BLACK, 1); // Crï¿½e une bordure avec une ligne noire d'ï¿½paisseur 1
       vuePetitProjet.setBorder(border1);
 
       section22.add(vuePetitProjet);
     }
 
-    // Création du JScrollPane avec le conteneur des cartes
+    // Crï¿½ation du JScrollPane avec le conteneur des cartes
     JScrollPane scrollPane = new JScrollPane(section22);
     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -166,4 +167,8 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
    
     add(panel);
   }
+
+public static Object seConnecter(ModeleAccueil modeleAccueil) {
+    return null;
+}
 }

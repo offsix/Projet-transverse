@@ -13,11 +13,11 @@ public class VueAccueil extends JFrame {
     private JButton seConnecterButton;
     
 	public VueAccueil(ModeleAccueil accueil) {
-        // Configuration de la fenêtre
+        // Configuration de la fenï¿½tre
         setTitle("Accueil");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Création des composants
+        // Crï¿½ation des composants
         JLabel identifiantLabel = new JLabel("Identifiant:");
         JLabel motDePasseLabel = new JLabel("Mot de passe:");
         identifiantField = new JTextField(10);
@@ -63,15 +63,15 @@ public class VueAccueil extends JFrame {
         ImageIcon logoIcon = new ImageIcon(cheminImage);
         JLabel logoLabel = new JLabel(logoIcon);
 
-        // Création du titre "Trelo"
-        JLabel titreLabel = new JLabel("Trelo");
+        // Crï¿½ation du titre "Trelo"
+        JLabel titreLabel = new JLabel("Trello Lite+");
         titreLabel.setFont(new Font("Arial", Font.BOLD, 24));
 
-        // Configuration de la fenêtre
+        // Configuration de la fenï¿½tre
         getContentPane().setBackground(Color.WHITE);
         setLayout(new BorderLayout());
 
-        // Section à gauche pour le logo
+        // Section ï¿½ gauche pour le logo
         JPanel logoPanel = new JPanel();
         logoPanel.setBackground(Color.WHITE);
         logoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -85,7 +85,7 @@ public class VueAccueil extends JFrame {
         add(titrePanel, BorderLayout.NORTH);
 
         add(panel, BorderLayout.CENTER);
-        setExtendedState(JFrame.MAXIMIZED_BOTH); // Affichage en plein écran
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // Affichage en plein ï¿½cran
         setVisible(true);
     }
 
@@ -97,10 +97,16 @@ public class VueAccueil extends JFrame {
         return new String(motDePasseField.getPassword());
     }
 
-    public void afficherMessageErreur(String message) {
-        JOptionPane.showMessageDialog(this, message, "Erreur", JOptionPane.ERROR_MESSAGE);
+    public void afficherMessageErreur() {
+        JOptionPane.showMessageDialog(this, "Votre mot de passe ou votre identifiant est incorrect", "Erreur", JOptionPane.INFORMATION_MESSAGE);
     }
     public void ajouterListenerSeConnecter(ActionListener listener) {
         seConnecterButton.addActionListener(listener);
     }
+
+    public void afficherMessageBienvenue() {
+        JOptionPane.showMessageDialog(this, "Bienvenue sur Trelo", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    
 }
