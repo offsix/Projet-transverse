@@ -27,7 +27,7 @@ public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
         labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
         add(labelNomProjet);
 
-        JLabel labelProprietaire = new JLabel("Propriétaire: " + project.getProprietaire());
+        JLabel labelProprietaire = new JLabel("PropriÃ©taire: " + project.getProprietaire());
         labelProprietaire.setHorizontalAlignment(SwingConstants.CENTER);
         add(labelProprietaire);
 
@@ -40,7 +40,7 @@ public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
         JLabel labelNombreMembres = new JLabel("Nombre de membres: " + nombreMembres);
         labelNombreMembres.setHorizontalAlignment(SwingConstants.CENTER);
         
-     // Création des contraintes pour positionner le bouton
+     // Crï¿½ation des contraintes pour positionner le bouton
         GridBagConstraints gbcBouton = new GridBagConstraints();
         gbcBouton.gridx = 0; // Colonne 0
         gbcBouton.gridy = 2; // Ligne 2
@@ -48,9 +48,9 @@ public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
         gbcBouton.weighty = 0.1;
         gbcBouton.fill = GridBagConstraints.BOTH;
 
-        // Création du bouton
+        // Crï¿½ation du bouton
         JButton bouton = new JButton("Ouvrir");
-        bouton.setPreferredSize(new Dimension(200, 50)); // Définir la taille souhaitée pour le bouton
+        bouton.setPreferredSize(new Dimension(200, 50)); // Dï¿½finir la taille souhaitï¿½e pour le bouton
 
         // Ajout du bouton dans le panel avec les contraintes
         add(bouton, gbcBouton);

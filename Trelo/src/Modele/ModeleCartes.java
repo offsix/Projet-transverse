@@ -24,6 +24,7 @@ public class ModeleCartes {
 		this.idCarte = INDEX_CARTE;
 		INDEX_CARTE++;
 	}
+	
 		
 	public final String getTitreCarte() {
 		return titreCarte;
