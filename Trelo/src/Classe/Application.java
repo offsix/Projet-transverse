@@ -5,8 +5,11 @@ import Modele.*;
 
 import java.awt.Button;
 import java.awt.Component;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.time.LocalDate;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -115,7 +118,7 @@ public class Application { // Coder par Mathieu Flesch
     ModeleAccueil modeleAccueil = new ModeleAccueil("Identifiant", "motdepasse");
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
 
-    // vueAccueil.setVisible(true);
+   // vueAccueil.setVisible(true);
 
     // ------------------------------
     // Creer un modele de calendrier
