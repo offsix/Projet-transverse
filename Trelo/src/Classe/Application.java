@@ -219,30 +219,12 @@ public class Application { // Coder par Mathieu Flesch
     ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");
     VueInscription vueInscription = new VueInscription(inscription);
 
-    fenetreInscription.add(vueInscription);
-    fenetreInscription.setLocationRelativeTo(null);
-    fenetreInscription.setVisible(true);
+    //fenetreInscription.add(vueInscription);
+    //fenetreInscription.setLocationRelativeTo(null);
+    //fenetreInscription.setVisible(true);
 
 
     
-    vueInscription.ajouterListenerInscrire(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          // Récupérez les informations saisies par l'utilisateur
-          String identifiant = vueInscription.getIdentifiant();
-          String motDePasse = vueInscription.getMotDePasse();
-          String nom = vueInscription.getNom();
-          String prenom = vueInscription.getPrenom();
-          String adresse = vueInscription.getAdresse();
-          
-          fenetreInscription.add(vueInscription);
-          fenetreInscription.setLocationRelativeTo(null);
-          fenetreInscription.setVisible(true);
-          
-          
-      }
-  });
-
     vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
