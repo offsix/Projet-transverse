@@ -9,14 +9,20 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 import java.util.concurrent.Future;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import Modele.ModeleAccueil;
+import Modele.ModeleInscription;
 
 public class VueAccueil extends JFrame {
     private JTextField identifiantField;
     private JPasswordField motDePasseField;
     private JButton seConnecterButton;
     private JLabel sInscrireLabel;
+    private JTextField nomField;
+    private JTextField prenomField;
+    private JTextField adresseField;
     
 	public VueAccueil(ModeleAccueil accueil) {
         // Configuration de la fen�tre
@@ -37,12 +43,14 @@ public class VueAccueil extends JFrame {
         JLabel identifiantLabel = new JLabel("Identifiant:");
         JLabel motDePasseLabel = new JLabel("Mot de passe:");
         JLabel phraseLabel = new JLabel("Vous n'avez pas de compte ? - ");
-        JLabel sInscrireLabel = new JLabel("S'inscrire");
         identifiantField = new JTextField(10);
         motDePasseField = new JPasswordField(10);
         seConnecterButton = new JButton("Se connecter");
-
-   
+        sInscrireLabel = new JLabel("S'inscrire");
+        nomField = new JTextField(10);
+        prenomField = new JTextField(10);
+        adresseField = new JTextField(10);
+        
        
 
         JPanel panel = new JPanel();
@@ -113,6 +121,34 @@ public class VueAccueil extends JFrame {
         gloid.add(panel);
         setExtendedState(JFrame.MAXIMIZED_BOTH); // Affichage en plein �cran
         setVisible(true);
+
+        // Ajout de la vue d'inscription dans la vue d'accueil
+        sInscrireLabel.addMouseListener(new MouseAdapter() {
+           
+            public void mouseClicked(MouseEvent e) {
+                ModeleInscription inscription = new ModeleInscription(
+                       identifiantLabel.getText(),
+                       motDePasseLabel.getText(),
+                       nomField.getText(),
+                       prenomField.getText(),
+                       adresseField.getText()
+                );
+
+                VueInscription inscriptionVue = new VueInscription(inscription);
+                JFrame fenetreInscription = new JFrame("VueInscription");
+                fenetreInscription.setSize(750, 550);
+                fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                VueInscription vueInscription = new VueInscription(inscription);
+
+                JFrame inscriptionFrame = new JFrame("VueInscription");
+                inscriptionFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                inscriptionFrame.getContentPane().add(vueInscription);
+                inscriptionFrame.pack();
+                inscriptionFrame.setLocationRelativeTo(null); // Affichage au centre de l'écran
+                inscriptionFrame.setVisible(true);
+
+            }
+        });
     }
 
     public String getIdentifiant() {
@@ -143,5 +179,7 @@ public class VueAccueil extends JFrame {
     public JLabel getLabelSInscrire() {
         return sInscrireLabel;
     }
+    
+
 }
 
