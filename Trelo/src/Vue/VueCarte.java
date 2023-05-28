@@ -12,13 +12,13 @@ public class VueCarte extends JPanel {	//Coder par Mathieu Flesch
     private static final int BUTTON_SIZE = 13;
 
     public VueCarte(ModeleCartes modele) {
-        //Récupération des informations de la carte depuis le modèle
+        //Rï¿½cupï¿½ration des informations de la carte depuis le modï¿½le
         String titre = modele.getTitreCarte();
         String description = modele.getDescriptionCarte();
         String statut = modele.getStatutCarte();
         String dateFin = modele.getDateLimiteCarte().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-        //Construction du texte à afficher dans la carte
+        //Construction du texte ï¿½ afficher dans la carte
         String labelText = "<html><body>" +
                 "<p style='text-align: center'>" +
                 "Titre: " + titre +
@@ -27,19 +27,19 @@ public class VueCarte extends JPanel {	//Coder par Mathieu Flesch
                 "<br>Date de fin: " + dateFin +
                 "</p></body></html>";
 
-        //Création du JLabel pour afficher le texte de la carte
+        //Crï¿½ation du JLabel pour afficher le texte de la carte
         JLabel affichageCarte = new JLabel(labelText);
         affichageCarte.setFont(LABEL_FONT);
         affichageCarte.setHorizontalAlignment(SwingConstants.CENTER);
 
-        //Récupération de la couleur de fond de la carte depuis le modèle
+        //Rï¿½cupï¿½ration de la couleur de fond de la carte depuis le modï¿½le
         Color couleurFond = modele.getCouvertureCarteColor();
 
         //Configuration du panneau de la carte
         setOpaque(true);
         setBackground(couleurFond);
 
-        //Création du bouton de suppression
+        //Crï¿½ation du bouton de suppression
         JButton boutton = new JButton("Supprimer");
         boutton.setPreferredSize(new Dimension(BUTTON_SIZE, BUTTON_SIZE));
 
@@ -47,5 +47,6 @@ public class VueCarte extends JPanel {	//Coder par Mathieu Flesch
         setLayout(new BorderLayout());
         add(affichageCarte, BorderLayout.CENTER);
         add(boutton, BorderLayout.NORTH);
+
     }
 }

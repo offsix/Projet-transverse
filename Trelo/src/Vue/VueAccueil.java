@@ -99,7 +99,7 @@ public class VueAccueil extends JFrame {
     }
 
     public void afficherMessageErreur() {
-        JOptionPane.showMessageDialog(this, "Votre mot de passe ou votre identifiant est incorrect", "Erreur", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Votre mot de passe ou votre identifiant est incorrect", "Erreur", JOptionPane.ERROR_MESSAGE);
     }
     public void ajouterListenerSeConnecter(ActionListener listener) {
         seConnecterButton.addActionListener(listener);
@@ -112,7 +112,7 @@ public class VueAccueil extends JFrame {
         if(motDePasseField.getText().isEmpty() || identifiantField.getText().isEmpty()) {
             motDePasseField.setText("");
             identifiantField.setText("");
-            JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
     }
 }
