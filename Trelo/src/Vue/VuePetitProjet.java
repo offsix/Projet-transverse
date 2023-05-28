@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
-import java.net.http.WebSocket.Listener;
+
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import Modele.ModeleProjet;
+
+import java.awt.event.ActionListener;
 
 public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
 
@@ -59,7 +61,9 @@ public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
         add(bouton, BorderLayout.NORTH);
         add(labelNombreMembres);
     }
-    /* public void ajouterListenerOuvrir(Listener listener) {
+    /*public void ajouterListenerOuvrir(ActionListener listener) {
         bouton.addActionListener(listener);
-    }*/ 
+    }
+    */
 }
+
