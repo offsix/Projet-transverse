@@ -203,25 +203,30 @@ public class Application {	//Coder par Mathieu Flesch
     vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-          String identifiant = vueAccueil.getIdentifiant();
-          String motDePasse = vueAccueil.getMotDePasse();
-          
-          if (identifiant.equals("admin") && motDePasse.equals("admin")) {
-              // Effectuez les actions souhaitées lorsque le bouton est cliqué
-              vueAccueil.afficherMessageBienvenue();
-              vueAccueil.dispose();
-              fenetreEspacedetravail.add(vueEspacedetravail);
-              fenetreEspacedetravail.setVisible(true);
-              
+        String identifiant = vueAccueil.getIdentifiant();
+        String motDePasse = vueAccueil.getMotDePasse();
+
+        if (identifiant.equals("admin") && motDePasse.equals("admin")) {
+
+          // Effectuez les actions souhaitées lorsque le bouton est cliqué
+          vueAccueil.afficherMessageBienvenue();
+          vueAccueil.dispose();
+          fenetreEspacedetravail.add(vueEspacedetravail);
+          fenetreEspacedetravail.setVisible(true);
+        } else {
+
+          if (vueAccueil.getIdentifiant().isEmpty() || vueAccueil.getMotDePasse().isEmpty()) {
+            vueAccueil.afficherVide();
           } else {
-              vueAccueil.afficherMessageErreur();
+            vueAccueil.afficherMessageErreur();
           }
+        }
       }
-  });
- 
+    });
 
 
+
+  }
 }
 
-}
 

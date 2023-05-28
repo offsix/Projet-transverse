@@ -108,6 +108,12 @@ public class VueAccueil extends JFrame {
     public void afficherMessageBienvenue() {
         JOptionPane.showMessageDialog(this, "Bienvenue sur Trelo", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
     }
-    
+    public void afficherVide() {
+        if(motDePasseField.getText().isEmpty() || identifiantField.getText().isEmpty()) {
+            motDePasseField.setText("");
+            identifiantField.setText("");
+            JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 }
 

@@ -167,8 +167,4 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
    
     add(panel);
   }
-
-public static Object seConnecter(ModeleAccueil modeleAccueil) {
-    return null;
-}
 }
