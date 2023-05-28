@@ -8,6 +8,7 @@ import javax.swing.plaf.basic.BasicBorders.FieldBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
+import java.util.concurrent.Future;
 
 import Modele.ModeleAccueil;
 
@@ -99,25 +100,13 @@ public class VueAccueil extends JFrame {
         sInscrireLabel.setForeground(new Color(52, 152, 219));
         sInscrireLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        // Chargement de l'image
-        String cheminImage = "Trelo/Image/logo.jpg";
-        ImageIcon logoIcon = new ImageIcon(cheminImage);
-        JLabel logoLabel = new JLabel(logoIcon);
-
-        // Cr�ation du titre "Trelo"
-     
-
-        
-        // // Section � gauche pour le logo
-        // JPanel logoPanel = new JPanel();
-        // logoPanel.setBackground(Color.WHITE);
-        // logoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        // logoPanel.add(logoLabel);
-        // add(logoPanel, BorderLayout.WEST);
-
         // Section en haut pour le titre
         JPanel titrePanel = new JPanel();
+        ImageIcon future = new ImageIcon(new ImageIcon("Trelo/Image/futuretexte.png").getImage().getScaledInstance(120, 50, Image.SCALE_DEFAULT));
+        JLabel texteFuture = new JLabel(future);
+        titrePanel.add(texteFuture,CENTER_ALIGNMENT);
         titrePanel.setBackground(Color.WHITE);
+       
         add(titrePanel, BorderLayout.NORTH);
         add(glop);
         glop.add(gloid);

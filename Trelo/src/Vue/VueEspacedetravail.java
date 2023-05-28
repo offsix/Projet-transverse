@@ -59,20 +59,14 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     gbcSection11.fill = GridBagConstraints.BOTH;
 
     JPanel section11 = new JPanel(new BorderLayout());
-    section11.setBackground(Color.white);
+    section11.setBackground(Color.blue);
 
     // Chargement de l'image du logo
-    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'acc�s r�el vers votre image
-    ImageIcon logoIcon = new ImageIcon(imagePath);
-
-    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
-    Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
-    JLabel logoLabel = new JLabel(scaledLogoIcon);
-
-    section11.add(logoLabel, BorderLayout.CENTER);
+    ImageIcon logoIcon = new ImageIcon("/Trelo/Image/logo.jpg");
+    JLabel logoLabel = new JLabel(logoIcon);
 
     panelFirst.add(section11, gbcSection11);
+    panelFirst.setBackground(Color.RED);
     //-----------------------------------------//
     // 		        GBCFIRST 1.2 		  	   //
     //-----------------------------------------//

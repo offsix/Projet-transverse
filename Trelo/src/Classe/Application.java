@@ -188,7 +188,7 @@ public class Application { // Coder par Mathieu Flesch
     fenetreMembre.setResizable(false);
     fenetreMembre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    ModeleMembre membre = new ModeleMembre("C:\\Image\\1335.jpg", "flesch", "mathieu");
+    ModeleMembre membre = new ModeleMembre("/Trelo/image/logo.jpg", "admin", "admin");
     VuePetitMembre vueMembre = new VuePetitMembre(membre);
 
     // fenetreMembre.add(vueMembre);
@@ -206,8 +206,8 @@ public class Application { // Coder par Mathieu Flesch
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(projets, membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
 
-    // fenetreEspacedetravail.add(vueEspacedetravail);
-    // fenetreEspacedetravail.setVisible(true);
+    fenetreEspacedetravail.add(vueEspacedetravail);
+    fenetreEspacedetravail.setVisible(true);
 
     // --------------------------
     // Creer un modele inscription
