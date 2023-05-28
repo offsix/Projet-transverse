@@ -113,7 +113,7 @@ public class Application { // Coder par Mathieu Flesch
     // --------------------------
 
     JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleAccueil modeleAccueil = new ModeleAccueil("Identifiant", "motdepasse");
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
@@ -125,7 +125,7 @@ public class Application { // Coder par Mathieu Flesch
     // ------------------------------
     JFrame fenetreCelendrier = new JFrame("VueCalendrier");
     fenetreCelendrier.setSize(300, 100);
-    fenetreCelendrier.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreCelendrier.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
     VueCalendrier vueCalendier = new VueCalendrier(calendrier);
@@ -143,7 +143,7 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreProjet = new JFrame("VueProjet");
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
@@ -157,7 +157,7 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetrePetitProjet = new JFrame("VueProjet");
     fenetrePetitProjet.setSize(300, 200);
-    fenetrePetitProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetrePetitProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
@@ -171,7 +171,7 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreCarte = new JFrame("VueCarte");
     fenetreCarte.setSize(300, 200);
-    fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte",
         LocalDate.now().plusDays(7), "statue �tudiant", "436884");
@@ -186,7 +186,7 @@ public class Application { // Coder par Mathieu Flesch
     JFrame fenetreMembre = new JFrame("VueMembre");
     fenetreMembre.setSize(100, 150);
     fenetreMembre.setResizable(false);
-    fenetreMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreMembre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleMembre membre = new ModeleMembre("C:\\Image\\1335.jpg", "flesch", "mathieu");
     VuePetitMembre vueMembre = new VuePetitMembre(membre);
@@ -201,13 +201,47 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(projets, membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
 
     // fenetreEspacedetravail.add(vueEspacedetravail);
     // fenetreEspacedetravail.setVisible(true);
+
+    // --------------------------
+    // Creer un modele inscription
+    // --------------------------
+    JFrame fenetreInscription = new JFrame("VueInscription");
+    fenetreInscription.setSize(750, 550);
+    fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+    ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");
+    VueInscription vueInscription = new VueInscription(inscription);
+
+    fenetreInscription.add(vueInscription);
+    fenetreInscription.setLocationRelativeTo(null);
+    fenetreInscription.setVisible(true);
+
+    
+    
+    vueInscription.ajouterListenerInscrire(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+          // Récupérez les informations saisies par l'utilisateur
+          String identifiant = vueInscription.getIdentifiant();
+          String motDePasse = vueInscription.getMotDePasse();
+          String nom = vueInscription.getNom();
+          String prenom = vueInscription.getPrenom();
+          String adresse = vueInscription.getAdresse();
+          
+          fenetreInscription.add(vueInscription);
+          fenetreInscription.setLocationRelativeTo(null);
+          fenetreInscription.setVisible(true);
+          
+          
+      }
+  });
 
     vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
       @Override
@@ -229,11 +263,12 @@ public class Application { // Coder par Mathieu Flesch
           } else {
             vueAccueil.afficherMessageErreur();
           }
+
         }
       }
     });
 
-
+    
     
   }
 }

@@ -15,6 +15,7 @@ public class VueAccueil extends JFrame {
     private JTextField identifiantField;
     private JPasswordField motDePasseField;
     private JButton seConnecterButton;
+    private JLabel sInscrireLabel;
     
 	public VueAccueil(ModeleAccueil accueil) {
         // Configuration de la fen�tre
@@ -149,6 +150,9 @@ public class VueAccueil extends JFrame {
             identifiantField.setText("");
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
+    }
+    public JLabel getLabelSInscrire() {
+        return sInscrireLabel;
     }
 }
 
