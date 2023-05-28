@@ -206,8 +206,8 @@ public class Application { // Coder par Mathieu Flesch
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(projets, membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
 
-    fenetreEspacedetravail.add(vueEspacedetravail);
-    fenetreEspacedetravail.setVisible(true);
+    //fenetreEspacedetravail.add(vueEspacedetravail);
+    //fenetreEspacedetravail.setVisible(true);
 
     // --------------------------
     // Creer un modele inscription
@@ -223,7 +223,7 @@ public class Application { // Coder par Mathieu Flesch
     fenetreInscription.setLocationRelativeTo(null);
     fenetreInscription.setVisible(true);
 
-    
+
     
     vueInscription.ajouterListenerInscrire(new ActionListener() {
       @Override
