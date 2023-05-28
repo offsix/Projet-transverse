@@ -17,6 +17,9 @@ import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import Modele.ModeleAccueil;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Application {	//Coder par Mathieu Flesch
 
 	public static ModeleProjet[] creationProjets(int iNum) {	//Fonction pour cr�er des projets
@@ -136,8 +139,8 @@ public class Application {	//Coder par Mathieu Flesch
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
 
-   //fenetreProjet.add(vueProject);
-    //fenetreProjet.setVisible(true);
+//    fenetreProjet.add(vueProject);
+//    fenetreProjet.setVisible(true);
 
     //----------------------------
     // Creer un modele d'un Petitprojet
@@ -197,6 +200,28 @@ public class Application {	//Coder par Mathieu Flesch
     //fenetreEspacedetravail.add(vueEspacedetravail);
     //fenetreEspacedetravail.setVisible(true);
 
+    vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+          String identifiant = vueAccueil.getIdentifiant();
+          String motDePasse = vueAccueil.getMotDePasse();
+          
+          if (identifiant.equals("admin") && motDePasse.equals("admin")) {
+              // Effectuez les actions souhaitées lorsque le bouton est cliqué
+              vueAccueil.afficherMessageBienvenue();
+              vueAccueil.dispose();
+              fenetreEspacedetravail.add(vueEspacedetravail);
+              fenetreEspacedetravail.setVisible(true);
+              
+          } else {
+              vueAccueil.afficherMessageErreur();
+          }
+      }
+  });
+ 
+
 
 }
+
 }
+
