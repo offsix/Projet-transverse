@@ -111,7 +111,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
     //R�cup�ration du nom du projet
-    String nomProjet = ("Voici les projets de : ") + espacedetravail.getProprietaire().getPrenom() +(" ") + espacedetravail.getProprietaire().getNom();
+    String nomProjet = ("Voici les projets de : ") + espacedetravail.getProprietaire().getPseudo();
 
     //Cr�ation du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
@@ -140,16 +140,16 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     section22.setBackground(Color.white);
 
     // Ajout des cartes dans le conteneur
-    for (ModeleProjet projet: espacedetravail.getProject()) {
-      VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
-      Dimension carteSize = new Dimension(200, 150); // D�finir la taille des cartes souhait�e
-      vuePetitProjet.setPreferredSize(carteSize);
+    // for (ModeleProjet projet: espacedetravail.getProject()) {
+    //   VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
+    //   Dimension carteSize = new Dimension(200, 150); // D�finir la taille des cartes souhait�e
+    //   vuePetitProjet.setPreferredSize(carteSize);
 
-      Border border1 = new LineBorder(Color.BLACK, 1); // Cr�e une bordure avec une ligne noire d'�paisseur 1
-      vuePetitProjet.setBorder(border1);
+    //   Border border1 = new LineBorder(Color.BLACK, 1); // Cr�e une bordure avec une ligne noire d'�paisseur 1
+    //   vuePetitProjet.setBorder(border1);
 
-      section22.add(vuePetitProjet);
-    }
+    //   section22.add(vuePetitProjet);
+    // }
 
     // Cr�ation du JScrollPane avec le conteneur des cartes
     JScrollPane scrollPane = new JScrollPane(section22);

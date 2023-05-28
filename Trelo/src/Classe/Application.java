@@ -26,24 +26,23 @@ import java.awt.event.*;
 
 public class Application { // Coder par Mathieu Flesch
 
-  public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
-    ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
+  // public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
+  //   ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
 
-    // Cr�ation des cartes et des membres
-    ModeleCartes[] tableauCartes = creationCarte(iNum);
-    ModeleMembre[] tableauMembres = creationMembres(iNum);
+  //   // Cr�ation des cartes et des membres
+  //   ModeleCartes[] tableauCartes = creationCarte(iNum);
 
-    for (int i = 0; i < iNum; i++) {
-      ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
-      ModeleMembre proprietaire = tableauMembres[i]; // Choisir un membre comme propri�taire du projet
+  //   for (int i = 0; i < iNum; i++) {
+  //     ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
+  //     ModeleMembre proprietaire = tableauMembres[i]; // Choisir un membre comme propri�taire du projet
 
-      // Cr�er un projet avec les cartes et le propri�taire
-      ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
-      tableauProjets[i] = projet; // Ajouter le projet dans le tableau
-    }
+  //     // Cr�er un projet avec les cartes et le propri�taire
+  //     ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
+  //     tableauProjets[i] = projet; // Ajouter le projet dans le tableau
+  //   }
 
-    return tableauProjets;
-  }
+  //   return tableauProjets;
+  // }
 
   public static ModeleCartes[] creationCarte(int iNum) { // Fonction pour cr�er des Cartes
     ModeleCartes[] tableauCartes = new ModeleCartes[iNum]; // Tableau pour stocker les cartes
@@ -69,19 +68,6 @@ public class Application { // Coder par Mathieu Flesch
     return tableauCartes;
   }
 
-  public static ModeleMembre[] creationMembres(int iNum) { // Fonction pour cr�er des Membres
-    ModeleMembre[] tableauMembres = new ModeleMembre[iNum];
-    for (int i = 1; i <= iNum; i++) {
-      String imagePath = "C:\\Users\\abdoulaye\\OneDrive\\Bureau\\Projet\\Projet-transverse\\Trelo\\Image\\" + i
-          + ".png";
-      String nom = "Nom Membre " + i;
-      String prenom = "Prenom Membre " + i;
-
-      ModeleMembre membre = new ModeleMembre(imagePath, nom, prenom);
-      tableauMembres[i - 1] = membre; // Ajouter le membre dans le tableau
-    }
-    return tableauMembres;
-  }
 
   /*
    public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate
@@ -113,9 +99,9 @@ public class Application { // Coder par Mathieu Flesch
     // --------------------------
 
     JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleAccueil modeleAccueil = new ModeleAccueil("Identifiant", "motdepasse");
+    ModeleAccueil modeleAccueil = new ModeleAccueil();
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
 
    // vueAccueil.setVisible(true);
@@ -125,7 +111,7 @@ public class Application { // Coder par Mathieu Flesch
     // ------------------------------
     JFrame fenetreCelendrier = new JFrame("VueCalendrier");
     fenetreCelendrier.setSize(300, 100);
-    fenetreCelendrier.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetreCelendrier.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
     VueCalendrier vueCalendier = new VueCalendrier(calendrier);
@@ -139,14 +125,19 @@ public class Application { // Coder par Mathieu Flesch
     // ----------------------creation de cartes pour les ajouter au
     // projet------------------------------------
     ModeleCartes[] tableauCartes = creationCarte(30);
-    ModeleMembre[] tableauMembres = creationMembres(15);
+
+    //Creation des membres manuellement et ajout au vecteur de l'acceuil
+    ModeleMembre firstmember = new ModeleMembre("2soum", "123");
+    ModeleMembre secondmember = new ModeleMembre("abdou", "troll");
+    modeleAccueil.ajouterMembre(firstmember);
+    modeleAccueil.ajouterMembre(secondmember);
 
     JFrame fenetreProjet = new JFrame("VueProjet");
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    VueProject vueProject = new VueProject(projet);
+    // ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    // VueProject vueProject = new VueProject(projet);
 
     // fenetreProjet.add(vueProject);
     // fenetreProjet.setVisible(true);
@@ -157,10 +148,10 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetrePetitProjet = new JFrame("VueProjet");
     fenetrePetitProjet.setSize(300, 200);
-    fenetrePetitProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetrePetitProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
+    // ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    // VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
 
     // fenetrePetitProjet.add(vuePetitProject);
     // fenetrePetitProjet.setVisible(true);
@@ -171,7 +162,7 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreCarte = new JFrame("VueCarte");
     fenetreCarte.setSize(300, 200);
-    fenetreCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte",
         LocalDate.now().plusDays(7), "statue �tudiant", "436884");
@@ -186,10 +177,8 @@ public class Application { // Coder par Mathieu Flesch
     JFrame fenetreMembre = new JFrame("VueMembre");
     fenetreMembre.setSize(100, 150);
     fenetreMembre.setResizable(false);
-    fenetreMembre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    ModeleMembre membre = new ModeleMembre("/Trelo/image/logo.jpg", "admin", "admin");
-    VuePetitMembre vueMembre = new VuePetitMembre(membre);
+    fenetreMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // VuePetitMembre vueMembre = new VuePetitMembre(membre);
 
     // fenetreMembre.add(vueMembre);
     // fenetreMembre.setVisible(true);
@@ -197,78 +186,38 @@ public class Application { // Coder par Mathieu Flesch
     // -------------------------------------
     // Creer un modele d'un espacedetravail
     // -------------------------------------
-    ModeleProjet[] projets = creationProjets(25);
+    // ModeleProjet[] projets = creationProjets(25);
 
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(projets, membre);
-    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
-
-    //fenetreEspacedetravail.add(vueEspacedetravail);
-    //fenetreEspacedetravail.setVisible(true);
-
-    // --------------------------
-    // Creer un modele inscription
-    // --------------------------
-    JFrame fenetreInscription = new JFrame("VueInscription");
-    fenetreInscription.setSize(750, 550);
-    fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");
-    VueInscription vueInscription = new VueInscription(inscription);
-
-    fenetreInscription.add(vueInscription);
-    fenetreInscription.setLocationRelativeTo(null);
-    fenetreInscription.setVisible(true);
-
-
-    
-    vueInscription.ajouterListenerInscrire(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          // Récupérez les informations saisies par l'utilisateur
-          String identifiant = vueInscription.getIdentifiant();
-          String motDePasse = vueInscription.getMotDePasse();
-          String nom = vueInscription.getNom();
-          String prenom = vueInscription.getPrenom();
-          String adresse = vueInscription.getAdresse();
-          
-          fenetreInscription.add(vueInscription);
-          fenetreInscription.setLocationRelativeTo(null);
-          fenetreInscription.setVisible(true);
-          
-          
-      }
-  });
+    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        String identifiant = vueAccueil.getIdentifiant();
-        String motDePasse = vueAccueil.getMotDePasse();
 
-        if (identifiant.equals("admin") && motDePasse.equals("admin")) {
+
+        if (modeleAccueil.estunmembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse())) {
 
           // Effectuez les actions souhaitées lorsque le bouton est cliqué
           vueAccueil.afficherMessageBienvenue();
           vueAccueil.dispose();
+          ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(modeleAccueil.getMembre(vueAccueil.getIdentifiant()));
+          VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
           fenetreEspacedetravail.add(vueEspacedetravail);
           fenetreEspacedetravail.setVisible(true);
-        } else {
-
-          if (vueAccueil.getIdentifiant().isEmpty() || vueAccueil.getMotDePasse().isEmpty()) {
-            vueAccueil.afficherVide();
-          } else {
+        } 
+        else if(vueAccueil.getIdentifiant().isEmpty() || vueAccueil.getMotDePasse().isEmpty()) {
+          vueAccueil.afficherVide(); 
+        }
+         else {
             vueAccueil.afficherMessageErreur();
           }
-
         }
-      }
-    });
+      });
+    };
 
-    
+
     
   }
-}
+

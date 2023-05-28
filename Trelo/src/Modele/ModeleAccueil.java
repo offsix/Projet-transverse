@@ -3,25 +3,35 @@ package Modele;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class ModeleAccueil {
-	private String Identifiant;
-	private String MotDePasse;
-	
-	private ArrayList<String> listeID = new ArrayList<String>();
-	private ArrayList<String> listePASS = new ArrayList<String>();
 
-
-	
-	public ModeleAccueil(String Identifiant, String MotDePasse)
+private ArrayList<ModeleMembre> membres;	
+	public ModeleAccueil()
 	{
-		this.Identifiant=Identifiant;
-		this.MotDePasse=MotDePasse;
+		this.membres = new ArrayList<ModeleMembre>();
 	}
-	public String getIdentifiant() {
-		return Identifiant;
+	public void ajouterMembre(ModeleMembre membre)
+	{
+		this.membres.add(membre);
 	}
+	public ModeleMembre getMembre(String nommembre){
+		for (ModeleMembre modeleMembre : membres) {
+			if(modeleMembre.getPseudo().equals(nommembre))
+				return modeleMembre;
+		}
+		return null;
+	}
+	public boolean estunmembre(String pseudo,String password){
+		boolean resultat = false;
+		for (ModeleMembre modeleMembre : membres) {
+			if (modeleMembre.getPseudo().equals(pseudo) && modeleMembre.getPassword().equals(password)) {
+				resultat = true;
 
-	public String getMotDePasse() {
-		return MotDePasse;
+			}
+
+		}
+		return resultat;
 	}
 }
