@@ -127,8 +127,8 @@ public class Application { // Coder par Mathieu Flesch
     ModeleCartes[] tableauCartes = creationCarte(30);
 
     //Creation des membres manuellement et ajout au vecteur de l'acceuil
-    ModeleMembre firstmember = new ModeleMembre("2soum", "123");
-    ModeleMembre secondmember = new ModeleMembre("abdou", "troll");
+    ModeleMembre firstmember = new ModeleMembre("2soum", "123","dayssam", "boss","dayssam@outlook.fr");
+    ModeleMembre secondmember = new ModeleMembre("abdou", "troll","abdou", "boss","abdou@outlook.fr");
     modeleAccueil.ajouterMembre(firstmember);
     modeleAccueil.ajouterMembre(secondmember);
 
