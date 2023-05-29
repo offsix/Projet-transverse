@@ -2,6 +2,7 @@ package Classe;
 
 import Vue.*;
 import Modele.*;
+import Controller.ControllerAccueil;
 
 import java.awt.Button;
 import java.awt.Component;
@@ -195,35 +196,15 @@ public class Application { // Coder par Mathieu Flesch
     ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");
     VueInscription vueInscription = new VueInscription(inscription);
 
-
-  
-
-    vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-
-
-        if (modeleAccueil.estunmembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse())) {
-
-          // Effectuez les actions souhaitées lorsque le bouton est cliqué
-          vueAccueil.afficherMessageBienvenue();
-          vueAccueil.dispose();
-          ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(modeleAccueil.getMembre(vueAccueil.getIdentifiant()));
-          VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
-          fenetreEspacedetravail.add(vueEspacedetravail);
-          fenetreEspacedetravail.setVisible(true);
-        } 
-        else if(vueAccueil.getIdentifiant().isEmpty() || vueAccueil.getMotDePasse().isEmpty()) {
-          vueAccueil.afficherVide(); 
-        }
-         else {
-            vueAccueil.afficherMessageErreur();
-          }
-        }
-      });
-    };
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
+    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(modeleAccueil.getMembre(vueAccueil.getIdentifiant()));
+    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
+    //fenetreEspacedetravail.add(vueEspacedetravail);
+    //fenetreEspacedetravail.setVisible(true);
+       
 
 
     
   }
+}
 
