@@ -196,21 +196,7 @@ public class Application { // Coder par Mathieu Flesch
     VueInscription vueInscription = new VueInscription(inscription);
 
 
-    
-    vueInscription.ajouterListenerInscrire(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          // Récupérez les informations saisies par l'utilisateur
-          String identifiant = vueInscription.getIdentifiant();
-          String motDePasse = vueInscription.getMotDePasse();
-          String nom = vueInscription.getNom();
-          String prenom = vueInscription.getPrenom();
-          String adresse = vueInscription.getAdresse();
-          
-
-          
-      }
-  });
+  
 
     vueAccueil.ajouterListenerSeConnecter(new ActionListener() {
       @Override
