@@ -9,7 +9,7 @@ public class ModeleMembre {
 	private String pseudo;
 	
 	
-	public ModeleMembre(String pseudo, String password) {
+	public ModeleMembre(String pseudo, String password, String nom, String prenom, String adressemail) {
 		this.pseudo = pseudo;
 		this.password = password;
 	}
@@ -20,7 +20,14 @@ public class ModeleMembre {
 	public String getPassword() {
 		return password;
 	}
-
-	
+	public String getNom() {
+		return nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public String getAdressemail() {
+		return adressemail;
+	}
 	
 }
