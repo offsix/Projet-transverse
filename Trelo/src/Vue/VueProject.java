@@ -49,8 +49,7 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
-    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'acc�s r�el vers votre image
-    ImageIcon logoIcon = new ImageIcon(imagePath);
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/logo.jpg");
 
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);

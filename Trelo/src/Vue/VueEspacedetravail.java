@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.List;
 import java.util.ArrayList;
 
@@ -34,12 +35,12 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     panel.setPreferredSize(new Dimension(400, 300));
 
     //-----------------------------------------//
-    //	        GBCFIRST 	 		  	   	         //
+    // 		        GBCFIRST 	 		  	   //
     //-----------------------------------------//
     GridBagConstraints gbcFirst = new GridBagConstraints();
     gbcFirst.gridx = 0;
     gbcFirst.gridy = 0;
-    gbcFirst.weightx = 0.1;
+    gbcFirst.weightx = 0.05;
     gbcFirst.weighty = 1.0;
     gbcFirst.gridwidth = 1; // Fixer la largeur � 1
     gbcFirst.fill = GridBagConstraints.BOTH;
@@ -50,7 +51,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     panelFirst.setBorder(border);
     panel.add(panelFirst, gbcFirst);
     //-----------------------------------------//
-    //     		        GBCFIRST 1.1 		         //
+    //     		        GBCFIRST 1.1 		   //
     //-----------------------------------------//
     GridBagConstraints gbcSection11 = new GridBagConstraints();
     gbcSection11.gridx = 0;
@@ -63,11 +64,16 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
-    ImageIcon logoIcon = new ImageIcon("/Trelo/Image/logo.jpg");
-    JLabel logoLabel = new JLabel(logoIcon);
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/logo.jpg");
+
+    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
+    JLabel logoLabel = new JLabel(scaledLogoIcon);
+
+    section11.add(logoLabel, BorderLayout.CENTER);
 
     panelFirst.add(section11, gbcSection11);
-    panelFirst.setBackground(Color.RED);
     //-----------------------------------------//
     // 		        GBCFIRST 1.2 		  	         //
     //-----------------------------------------//
