@@ -257,7 +257,7 @@ panelSecond.add(section22, gbcSection22);
     //Ajout du JScrollPane dans la premi�re sous-section
     panelThird.add(scrollPane31);
     //-----------------------------------------//
-    //				GBCTHIRD 3.2 	 		   //
+    //				GBCTHIRD 3.2 	 		               //
     //-----------------------------------------//
     JPanel gbcSection32 = new JPanel();
     gbcSection32.setBackground(Color.white);

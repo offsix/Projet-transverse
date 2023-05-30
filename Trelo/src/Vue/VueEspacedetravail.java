@@ -2,22 +2,29 @@ package Vue;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.List;
+import java.util.ArrayList;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
 import Modele.ModeleEspacedetravail;
+import Modele.ModeleProjet;
 
-public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
+public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
 
   private static final long serialVersionUID = 1L;
 
@@ -104,10 +111,10 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     section21.setBackground(Color.white);
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
-    //R�cup�ration du nom du projet
+    //Récupération du nom du projet
     String nomProjet = ("Voici les projets de : ") + espacedetravail.getProprietaire().getPseudo();
 
-    //Cr�ation du JLabel pour afficher le nom du projet en grand au milieu
+    //Création du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
     labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
@@ -119,28 +126,44 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     //Ajout de la section 21 dans panelSecond
     panelSecond.add(section21, gbcSection21);
 
-//-----------------------------------------//
-// GBCSECOND 2.2 //
-//-----------------------------------------//
-GridBagConstraints gbcSection22 = new GridBagConstraints();
-gbcSection22.gridx = 0;
-gbcSection22.gridy = 1;
-gbcSection22.weightx = 1.0;
-gbcSection22.weighty = 0.95;
-gbcSection22.fill = GridBagConstraints.BOTH;
+    
+    //-----------------------------------------//
+    // GBCSECOND 2.2 //
+    //-----------------------------------------//
+    GridBagConstraints gbcSection22 = new GridBagConstraints();
+    gbcSection22.gridx = 0;
+    gbcSection22.gridy = 1;
+    gbcSection22.weightx = 1.0;
+    gbcSection22.weighty = 0.95;
+    gbcSection22.fill = GridBagConstraints.BOTH;
 
-// Création du conteneur pour les cartes
-JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
-section22.setBackground(Color.BLUE);
+    // Création du conteneur pour les cartes
+    JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
+    section22.setBackground(Color.white);
 
+    // Ajout des cartes dans le conteneur
+    for (ModeleProjet projet: espacedetravail.getProject()) {
+      VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
+      Dimension carteSize = new Dimension(200, 150); // Définir la taille des cartes souhaitée
+      vuePetitProjet.setPreferredSize(carteSize);
 
+      Border border1 = new LineBorder(Color.BLACK, 1); // Crée une bordure avec une ligne noire d'épaisseur 1
+      vuePetitProjet.setBorder(border1);
 
-// Création du JScrollPane avec le conteneur des cartes
-JScrollPane scrollPane = new JScrollPane(section22);
-scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+      section22.add(vuePetitProjet);
+    }
+    VueAjoute vueAjouteProjet = new VueAjoute(null);
+    vueAjouteProjet.setAlignmentX(Component.LEFT_ALIGNMENT);
+    section22.add(vueAjouteProjet);
 
-// Ajout du JScrollPane dans le panelSecond avec les contraintes
-panelSecond.add(scrollPane, gbcSection22);
+    // Création du JScrollPane avec le conteneur des cartes
+    JScrollPane scrollPane = new JScrollPane(section22);
+    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
+    // Ajout du JScrollPane dans le panelSecond avec les contraintes
+    panelSecond.add(scrollPane, gbcSection22);
+
+   
+    add(panel);
   }
 }

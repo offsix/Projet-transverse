@@ -34,7 +34,6 @@ public class VueAccueil extends JFrame {
         glop.setLayout(new GridLayout(1, 2));        
         glop.add(new JLabel(new ImageIcon("Trelo/Image/forme.png")));
         
-
         // Cr�ation des composants
         JLabel identifiantLabel = new JLabel("Identifiant:");
         JLabel motDePasseLabel = new JLabel("Mot de passe:");
@@ -46,8 +45,6 @@ public class VueAccueil extends JFrame {
         nomField = new JTextField(10);
         prenomField = new JTextField(10);
         adresseField = new JTextField(10);
-        
-       
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());

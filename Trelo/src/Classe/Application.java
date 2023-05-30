@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import javax.swing.JFrame;
 
+import Controller.ControllerAccueil;
 import Modele.ModeleCalendrier;
 import Modele.ModeleCartes;
 import Modele.ModeleEspacedetravail;
@@ -166,8 +167,8 @@ public class Application { // Coder par Mathieu Flesch
     ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
 
-    // fenetrePetitProjet.add(vuePetitProject);
-    // fenetrePetitProjet.setVisible(true);
+     fenetrePetitProjet.add(vuePetitProject);
+     fenetrePetitProjet.setVisible(true);
 
     // ----------------------------
     // Creer un modele d'une carte
@@ -206,12 +207,14 @@ public class Application { // Coder par Mathieu Flesch
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    /* ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");  c trois lignes servent a rien
+     ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");  
     VueInscription vueInscription = new VueInscription(inscription);
 
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil); */
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil); 
+    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(firstmember);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
+
+    espacedetravail.ajouterProjet(projet);
 
     fenetreEspacedetravail.add(vueEspacedetravail);
     fenetreEspacedetravail.setVisible(true);

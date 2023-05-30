@@ -11,6 +11,14 @@ public class ModeleEspacedetravail {
 		this.projectliste = new ArrayList<ModeleProjet>();
 		this.proprietaire = proprietaire;
 	}
+
+	public void ajouterProjet(ModeleProjet projet){
+		projectliste.add(projet);
+	}
+
+	public ArrayList<ModeleProjet> getProject(){
+		return projectliste;
+	}
 	public ModeleMembre getProprietaire() {
 		return proprietaire;
 	}
