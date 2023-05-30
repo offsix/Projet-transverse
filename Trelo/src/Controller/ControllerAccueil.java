@@ -3,8 +3,7 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-
-import javax.swing.event.MouseInputAdapter;
+import java.awt.event.MouseAdapter;
 
 import Modele.*;
 import Vue.*;
@@ -53,7 +52,7 @@ public class ControllerAccueil {
         }
 
          // Ajout de la vue d'inscription dans la vue d'accueil
-         public class SInscrireListener extends MouseInputAdapter {
+         public class SInscrireListener extends MouseAdapter {
             
             public void mouseClicked(MouseEvent e) {
                 ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),

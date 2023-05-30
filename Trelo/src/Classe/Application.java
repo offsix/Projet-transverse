@@ -187,8 +187,8 @@ public class Application { // Coder par Mathieu Flesch
     ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());  
     VueInscription vueInscription = new VueInscription(inscription);
 
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil); 
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(firstmember);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
+    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
 
     espacedetravail.ajouterProjet(projet);
