@@ -187,7 +187,8 @@ public class Application { // Coder par Mathieu Flesch
     // -------------------------------------
     // Creer un modele d'un espacedetravail
     // -------------------------------------
-    // ModeleProjet[] projets = creationProjets(25);
+
+    ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
 
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -197,7 +198,7 @@ public class Application { // Coder par Mathieu Flesch
     VueInscription vueInscription = new VueInscription(inscription);
 
     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(modeleAccueil.getMembre(vueAccueil.getIdentifiant()));
+    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
     //fenetreEspacedetravail.add(vueEspacedetravail);
     //fenetreEspacedetravail.setVisible(true);

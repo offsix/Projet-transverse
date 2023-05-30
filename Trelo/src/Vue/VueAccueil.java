@@ -158,6 +158,14 @@ public class VueAccueil extends JFrame {
     public String getMotDePasse() {
         return new String(motDePasseField.getPassword());
     }
+   
+    public String getprenom() {
+        return nomField.getText();
+    }
+
+    public String getadresseMail() {
+        return adresseField.getText();
+    }
 
     public void afficherMessageErreur() {
         JOptionPane.showMessageDialog(this, "Votre mot de passe ou votre identifiant est incorrect", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -176,9 +184,7 @@ public class VueAccueil extends JFrame {
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
     }
-    public JLabel getLabelSInscrire() {
-        return sInscrireLabel;
-    }
+  
     
 
 }

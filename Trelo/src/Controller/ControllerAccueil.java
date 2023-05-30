@@ -34,7 +34,8 @@ public class ControllerAccueil {
                     boolean estMembre = modeleAccueil.estunmembre(identifiant, motDePasse);
                     if (estMembre) {
                         vueAccueil.afficherMessageBienvenue();
-                        ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(modeleAccueil.getMembre(vueAccueil.getIdentifiant()));
+                        ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
+                        ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
                         VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
                         vueEspacedetravail.setVisible(true);
                         vueAccueil.dispose();
