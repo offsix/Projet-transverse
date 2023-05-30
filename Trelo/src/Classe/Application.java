@@ -56,29 +56,6 @@ public class Application { // Coder par Mathieu Flesch
     return tableauCartes;
   }
 
-  
-   /* public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate
-   dateDebut, String description, LocalDate dateLimite, String statut, String
-   couverture) {
-    ModeleCartes carte = new ModeleCartes(titre, dateDebut, description,
-    dateLimite, statut, couverture);
-   projet.ajouterCarte(carte);
-    }
-   
-    public static void ajouterMembre(ModeleProjet projet, String imagePath,
-   String nom, String prenom) {
-    ModeleMembre membre = new ModeleMembre(imagePath, nom, prenom);
-   projet.ajouterMembre(membre);
-    }
-    
-    public static void ajouterProjet(ModeleEspacedetravail espacedetravail,
-    String titre, ModeleCartes[] cartes, ModeleMembre[] membres, String
-    proprietaire) {
-    ModeleProjet projet = new ModeleProjet(titre, cartes, membres, proprietaire);
-    espacedetravail.ajouterProjet(projet);
-    } */
-   
-
   public static void main(String[] args) {
     // --------------------------
     // Creer un modele d'ajouter une carte
@@ -86,33 +63,33 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreAjouteCarte = new JFrame("VueAjouterCarte");
     fenetreAjouteCarte.setSize(400, 500);
-    fenetreAjouteCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
     VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
 
-    fenetreAjouteCarte.add(vueAjouteCarte);
-    fenetreAjouteCarte.setVisible(true);
+    //fenetreAjouteCarte.add(vueAjouteCarte);
+    //fenetreAjouteCarte.setVisible(true);
 
     // --------------------------
     // Creer un modele d'ajout
     // --------------------------
     JFrame fenetreAjout = new JFrame("VueAjout");
     fenetreAjout.setSize(300, 200);
-    fenetreAjout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreAjout.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleAjout ajout = new ModeleAjout();
     VueAjoute vueAjoute = new VueAjoute(ajout);
 
-    fenetreAjout.add(vueAjoute);
-    fenetreAjout.setVisible(true);
+    //fenetreAjout.add(vueAjoute);
+    //fenetreAjout.setVisible(true);
 
     // --------------------------
     // Creer un modele d'accueil
     // --------------------------
 
     JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleAccueil modeleAccueil = new ModeleAccueil();
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
@@ -124,7 +101,7 @@ public class Application { // Coder par Mathieu Flesch
     // ------------------------------
     JFrame fenetreCelendrier = new JFrame("VueCalendrier");
     fenetreCelendrier.setSize(300, 100);
-    fenetreCelendrier.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreCelendrier.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
     VueCalendrier vueCalendier = new VueCalendrier(calendrier);
@@ -148,13 +125,13 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreProjet = new JFrame("VueProjet");
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
 
-    fenetreProjet.add(vueProject);
-    fenetreProjet.setVisible(true);
+    //fenetreProjet.add(vueProject);
+    //fenetreProjet.setVisible(true);
 
     // ----------------------------
     // Creer un modele d'un Petitprojet
@@ -162,13 +139,13 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetrePetitProjet = new JFrame("VueProjet");
     fenetrePetitProjet.setSize(300, 200);
-    fenetrePetitProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetrePetitProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
 
-     fenetrePetitProjet.add(vuePetitProject);
-     fenetrePetitProjet.setVisible(true);
+     //fenetrePetitProjet.add(vuePetitProject);
+     //fenetrePetitProjet.setVisible(true);
 
     // ----------------------------
     // Creer un modele d'une carte
@@ -176,7 +153,7 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreCarte = new JFrame("VueCarte");
     fenetreCarte.setSize(300, 200);
-    fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte",
       LocalDate.now().plusDays(7), "statue �tudiant", "436884");
@@ -191,11 +168,11 @@ public class Application { // Coder par Mathieu Flesch
     JFrame fenetrePetitMembre = new JFrame("VueMembre");
     fenetrePetitMembre.setSize(100, 150);
     fenetrePetitMembre.setResizable(false);
-    fenetrePetitMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetrePetitMembre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     VuePetitMembre vueMembre = new VuePetitMembre(firstmember);
 
-     fenetrePetitMembre.add(vueMembre);
-     fenetrePetitMembre.setVisible(true);
+     //fenetrePetitMembre.add(vueMembre);
+     //fenetrePetitMembre.setVisible(true);
 
     // -------------------------------------
     // Creer un modele d'un espacedetravail
@@ -205,9 +182,9 @@ public class Application { // Coder par Mathieu Flesch
 
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-     ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");  
+    ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());  
     VueInscription vueInscription = new VueInscription(inscription);
 
     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil); 
@@ -216,7 +193,9 @@ public class Application { // Coder par Mathieu Flesch
 
     espacedetravail.ajouterProjet(projet);
 
-    fenetreEspacedetravail.add(vueEspacedetravail);
-    fenetreEspacedetravail.setVisible(true);
+    //fenetreEspacedetravail.add(vueEspacedetravail);
+    //fenetreEspacedetravail.setVisible(true);
+    
+    vueAccueil.setVisible(true);
   }
 }

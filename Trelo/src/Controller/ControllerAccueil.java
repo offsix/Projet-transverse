@@ -2,6 +2,9 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+
+import javax.swing.event.MouseInputAdapter;
 
 import Modele.*;
 import Vue.*;
@@ -16,13 +19,16 @@ public class ControllerAccueil {
         public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil) {
             this.modeleAccueil = modeleAccueil;
             this.vueAccueil = vueAccueil;
+
+            
     
             // Ajouter les listeners
             vueAccueil.ajouterListenerSeConnecter(new SeConnecterListener());
+            vueAccueil.ajouterListenerSInscrire(new SInscrireListener());
         }
     
         // Listener pour le bouton Se connecter
-        class SeConnecterListener implements ActionListener {
+        public class SeConnecterListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String identifiant = vueAccueil.getIdentifiant();
@@ -43,6 +49,20 @@ public class ControllerAccueil {
                         vueAccueil.afficherMessageErreur();
                     }
                 }
+            }
+        }
+
+         // Ajout de la vue d'inscription dans la vue d'accueil
+         public class SInscrireListener extends MouseInputAdapter {
+            
+            public void mouseClicked(MouseEvent e) {
+                ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
+                        vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
+                        vueAccueil.getadresseMail());
+                        System.out.println("Inscrire");
+    
+                VueInscription vueInscription = new VueInscription(inscription);
+                vueInscription.setVisible(true);
             }
         }
     }

@@ -3,7 +3,11 @@ package Vue;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+
+
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -24,7 +28,7 @@ public class VueAccueil extends JFrame {
         // Configuration de la fen�tre
         setIconImage(new ImageIcon("Trelo/Image/testlogo.png").getImage());
         setTitle("Bienvenue");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         // Configuration du layout
         JPanel glop = new JPanel();
         JPanel gloid = new JPanel();
@@ -115,33 +119,7 @@ public class VueAccueil extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH); // Affichage en plein �cran
         setVisible(true);
 
-        // Ajout de la vue d'inscription dans la vue d'accueil
-        sInscrireLabel.addMouseListener(new MouseAdapter() {
-           
-            public void mouseClicked(MouseEvent e) {
-                ModeleInscription inscription = new ModeleInscription(
-                       identifiantLabel.getText(),
-                       motDePasseLabel.getText(),
-                       nomField.getText(),
-                       prenomField.getText(),
-                       adresseField.getText()
-                );
-
-                VueInscription inscriptionVue = new VueInscription(inscription);
-                JFrame fenetreInscription = new JFrame("VueInscription");
-                fenetreInscription.setSize(750, 550);
-                fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                VueInscription vueInscription = new VueInscription(inscription);
-
-                JFrame inscriptionFrame = new JFrame("VueInscription");
-                inscriptionFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                inscriptionFrame.getContentPane().add(vueInscription);
-                inscriptionFrame.pack();
-                inscriptionFrame.setLocationRelativeTo(null); // Affichage au centre de l'écran
-                inscriptionFrame.setVisible(true);
-
-            }
-        });
+       
     }
 
     public String getIdentifiant() {
@@ -166,6 +144,9 @@ public class VueAccueil extends JFrame {
     public void ajouterListenerSeConnecter(ActionListener listener) {
         seConnecterButton.addActionListener(listener);
     }
+    public void ajouterListenerSInscrire(MouseAdapter listener) {
+        sInscrireLabel.addMouseListener(listener);
+    }
 
     public void afficherMessageBienvenue() {
         JOptionPane.showMessageDialog(this, "Bienvenue sur Trelo", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
@@ -177,7 +158,6 @@ public class VueAccueil extends JFrame {
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
     }
-  
     
 
 }
