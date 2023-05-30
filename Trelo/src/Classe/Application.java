@@ -4,14 +4,8 @@ import Vue.*;
 import Modele.*;
 import Controller.ControllerAccueil;
 
-import java.awt.Button;
-import java.awt.Component;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.time.LocalDate;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import Modele.ModeleCalendrier;
@@ -20,10 +14,6 @@ import Modele.ModeleEspacedetravail;
 import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import Modele.ModeleAccueil;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.*;
 
 public class Application { // Coder par Mathieu Flesch
 
@@ -94,6 +84,32 @@ public class Application { // Coder par Mathieu Flesch
    */
 
   public static void main(String[] args) {
+    // --------------------------
+    // Creer un modele d'ajouter une carte
+    // --------------------------
+
+    JFrame fenetreAjouteCarte = new JFrame("VueAjouterCarte");
+    fenetreAjouteCarte.setSize(400, 500);
+    fenetreAjouteCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
+    VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
+
+    fenetreAjouteCarte.add(vueAjouteCarte);
+    fenetreAjouteCarte.setVisible(true);
+
+    // --------------------------
+    // Creer un modele d'ajout
+    // --------------------------
+    JFrame fenetreAjout = new JFrame("VueAjout");
+    fenetreAjout.setSize(300, 200);
+    fenetreAjout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    ModeleAjout ajout = new ModeleAjout();
+    VueAjoute vueAjoute = new VueAjoute(ajout);
+
+    fenetreAjout.add(vueAjoute);
+    fenetreAjout.setVisible(true);
 
     // --------------------------
     // Creer un modele d'accueil
@@ -123,9 +139,9 @@ public class Application { // Coder par Mathieu Flesch
     // ----------------------------
     // Creer un modele d'un projet
     // ----------------------------
-    // ----------------------creation de cartes pour les ajouter au
-    // projet------------------------------------
+    //creation de cartes pour les ajouter au projet
     ModeleCartes[] tableauCartes = creationCarte(30);
+    ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
     //Creation des membres manuellement et ajout au vecteur de l'acceuil
     ModeleMembre firstmember = new ModeleMembre("2soum", "123","dayssam", "boss","dayssam@outlook.fr");
@@ -137,11 +153,11 @@ public class Application { // Coder par Mathieu Flesch
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    // ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    // VueProject vueProject = new VueProject(projet);
+     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+     VueProject vueProject = new VueProject(projet);
 
-    // fenetreProjet.add(vueProject);
-    // fenetreProjet.setVisible(true);
+    fenetreProjet.add(vueProject);
+     fenetreProjet.setVisible(true);
 
     // ----------------------------
     // Creer un modele d'un Petitprojet
@@ -200,12 +216,8 @@ public class Application { // Coder par Mathieu Flesch
     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
-    //fenetreEspacedetravail.add(vueEspacedetravail);
-    //fenetreEspacedetravail.setVisible(true);
-       
-
-
-    
+    fenetreEspacedetravail.add(vueEspacedetravail);
+    fenetreEspacedetravail.setVisible(true);
   }
 }
 

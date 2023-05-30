@@ -7,21 +7,15 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
-import Modele.ModeleAccueil;
 import Modele.ModeleEspacedetravail;
-import Modele.ModeleProjet;
 
 public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
 

@@ -1,9 +1,6 @@
 package Modele;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import javax.naming.spi.DirStateFactory.Result;
 
 public class ModeleAccueil {
 

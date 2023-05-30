@@ -1,13 +1,8 @@
 package Vue;
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.basic.BasicBorders.FieldBorder;
-
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Field;
-
 import Modele.ModeleInscription;
 
 public class VueInscription extends JPanel {

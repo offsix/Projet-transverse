@@ -11,7 +11,7 @@ import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import java.awt.*;
 
-public class VueProject extends JPanel {	//Coder par Mathieu Flesch
+public class VueProject extends JPanel { //Coder par Mathieu Flesch
 
   private static final long serialVersionUID = 1L;
 
@@ -19,15 +19,15 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
     setLayout(new BorderLayout());
     JPanel panel = new JPanel(new GridBagLayout());
     panel.setPreferredSize(new Dimension(400, 300));
-//-----------------------------------------//
-// 		        GBCFIRST 	 		  	   //
-//-----------------------------------------//
+    //-----------------------------------------//
+    // 		        GBCFIRST 	 		  	   //
+    //-----------------------------------------//
     GridBagConstraints gbcFirst = new GridBagConstraints();
     gbcFirst.gridx = 0;
     gbcFirst.gridy = 0;
     gbcFirst.weightx = 0.05;
     gbcFirst.weighty = 1.0;
-    gbcFirst.gridwidth = 1; // Fixer la largeur à 1
+    gbcFirst.gridwidth = 1; // Fixer la largeur ï¿½ 1
     gbcFirst.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
@@ -49,10 +49,10 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
-    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'accès réel vers votre image
+    String imagePath = "E:\\ProgramationPerso\\Java\\Trelo\\Image\\logo.jpg"; // Remplacez par le chemin d'accï¿½s rï¿½el vers votre image
     ImageIcon logoIcon = new ImageIcon(imagePath);
 
-    // Redimensionner l'image à une taille spécifique (par exemple, 50x50)
+    // Redimensionner l'image ï¿½ une taille spï¿½cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
     JLabel logoLabel = new JLabel(scaledLogoIcon);
@@ -73,9 +73,9 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
     JPanel section12 = new JPanel();
     section12.setBackground(Color.white);
     panelFirst.add(section12, gbcSection12);
-//-----------------------------------------//
-//     			GBCSECOND 	 		  	   //
-//-----------------------------------------//
+    //-----------------------------------------//
+    //     			GBCSECOND 	 		  	   //
+    //-----------------------------------------//
     GridBagConstraints gbcSecond = new GridBagConstraints();
     gbcSecond.gridx = 1;
     gbcSecond.gridy = 0;
@@ -99,12 +99,12 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
 
     JPanel section21 = new JPanel();
     section21.setBackground(Color.white);
-    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Définir une marge vide autour du panneau
+    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Dï¿½finir une marge vide autour du panneau
 
-    //Récupération du nom du projet
+    //Rï¿½cupï¿½ration du nom du projet
     String nomProjet = project.getsNomProjet();
 
-    //Création du JLabel pour afficher le nom du projet en grand au milieu
+    //Crï¿½ation du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
     labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
@@ -115,62 +115,106 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
 
     //Ajout de la section 21 dans panelSecond
     panelSecond.add(section21, gbcSection21);
-
-    //-----------------------------------------//
-    //				GBCSECOND 2.2 	 		   //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection22 = new GridBagConstraints();
-    gbcSection22.gridx = 0;
-    gbcSection22.gridy = 1;
-    gbcSection22.weightx = 1.0;
-    gbcSection22.weighty = 0.6;
-    gbcSection22.fill = GridBagConstraints.BOTH;
-
-    //Création du conteneur pour les cartes
-    JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); //GridLayout avec 4 colonnes et espacement de 10 pixels
-    section22.setBackground(Color.white);
-
-    //Ajout des cartes dans le conteneur
-    for (ModeleCartes carte : project.gettableauCarte()) {
-        VueCarte vueCarte = new VueCarte(carte);
-        Dimension carteSize = new Dimension(200, 150); //Définir la taille des cartes souhaitée
-        vueCarte.setPreferredSize(carteSize);
-        
-        Border border1 = new LineBorder(Color.BLACK, 1); //Crée une bordure avec une ligne noire d'épaisseur 1
-        vueCarte.setBorder(border1);
-        
-        section22.add(vueCarte);
-    }
-
-    //Création du JScrollPane avec le conteneur des cartes
-    JScrollPane scrollPane = new JScrollPane(section22);
-    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-    //Ajout du JScrollPane dans le panelSecond avec les contraintes
-    panelSecond.add(scrollPane, gbcSection22);
-    //-----------------------------------------//
-    //				GBCSECOND 2.3 	 		   //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection23 = new GridBagConstraints();
-    gbcSection23.gridx = 0;
-    gbcSection23.gridy = 2;
-    gbcSection23.weightx = 1.0;
-    gbcSection23.weighty = 0.3;
-    gbcSection23.fill = GridBagConstraints.BOTH;
-
-    JPanel section23 = new JPanel();
-    section23.setBackground(Color.white);
-    panelSecond.add(section23, gbcSection23);
 //-----------------------------------------//
-//				GBCTHIRD 	 		  	   //
+//             GBCSECOND 2.2                //
 //-----------------------------------------//
+GridBagConstraints gbcSection22 = new GridBagConstraints();
+gbcSection22.gridx = 0;
+gbcSection22.gridy = 1;
+gbcSection22.weightx = 1.0;
+gbcSection22.weighty = 0.6;
+gbcSection22.fill = GridBagConstraints.BOTH;
+
+// CrÃ©ation du conteneur pour les sections
+JPanel section22 = new JPanel(new GridLayout(1, 3, 10, 10)); // GridLayout avec 1 ligne et 3 colonnes
+section22.setBackground(Color.white);
+
+// Section 1
+JPanel section1 = new JPanel();
+section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
+
+// Titre de la section 1
+JLabel titreSection1 = new JLabel("Section 1");
+titreSection1.setHorizontalAlignment(SwingConstants.CENTER);
+section1.add(titreSection1);
+
+// Ajout des cartes dans la section 1
+for (ModeleCartes carte : project.gettableauCarte()) {
+    VueCarte vueCarte = new VueCarte(carte);
+    vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement Ã  gauche
+
+    // Ajouter la carte Ã  la section 1
+    section1.add(vueCarte);
+}
+
+VueAjoute vueAjouteCarte = new VueAjoute(null);
+vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
+section1.add(vueAjouteCarte);
+
+// CrÃ©ation du JScrollPane avec le conteneur de la section 1
+JScrollPane scrollPane1 = new JScrollPane(section1);
+scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+// DÃ©finition de la taille de la section 1
+scrollPane1.setPreferredSize(new Dimension(70, 500)); // Taille souhaitÃ©e de la section 1
+
+// Ajout du JScrollPane dans la section 1
+section22.add(scrollPane1);
+
+// Section 2
+JPanel section2 = new JPanel();
+section2.setBackground(Color.white);
+
+// Titre de la section 2
+JLabel titreSection2 = new JLabel("Section 2");
+titreSection2.setHorizontalAlignment(SwingConstants.CENTER);
+section2.add(titreSection2);
+
+// CrÃ©ation du JScrollPane avec la section 2 (sans barre de dÃ©filement)
+JScrollPane scrollPane2 = new JScrollPane(section2);
+scrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+scrollPane2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+// DÃ©finition de la taille de la section 2
+scrollPane2.setPreferredSize(new Dimension(70, 500)); // Taille souhaitÃ©e de la section 2
+
+// Ajout du JScrollPane dans la section 2
+section22.add(scrollPane2);
+
+// Section 3
+JPanel section3 = new JPanel();
+section3.setBackground(Color.white);
+
+// Titre de la section 3
+JLabel titreSection3 = new JLabel("Section 3");
+titreSection3.setHorizontalAlignment(SwingConstants.CENTER);
+section3.add(titreSection3);
+
+// CrÃ©ation du JScrollPane avec la section 3 (sans barre de dÃ©filement)
+JScrollPane scrollPane3 = new JScrollPane(section3);
+scrollPane3.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+scrollPane3.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+// DÃ©finition de la taille de la section 3
+scrollPane3.setPreferredSize(new Dimension(70, 500)); // Taille souhaitÃ©e de la section 3
+
+// Ajout du JScrollPane dans la section 3
+section22.add(scrollPane3);
+
+// Ajout de la section 2.2 dans le panelSecond avec les contraintes
+panelSecond.add(section22, gbcSection22);
+
+
+    //-----------------------------------------//
+    //				GBCTHIRD 	 		  	   //
+    //-----------------------------------------//
     GridBagConstraints gbcThird = new GridBagConstraints();
     gbcThird.gridx = 2;
     gbcThird.gridy = 0;
     gbcThird.weightx = 0.17;
     gbcThird.weighty = 1.0;
     gbcThird.fill = GridBagConstraints.BOTH;
-    
+
     JPanel panelThird = new JPanel(new GridLayout(2, 1));
     panelThird.setBackground(Color.white);
     panel.add(panelThird, gbcThird);
@@ -180,33 +224,38 @@ public class VueProject extends JPanel {	//Coder par Mathieu Flesch
     JPanel gbcSection31 = new JPanel(new GridLayout(0, 1, 10, 10)); //GridLayout avec 1 colonne et espacement de 10 pixels
     gbcSection31.setBackground(Color.white);
 
-    int membresParLigne = 2; //Défini le nombre de membres par ligne
+    int membresParLigne = 2; //Dï¿½fini le nombre de membres par ligne
     int count = 0;
     JPanel lignePanel = null;
-    for (ModeleMembre membre : project.getTableauMembres()) {
-        if (count % membresParLigne == 0) {
-            lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-            lignePanel.setBorder(new EmptyBorder(0, 0, 0, 0)); //Ajoute une marge vide autour du panel
-            gbcSection31.add(lignePanel);
-        }
 
-        VuePetitMembre vueMembre = new VuePetitMembre(membre);
-        Dimension smallerSize = new Dimension(120, 120);
-        vueMembre.setPreferredSize(smallerSize);
-        
-        Border border1 = new LineBorder(Color.BLACK, 1); //Crée une bordure avec une ligne noire d'épaisseur 1
-        vueMembre.setBorder(border1);
-        
-        lignePanel.add(vueMembre);
+    for (ModeleMembre membre: project.getTableauMembres()) {
+      if (count % membresParLigne == 0) {
+        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        lignePanel.setBorder(new EmptyBorder(0, 0, 0, 0)); //Ajoute une marge vide autour du panel
+        gbcSection31.add(lignePanel);
+      }
 
-        count++;
+      VueAjoute vueAjouteMembre = new VueAjoute(null);
+      vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
+      gbcSection31.add(vueAjouteMembre);
+
+      VuePetitMembre vueMembre = new VuePetitMembre(membre);
+      Dimension smallerSize = new Dimension(120, 120);
+      vueMembre.setPreferredSize(smallerSize);
+
+      Border border1 = new LineBorder(Color.BLACK, 1); //Crï¿½e une bordure avec une ligne noire d'ï¿½paisseur 1
+      vueMembre.setBorder(border1);
+
+      lignePanel.add(vueMembre);
+
+      count++;
     }
-    //Création du JScrollPane avec la sous-section des membres
-    JScrollPane scrollPane1 = new JScrollPane(gbcSection31);
-    scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    //Crï¿½ation du JScrollPane avec la sous-section des membres
+    JScrollPane scrollPane31 = new JScrollPane(gbcSection31);
+    scrollPane31.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-    //Ajout du JScrollPane dans la première sous-section
-    panelThird.add(scrollPane1);
+    //Ajout du JScrollPane dans la premiï¿½re sous-section
+    panelThird.add(scrollPane31);
     //-----------------------------------------//
     //				GBCTHIRD 3.2 	 		   //
     //-----------------------------------------//

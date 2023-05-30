@@ -14,8 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import Modele.ModeleProjet;
 
-import java.awt.event.ActionListener;
-
 public class VuePetitProjet extends JPanel {	//Coder par Mathieu Flesch
 
     private static final long serialVersionUID = 1L;
