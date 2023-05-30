@@ -2,8 +2,6 @@ package Classe;
 
 import Vue.*;
 import Modele.*;
-import Controller.ControllerAccueil;
-
 import java.time.LocalDate;
 
 import javax.swing.JFrame;
@@ -17,32 +15,30 @@ import Modele.ModeleAccueil;
 
 public class Application { // Coder par Mathieu Flesch
 
-  // public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
-  //   ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
+  public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
+    ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
 
-  //   // Cr�ation des cartes et des membres
-  //   ModeleCartes[] tableauCartes = creationCarte(iNum);
+    // Création des cartes et des membres
+    ModeleCartes[] tableauCartes = creationCarte(iNum);
+    ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
-  //   for (int i = 0; i < iNum; i++) {
-  //     ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
-  //     ModeleMembre proprietaire = tableauMembres[i]; // Choisir un membre comme propri�taire du projet
-
-  //     // Cr�er un projet avec les cartes et le propri�taire
-  //     ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
-  //     tableauProjets[i] = projet; // Ajouter le projet dans le tableau
-  //   }
-
-  //   return tableauProjets;
-  // }
+    for (int i = 0; i < iNum; i++) {
+      ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
+      // Créer un projet avec les cartes et le propriétaire
+      ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
+      tableauProjets[i] = projet; // Ajouter le projet dans le tableau
+    }
+    return tableauProjets;
+  }
 
   public static ModeleCartes[] creationCarte(int iNum) { // Fonction pour cr�er des Cartes
     ModeleCartes[] tableauCartes = new ModeleCartes[iNum]; // Tableau pour stocker les cartes
     // Liste des couleurs pr�d�finies
     String[] couleurs = {
-        "#FBE0C3",
-        "#FFBB98",
-        "#7D8E95",
-        "#344648"
+      "#FBE0C3",
+      "#FFBB98",
+      "#7D8E95",
+      "#344648"
     };
 
     for (int j = 1; j <= iNum; j++) {
@@ -59,29 +55,28 @@ public class Application { // Coder par Mathieu Flesch
     return tableauCartes;
   }
 
-
-  /*
-   public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate
+  
+   /* public static void ajouterCarte(ModeleProjet projet, String titre, LocalDate
    dateDebut, String description, LocalDate dateLimite, String statut, String
    couverture) {
     ModeleCartes carte = new ModeleCartes(titre, dateDebut, description,
     dateLimite, statut, couverture);
    projet.ajouterCarte(carte);
     }
-   * 
-   * public static void ajouterMembre(ModeleProjet projet, String imagePath,
-   * String nom, String prenom) {
-   * ModeleMembre membre = new ModeleMembre(imagePath, nom, prenom);
-   * projet.ajouterMembre(membre);
-   * }
-   * 
-   * public static void ajouterProjet(ModeleEspacedetravail espacedetravail,
-   * String titre, ModeleCartes[] cartes, ModeleMembre[] membres, String
-   * proprietaire) {
-   * ModeleProjet projet = new ModeleProjet(titre, cartes, membres, proprietaire);
-   * espacedetravail.ajouterProjet(projet);
-   * }
-   */
+   
+    public static void ajouterMembre(ModeleProjet projet, String imagePath,
+   String nom, String prenom) {
+    ModeleMembre membre = new ModeleMembre(imagePath, nom, prenom);
+   projet.ajouterMembre(membre);
+    }
+    
+    public static void ajouterProjet(ModeleEspacedetravail espacedetravail,
+    String titre, ModeleCartes[] cartes, ModeleMembre[] membres, String
+    proprietaire) {
+    ModeleProjet projet = new ModeleProjet(titre, cartes, membres, proprietaire);
+    espacedetravail.ajouterProjet(projet);
+    } */
+   
 
   public static void main(String[] args) {
     // --------------------------
@@ -121,7 +116,7 @@ public class Application { // Coder par Mathieu Flesch
     ModeleAccueil modeleAccueil = new ModeleAccueil();
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
 
-   // vueAccueil.setVisible(true);
+    // vueAccueil.setVisible(true);
 
     // ------------------------------
     // Creer un modele de calendrier
@@ -144,8 +139,9 @@ public class Application { // Coder par Mathieu Flesch
     ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
     //Creation des membres manuellement et ajout au vecteur de l'acceuil
-    ModeleMembre firstmember = new ModeleMembre("2soum", "123","dayssam", "boss","dayssam@outlook.fr");
-    ModeleMembre secondmember = new ModeleMembre("abdou", "troll","abdou", "boss","abdou@outlook.fr");
+    ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
+    ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
+    
     modeleAccueil.ajouterMembre(firstmember);
     modeleAccueil.ajouterMembre(secondmember);
 
@@ -153,11 +149,11 @@ public class Application { // Coder par Mathieu Flesch
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-     VueProject vueProject = new VueProject(projet);
+    ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    VueProject vueProject = new VueProject(projet);
 
     fenetreProjet.add(vueProject);
-     fenetreProjet.setVisible(true);
+    fenetreProjet.setVisible(true);
 
     // ----------------------------
     // Creer un modele d'un Petitprojet
@@ -167,8 +163,8 @@ public class Application { // Coder par Mathieu Flesch
     fenetrePetitProjet.setSize(300, 200);
     fenetrePetitProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    // ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    // VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
+    ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
 
     // fenetrePetitProjet.add(vuePetitProject);
     // fenetrePetitProjet.setVisible(true);
@@ -182,7 +178,7 @@ public class Application { // Coder par Mathieu Flesch
     fenetreCarte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte",
-        LocalDate.now().plusDays(7), "statue �tudiant", "436884");
+      LocalDate.now().plusDays(7), "statue �tudiant", "436884");
     VueCarte vueCarte = new VueCarte(carte);
 
     // fenetreCarte.add(vueCarte);
@@ -191,14 +187,14 @@ public class Application { // Coder par Mathieu Flesch
     // ----------------------------
     // Creer un modele d'un membre
     // ----------------------------
-    JFrame fenetreMembre = new JFrame("VueMembre");
-    fenetreMembre.setSize(100, 150);
-    fenetreMembre.setResizable(false);
-    fenetreMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    // VuePetitMembre vueMembre = new VuePetitMembre(membre);
+    JFrame fenetrePetitMembre = new JFrame("VueMembre");
+    fenetrePetitMembre.setSize(100, 150);
+    fenetrePetitMembre.setResizable(false);
+    fenetrePetitMembre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    VuePetitMembre vueMembre = new VuePetitMembre(firstmember);
 
-    // fenetreMembre.add(vueMembre);
-    // fenetreMembre.setVisible(true);
+     fenetrePetitMembre.add(vueMembre);
+     fenetrePetitMembre.setVisible(true);
 
     // -------------------------------------
     // Creer un modele d'un espacedetravail
@@ -210,14 +206,14 @@ public class Application { // Coder par Mathieu Flesch
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");
+    /* ModeleInscription inscription = new ModeleInscription("Identifiant", "motdepasse", "nom", "prenom", "adresseMail");  c trois lignes servent a rien
     VueInscription vueInscription = new VueInscription(inscription);
 
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil); */
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
+
     fenetreEspacedetravail.add(vueEspacedetravail);
     fenetreEspacedetravail.setVisible(true);
   }
 }
-

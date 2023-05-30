@@ -8,10 +8,12 @@ public class ModeleMembre {
 	private String password;
 	private String pseudo;
 	
-	
 	public ModeleMembre(String pseudo, String password, String nom, String prenom, String adressemail) {
 		this.pseudo = pseudo;
 		this.password = password;
+		this.adressemail = adressemail;
+		this.prenom = prenom;
+		this.nom = nom;
 	}
 	// getter
 	public String getPseudo() {

@@ -1,33 +1,33 @@
 package Vue;
 
 import javax.swing.*;
-import Modele.ModeleMembre;
 import java.awt.*;
 
-public class VuePetitMembre extends JPanel {	//Coder par Mathieu Flesch
+import Modele.ModeleMembre;
 
-    private static final long serialVersionUID = 1L;
+public class VuePetitMembre extends JPanel {
+    private JLabel pseudoLabel;
+    private JLabel passwordLabel;
+    private JLabel nomLabel;
+    private JLabel prenomLabel;
+    private JLabel adresseMailLabel;
 
     public VuePetitMembre(ModeleMembre membre) {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridLayout(5, 2, 10, 10));
+        setBackground(Color.WHITE);
 
-        //Cr�ation de l'image
-        /*ImageIcon imageIcon = new ImageIcon(membre.getImagePath());
-        Image image = imageIcon.getImage();
-        Image resizedImage = image.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
-        ImageIcon resizedImageIcon = new ImageIcon(resizedImage);
-        JLabel imageLabel = new JLabel(resizedImageIcon);
-        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(imageLabel);
-        */
-        //Cr�ation du label pour le pr�nom du membre
-        JLabel firstNameLabel = new JLabel(membre.getPrenom());
-        firstNameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(firstNameLabel);
+        pseudoLabel = new JLabel("Pseudo:");
+        nomLabel = new JLabel("Nom:");
+        prenomLabel = new JLabel("Prénom:");
+        adresseMailLabel = new JLabel("Addr:");
 
-        //Cr�ation du label pour le nom du membre
-        JLabel lastNameLabel = new JLabel(membre.getNom());
-        lastNameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(lastNameLabel);
+        add(pseudoLabel);
+        add(new JLabel(membre.getPseudo()));
+        add(nomLabel);
+        add(new JLabel(membre.getNom()));
+        add(prenomLabel);
+        add(new JLabel(membre.getPrenom()));
+        add(adresseMailLabel);
+        add(new JLabel(membre.getAdressemail()));
     }
 }

@@ -27,7 +27,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     panel.setPreferredSize(new Dimension(400, 300));
 
     //-----------------------------------------//
-    //	        GBCFIRST 	 		  	   	 //
+    //	        GBCFIRST 	 		  	   	         //
     //-----------------------------------------//
     GridBagConstraints gbcFirst = new GridBagConstraints();
     gbcFirst.gridx = 0;
@@ -43,7 +43,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     panelFirst.setBorder(border);
     panel.add(panelFirst, gbcFirst);
     //-----------------------------------------//
-    //     		        GBCFIRST 1.1 		   //
+    //     		        GBCFIRST 1.1 		         //
     //-----------------------------------------//
     GridBagConstraints gbcSection11 = new GridBagConstraints();
     gbcSection11.gridx = 0;
@@ -53,7 +53,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     gbcSection11.fill = GridBagConstraints.BOTH;
 
     JPanel section11 = new JPanel(new BorderLayout());
-    section11.setBackground(Color.blue);
+    section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
     ImageIcon logoIcon = new ImageIcon("/Trelo/Image/logo.jpg");
@@ -62,7 +62,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     panelFirst.add(section11, gbcSection11);
     panelFirst.setBackground(Color.RED);
     //-----------------------------------------//
-    // 		        GBCFIRST 1.2 		  	   //
+    // 		        GBCFIRST 1.2 		  	         //
     //-----------------------------------------//
     GridBagConstraints gbcSection12 = new GridBagConstraints();
     gbcSection12.gridx = 0;
@@ -76,7 +76,7 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     panelFirst.add(section12, gbcSection12);
 
     //-----------------------------------------//
-    // GBCSECOND //
+    //              GBCSECOND                  //
     //-----------------------------------------//
     GridBagConstraints gbcSecond = new GridBagConstraints();
     gbcSecond.gridx = 1;
@@ -119,40 +119,28 @@ public class VueEspacedetravail extends JPanel {	//Coder par Mathieu Flesch
     //Ajout de la section 21 dans panelSecond
     panelSecond.add(section21, gbcSection21);
 
-    //-----------------------------------------//
-    // GBCSECOND 2.2 //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection22 = new GridBagConstraints();
-    gbcSection22.gridx = 0;
-    gbcSection22.gridy = 1;
-    gbcSection22.weightx = 1.0;
-    gbcSection22.weighty = 0.95;
-    gbcSection22.fill = GridBagConstraints.BOTH;
+//-----------------------------------------//
+// GBCSECOND 2.2 //
+//-----------------------------------------//
+GridBagConstraints gbcSection22 = new GridBagConstraints();
+gbcSection22.gridx = 0;
+gbcSection22.gridy = 1;
+gbcSection22.weightx = 1.0;
+gbcSection22.weighty = 0.95;
+gbcSection22.fill = GridBagConstraints.BOTH;
 
-    // Cr�ation du conteneur pour les cartes
-    JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
-    section22.setBackground(Color.white);
+// Création du conteneur pour les cartes
+JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
+section22.setBackground(Color.BLUE);
 
-    // Ajout des cartes dans le conteneur
-    // for (ModeleProjet projet: espacedetravail.getProject()) {
-    //   VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
-    //   Dimension carteSize = new Dimension(200, 150); // D�finir la taille des cartes souhait�e
-    //   vuePetitProjet.setPreferredSize(carteSize);
 
-    //   Border border1 = new LineBorder(Color.BLACK, 1); // Cr�e une bordure avec une ligne noire d'�paisseur 1
-    //   vuePetitProjet.setBorder(border1);
 
-    //   section22.add(vuePetitProjet);
-    // }
+// Création du JScrollPane avec le conteneur des cartes
+JScrollPane scrollPane = new JScrollPane(section22);
+scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-    // Cr�ation du JScrollPane avec le conteneur des cartes
-    JScrollPane scrollPane = new JScrollPane(section22);
-    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+// Ajout du JScrollPane dans le panelSecond avec les contraintes
+panelSecond.add(scrollPane, gbcSection22);
 
-    // Ajout du JScrollPane dans le panelSecond avec les contraintes
-    panelSecond.add(scrollPane, gbcSection22);
-
-   
-    add(panel);
   }
 }

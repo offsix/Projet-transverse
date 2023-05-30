@@ -8,7 +8,7 @@ public class ModeleEspacedetravail {
 	private ModeleMembre proprietaire;
 	
 	public ModeleEspacedetravail(ModeleMembre proprietaire) {
-		this.projectliste= new ArrayList<ModeleProjet>();
+		this.projectliste = new ArrayList<ModeleProjet>();
 		this.proprietaire = proprietaire;
 	}
 	public ModeleMembre getProprietaire() {
