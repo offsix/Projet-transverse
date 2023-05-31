@@ -25,7 +25,6 @@ public class ControllerInscription {
      class InscrireListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            vueInscription.afficherVide();
             String identifiant = vueInscription.getIdentifiant();
             String motDePasse = vueInscription.getMotDePasse();
             String nom = vueInscription.getNom();
@@ -39,6 +38,7 @@ public class ControllerInscription {
                 vueInscription.setVisible(true);
                 ModeleInscription inscription = new ModeleInscription(identifiant, motDePasse, nom, prenom, adressemail);
                 modeleAccueil.ajouterMembre(inscription.getMembre());
+                vueInscription.validate();
                 System.out.println("Vous êtes inscrit vous pouvez vous connecter");
                     
             }

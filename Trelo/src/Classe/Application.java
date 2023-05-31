@@ -63,12 +63,22 @@ public class Application {
     ModeleAccueil modeleAccueil = new ModeleAccueil();
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
     VueInscription vueInscription = new VueInscription();
+
+     // Creation des membres manuellement et ajout au vecteur de l'acceuil
+     ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
+     ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
+ 
+
+    modeleAccueil.ajouterMembre(firstmember);
+    modeleAccueil.ajouterMembre(secondmember);
+    ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
+    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
     ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
     
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    
+
     
 
 // ------------------------------------------------------Inscription----------------------------------------------------//
@@ -97,12 +107,7 @@ VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
     ModeleCartes[] tableauCartes = creationCarte(30);
     ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
-    // Creation des membres manuellement et ajout au vecteur de l'acceuil
-    ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
-    ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
-
-    modeleAccueil.ajouterMembre(firstmember);
-    modeleAccueil.ajouterMembre(secondmember);
+   
 
     ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
     VueProject vueProject = new VueProject(projet);
@@ -118,9 +123,9 @@ VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
 
    
 
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(firstmember);
-    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
-    espacedetravail.ajouterProjet(projet);
+    // ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(firstmember);
+    // VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
+    // espacedetravail.ajouterProjet(projet);
 
     // ------------------------------------------------------JFrame----------------------------------------------------//
 

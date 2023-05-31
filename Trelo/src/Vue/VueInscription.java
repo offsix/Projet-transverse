@@ -95,8 +95,7 @@ public class VueInscription extends JPanel {
         inscrireButton.addActionListener(listener);
     }
 
-    public void afficherVide() {
-        if(motDePasseField.getText().isEmpty() || identifiantField.getText().isEmpty() || nomField.getText().isEmpty() || prenomField.getText().isEmpty() || adresseField.getText().isEmpty()) {
+    public void afficherVide() {       
             motDePasseField.setText("");
             identifiantField.setText("");
             prenomField.setText("");
@@ -105,4 +104,3 @@ public class VueInscription extends JPanel {
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
     }
-}

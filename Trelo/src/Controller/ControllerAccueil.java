@@ -18,11 +18,13 @@ public class ControllerAccueil {
         private ModeleAccueil modeleAccueil;
         private VueAccueil vueAccueil;
         private VueInscription vueInscription;
+        private VueEspacedetravail vueEspacedetravail;
     
-        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil ,VueInscription vueInscription) {
+        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil ,VueInscription vueInscription , VueEspacedetravail vueEspacedetravail) {
             this.modeleAccueil = modeleAccueil;
             this.vueAccueil = vueAccueil;
             this.vueInscription = vueInscription;
+            this.vueEspacedetravail = vueEspacedetravail;
 
             
     
@@ -48,6 +50,7 @@ public class ControllerAccueil {
                         VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
                         vueEspacedetravail.setVisible(true);
                         System.out.println("Est connecté");
+                        
                     } else {
                         vueAccueil.afficherMessageErreur();
                     }
@@ -62,12 +65,13 @@ public class ControllerAccueil {
                 // ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
                 //         vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
                 //         vueAccueil.getadresseMail());
+                                      
                 JFrame fenetreInscription = new JFrame("VueInscription");
-                         fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                         fenetreInscription.setLocationRelativeTo(null);
-                         fenetreInscription.setSize(750, 550);
-                         fenetreInscription.add(vueInscription);                         
-                         fenetreInscription.setVisible(true);
+                fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                fenetreInscription.setSize(750, 550);
+                fenetreInscription.add(vueInscription);   
+                fenetreInscription.setVisible(true);
+                fenetreInscription.setLocationRelativeTo(null);
             }
         }
     }
