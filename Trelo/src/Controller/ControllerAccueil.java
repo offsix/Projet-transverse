@@ -43,7 +43,7 @@ public class ControllerAccueil {
                         ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
                         VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
                         vueEspacedetravail.setVisible(true);
-                        vueAccueil.dispose();
+                        System.out.println("Est connecté");
                     } else {
                         vueAccueil.afficherMessageErreur();
                     }
@@ -58,7 +58,7 @@ public class ControllerAccueil {
                 ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
                         vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
                         vueAccueil.getadresseMail());
-                        System.out.println("Inscrire");
+                        System.out.println("Veut s'inscrire");
     
                 VueInscription vueInscription = new VueInscription(inscription);
                 vueInscription.setVisible(true);
