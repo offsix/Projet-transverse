@@ -25,17 +25,22 @@ import javax.swing.border.MatteBorder;
 import Modele.ModeleEspacedetravail;
 import Modele.ModeleProjet;
 
-public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
+public class VueEspacedetravail extends JPanel { 
 
   private static final long serialVersionUID = 1L;
 
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
+
+    //Panel Global
     setLayout(new BorderLayout());
-    JPanel panel = new JPanel(new GridBagLayout());
-    panel.setPreferredSize(new Dimension(400, 300));
+    JPanel panelglobal = new JPanel(new GridBagLayout());
+    panelglobal.setPreferredSize(new Dimension(400, 300));
+    panelglobal.setBackground(Color.BLUE);
+    panelglobal.setBorder(new MatteBorder(2,2,2,2, Color.RED));
+
 
     //-----------------------------------------//
-    // 		        GBCFIRST 	 		  	   //
+    // 		        PANNEL GAUCHE 	 		  	   //
     //-----------------------------------------//
     GridBagConstraints gbcFirst = new GridBagConstraints();
     gbcFirst.gridx = 0;
@@ -46,12 +51,15 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     gbcFirst.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
-    panelFirst.setBackground(Color.white);
-    MatteBorder border = new MatteBorder(0, 0, 0, 2, Color.BLACK);
-    panelFirst.setBorder(border);
-    panel.add(panelFirst, gbcFirst);
+    panelFirst.setBackground(Color.BLUE);
+    MatteBorder border2 = new MatteBorder(2, 2, 2, 2, Color.GREEN);
+    MatteBorder border = new MatteBorder(2, 2, 2, 2, Color.BLUE);
+    MatteBorder border3 = new MatteBorder(2, 2, 2, 2, Color.PINK);
+    MatteBorder border4 = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
+    panelFirst.setBorder(border2);
+    panelglobal.add(panelFirst, gbcFirst);
     //-----------------------------------------//
-    //     		        GBCFIRST 1.1 		   //
+    // PANNEL PETIT GAUCHE//
     //-----------------------------------------//
     GridBagConstraints gbcSection11 = new GridBagConstraints();
     gbcSection11.gridx = 0;
@@ -61,6 +69,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     gbcSection11.fill = GridBagConstraints.BOTH;
 
     JPanel section11 = new JPanel(new BorderLayout());
+    section11.setBorder(border3);
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
@@ -72,10 +81,11 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     JLabel logoLabel = new JLabel(scaledLogoIcon);
 
     section11.add(logoLabel, BorderLayout.CENTER);
+    section11.add(logoLabel, BorderLayout.CENTER);
 
     panelFirst.add(section11, gbcSection11);
     //-----------------------------------------//
-    // 		        GBCFIRST 1.2 		  	         //
+    // 		       DESSOUS PANNEL GAUCHE		  	 //
     //-----------------------------------------//
     GridBagConstraints gbcSection12 = new GridBagConstraints();
     gbcSection12.gridx = 0;
@@ -85,11 +95,12 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     gbcSection12.fill = GridBagConstraints.BOTH;
 
     JPanel section12 = new JPanel();
+    section12.setBorder(border4);
     section12.setBackground(Color.white);
     panelFirst.add(section12, gbcSection12);
 
     //-----------------------------------------//
-    //              GBCSECOND                  //
+    //              PANNEL MAIN                  //
     //-----------------------------------------//
     GridBagConstraints gbcSecond = new GridBagConstraints();
     gbcSecond.gridx = 1;
@@ -101,7 +112,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     JPanel panelSecond = new JPanel(new GridBagLayout());
     panelSecond.setBackground(Color.white);
     panelSecond.setBorder(border);
-    panel.add(panelSecond, gbcSecond);
+    panelglobal.add(panelSecond, gbcSecond);
 
     //-----------------------------------------//
     // GBCSECOND 2.1 //
@@ -114,6 +125,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     gbcSection21.fill = GridBagConstraints.BOTH;
 
     JPanel section21 = new JPanel();
+    section21.setBorder(border4);
     section21.setBackground(Color.white);
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
@@ -170,6 +182,6 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     panelSecond.add(scrollPane, gbcSection22);
 
    
-    add(panel);
+    add(panelglobal);
   }
 }

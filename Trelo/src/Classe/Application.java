@@ -18,45 +18,45 @@ import Modele.ModeleAccueil;
 
 public class Application {
 
-  public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
-    ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
+  // public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
+  //   ModeleProjet[] tableauProjets = new ModeleProjet[iNum];
 
-    // Création des cartes et des membres
-    ModeleCartes[] tableauCartes = creationCarte(iNum);
-    ModeleMembre[] tableauMembres = new ModeleMembre[0];
+  //   // Création des cartes et des membres
+  //   ModeleCartes[] tableauCartes = creationCarte(iNum);
+  //   ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
-    for (int i = 0; i < iNum; i++) {
-      ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
-      // Créer un projet avec les cartes et le propriétaire
-      ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
-      tableauProjets[i] = projet; // Ajouter le projet dans le tableau
-    }
-    return tableauProjets;
-  }
+  //   for (int i = 0; i < iNum; i++) {
+  //     ModeleCartes[] cartesProjet = tableauCartes; // Utiliser le m�me tableau de cartes pour chaque projet
+  //     // Créer un projet avec les cartes et le propriétaire
+  //     ModeleProjet projet = new ModeleProjet("Mon projet", tableauCartes, tableauMembres, "Moi");
+  //     tableauProjets[i] = projet; // Ajouter le projet dans le tableau
+  //   }
+  //   return tableauProjets;
+  // }
 
-  public static ModeleCartes[] creationCarte(int iNum) { // Fonction pour cr�er des Cartes
-    ModeleCartes[] tableauCartes = new ModeleCartes[iNum]; // Tableau pour stocker les cartes
-    // Liste des couleurs pr�d�finies
-    String[] couleurs = {
-        "#FBE0C3",
-        "#FFBB98",
-        "#7D8E95",
-        "#344648"
-    };
+  // public static ModeleCartes[] creationCarte(int iNum) { // Fonction pour cr�er des Cartes
+  //   ModeleCartes[] tableauCartes = new ModeleCartes[iNum]; // Tableau pour stocker les cartes
+  //   // Liste des couleurs pr�d�finies
+  //   String[] couleurs = {
+  //       "#FBE0C3",
+  //       "#FFBB98",
+  //       "#7D8E95",
+  //       "#344648"
+  //   };
 
-    for (int j = 1; j <= iNum; j++) {
-      String titre = "Carte " + j;
-      LocalDate dateDebut = LocalDate.now();
-      String description = "Description de la carte " + j;
-      LocalDate dateLimite = LocalDate.now().plusDays(j);
-      String statut = "En cours";
-      String couverture = couleurs[(j - 1) % couleurs.length]; // S�lectionner une couleur de mani�re cyclique
+  //   for (int j = 1; j <= iNum; j++) {
+  //     String titre = "Carte " + j;
+  //     LocalDate dateDebut = LocalDate.now();
+  //     String description = "Description de la carte " + j;
+  //     LocalDate dateLimite = LocalDate.now().plusDays(j);
+  //     String statut = "En cours";
+  //     String couverture = couleurs[(j - 1) % couleurs.length]; // S�lectionner une couleur de mani�re cyclique
 
-      ModeleCartes carte1 = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
-      tableauCartes[j - 1] = carte1; // Ajouter la carte dans le tableau
-    }
-    return tableauCartes;
-  }
+  //     ModeleCartes carte1 = new ModeleCartes(titre, dateDebut, description, dateLimite, statut, couverture);
+  //     tableauCartes[j - 1] = carte1; // Ajouter la carte dans le tableau
+  //   }
+  //   return tableauCartes;
+  // }
 
 /**
  * Initialise l'application en créant et initialisant différents objets, notamment:
@@ -85,7 +85,11 @@ public class Application {
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-
+    // Creer un modele d'un espacedetravail
+    JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
+    fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
 //--------------------------------------------Autre------------------------------------------------------//
 ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
 VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
@@ -97,17 +101,17 @@ VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
     ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
     VueCalendrier vueCalendier = new VueCalendrier(calendrier);
 
-    // creation de cartes pour les ajouter au projet
-    ModeleCartes[] tableauCartes = creationCarte(30);
-    ModeleMembre[] tableauMembres = new ModeleMembre[0];
+    // // creation de cartes pour les ajouter au projet
+    // ModeleCartes[] tableauCartes = creationCarte(30);
+    // ModeleMembre[] tableauMembres = new ModeleMembre[0];
 
    
 
-    ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    VueProject vueProject = new VueProject(projet);
+    // ModeleProjet projet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    // VueProject vueProject = new VueProject(projet);
 
-    ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
-    VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
+    // ModeleProjet Petitprojet = new ModeleProjet("Parceque c notre projet", tableauCartes, tableauMembres, "Moi");
+    // VuePetitProjet vuePetitProject = new VuePetitProjet(Petitprojet);
 
     ModeleCartes carte = new ModeleCartes("Coder en java", LocalDate.now(), "Ceci est une carte",
         LocalDate.now().plusDays(7), "statue �tudiant", "436884");
@@ -160,10 +164,7 @@ VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
     fenetrePetitMembre.setResizable(false);
     fenetrePetitMembre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    // Creer un modele d'un espacedetravail
-    JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
-    fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 
  
 
