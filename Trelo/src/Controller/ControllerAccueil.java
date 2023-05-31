@@ -49,13 +49,13 @@ public class ControllerAccueil {
                         ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
                         VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
                         vueEspacedetravail.setVisible(true);
-                        System.out.println("Est connecté");
                         JFrame fenetreEspacedeTravail = new JFrame("VueEspacedeTravail");
                         fenetreEspacedeTravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                         fenetreEspacedeTravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         fenetreEspacedeTravail.add(vueEspacedetravail);   
                         fenetreEspacedeTravail.setVisible(true);
                         fenetreEspacedeTravail.setLocationRelativeTo(null);
+                        vueAccueil.dispose();
 
                         
                     } else {

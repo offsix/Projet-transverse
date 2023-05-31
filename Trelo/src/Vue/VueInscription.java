@@ -90,6 +90,23 @@ public class VueInscription extends JPanel {
     public String getAdresse() {
         return adresseField.getText();
     }
+    //setter
+    public void setIdentifiant(String identifiant) {
+        identifiantField.setText(identifiant);
+    }
+    public void setMotDePasse(String motDePasse) {
+        motDePasseField.setText(motDePasse);
+    }
+    public void setNom(String nom) {
+        nomField.setText(nom);
+    }
+    public void setPrenom(String prenom) {
+        prenomField.setText(prenom);
+    }
+    public void setAdresse(String adresse) {
+        adresseField.setText(adresse);
+    }
+
 
     public void ajouterListenerInscrire(ActionListener listener) {
         inscrireButton.addActionListener(listener);
@@ -105,6 +122,11 @@ public class VueInscription extends JPanel {
         }
 
     public void afficherCorrect(){
+        motDePasseField.setText("");
+        identifiantField.setText("");
+        prenomField.setText("");
+        nomField.setText("");
+        adresseField.setText("");
         JOptionPane.showMessageDialog(this, "Inscription reussie", "Succès", JOptionPane.INFORMATION_MESSAGE);
     }
     }

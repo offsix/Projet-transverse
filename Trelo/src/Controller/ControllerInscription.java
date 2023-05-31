@@ -41,7 +41,6 @@ public class ControllerInscription {
                 vueInscription.afficherCorrect();
                 JFrame parent = (JFrame) vueInscription.getTopLevelAncestor();
                 parent.dispose();
-                System.out.println("Vous êtes inscrit vous pouvez vous connecter");
                 
             }
         }

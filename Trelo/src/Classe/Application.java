@@ -74,7 +74,7 @@ public class Application {
      ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
      ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
-
+    modeleAccueil.ajouterMembre(test);
     modeleAccueil.ajouterMembre(firstmember);
     modeleAccueil.ajouterMembre(secondmember);
     ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);

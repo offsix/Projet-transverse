@@ -64,7 +64,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     section11.setBackground(Color.white);
 
     // Chargement de l'image du logo
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/logo.jpg");
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
 
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
@@ -118,7 +118,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
     //Récupération du nom du projet
-    String nomProjet = ("Bienvenu sur votre espace de travail") + espacedetravail.getProprietaire().getPseudo();
+    String nomProjet = ("Bienvenu sur votre espace de travail ") + espacedetravail.getProprietaire().getPseudo();
 
     //Création du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
