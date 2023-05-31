@@ -11,9 +11,12 @@ import Vue.*;
 
 public class ControllerInscription {
     private VueInscription vueInscription;
+    private ModeleAccueil modeleAccueil;
 
-    public ControllerInscription(VueInscription vueInscription) {
+    public ControllerInscription(VueInscription vueInscription, ModeleAccueil modeleAccueil) {
         this.vueInscription = vueInscription;
+        this.modeleAccueil = modeleAccueil;
+
 
         // Ajouter les listeners
         vueInscription.ajouterListenerInscrire(new InscrireListener());

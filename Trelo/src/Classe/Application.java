@@ -61,27 +61,21 @@ public class Application {
 
     // ------------------------------------------------------Acceuil----------------------------------------------------//
     ModeleAccueil modeleAccueil = new ModeleAccueil();
-    VueInscription vueInscription = new VueInscription();
-    ControllerInscription controllerInscription = new ControllerInscription(vueInscription);
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
+    VueInscription vueInscription = new VueInscription();
+    ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription);
+    
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription);
-
+    
+    
 
 // ------------------------------------------------------Inscription----------------------------------------------------//
-
-    JFrame fenetreInscription = new JFrame("VueInscription");
-                         fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                         fenetreInscription.setLocationRelativeTo(null);
-                         fenetreInscription.setSize(750, 550);
-                         fenetreInscription.add(vueInscription);
+                  
+            
           
-     // ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
-    //     vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
 
-    // ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
-    // vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
    // Creer un modele d'une inscription
  
     

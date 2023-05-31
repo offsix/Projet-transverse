@@ -19,10 +19,11 @@ public class ControllerAccueil {
         private VueAccueil vueAccueil;
         private VueInscription vueInscription;
     
-        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil , VueInscription vueInscription) {
+        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil ,VueInscription vueInscription) {
             this.modeleAccueil = modeleAccueil;
             this.vueAccueil = vueAccueil;
             this.vueInscription = vueInscription;
+
             
     
             // Ajouter les listeners
@@ -61,9 +62,12 @@ public class ControllerAccueil {
                 // ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
                 //         vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
                 //         vueAccueil.getadresseMail());
-                         System.out.println("Veut s'inscrire");
-                         vueInscription.setVisible(true);
-                         
+                JFrame fenetreInscription = new JFrame("VueInscription");
+                         fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                         fenetreInscription.setLocationRelativeTo(null);
+                         fenetreInscription.setSize(750, 550);
+                         fenetreInscription.add(vueInscription);                         
+                         fenetreInscription.setVisible(true);
             }
         }
     }
