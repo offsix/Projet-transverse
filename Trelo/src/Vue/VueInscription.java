@@ -103,4 +103,8 @@ public class VueInscription extends JPanel {
             adresseField.setText("");
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
+
+    public void afficherCorrect(){
+        JOptionPane.showMessageDialog(this, "Inscription reussie", "Succès", JOptionPane.INFORMATION_MESSAGE);
+    }
     }

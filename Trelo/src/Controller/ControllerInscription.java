@@ -35,12 +35,14 @@ public class ControllerInscription {
                 vueInscription.afficherVide();
             } 
             else {
-                vueInscription.setVisible(true);
-                ModeleInscription inscription = new ModeleInscription(identifiant, motDePasse, nom, prenom, adressemail);
-                modeleAccueil.ajouterMembre(inscription.getMembre());
+                ModeleInscription inscription = new ModeleInscription(modeleAccueil,identifiant, motDePasse, nom, prenom, adressemail);
                 vueInscription.validate();
+                modeleAccueil.listemembre();
+                vueInscription.afficherCorrect();
+                JFrame parent = (JFrame) vueInscription.getTopLevelAncestor();
+                parent.dispose();
                 System.out.println("Vous êtes inscrit vous pouvez vous connecter");
-                    
+                
             }
         }
     }

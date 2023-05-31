@@ -13,6 +13,12 @@ private ArrayList<ModeleMembre> membres;
 	{
 		this.membres.add(membre);
 	}
+	public  void listemembre() 
+	{
+		for (ModeleMembre modeleMembre : membres) {
+			System.out.println(modeleMembre.getPseudo());
+		}
+	}
 	public ModeleMembre getMembre(String nommembre){
 		for (ModeleMembre modeleMembre : membres) {
 			if(modeleMembre.getPseudo().equals(nommembre))

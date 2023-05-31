@@ -77,8 +77,7 @@ public class Application {
     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
     
     JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+    fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
 
 // ------------------------------------------------------Inscription----------------------------------------------------//
