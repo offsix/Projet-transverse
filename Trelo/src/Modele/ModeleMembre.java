@@ -31,5 +31,6 @@ public class ModeleMembre {
 	public String getAdressemail() {
 		return adressemail;
 	}
+    
 	
 }

@@ -2,10 +2,12 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
 
 import Modele.*;
 import Vue.*;
-
 
 public class ControllerInscription {
     private ModeleInscription modeleInscription;
@@ -21,7 +23,6 @@ public class ControllerInscription {
      class InscrireListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Inscrire");
             vueInscription.afficherVide();
             String identifiant = vueInscription.getIdentifiant();
             String motDePasse = vueInscription.getMotDePasse();
@@ -29,13 +30,16 @@ public class ControllerInscription {
             String prenom = vueInscription.getPrenom();
             String adressemail = vueInscription.getAdresse();
 
-            if (identifiant.isEmpty() || motDePasse.isEmpty() || nom.isEmpty() || prenom.isEmpty() || adressemail.isEmpty()) {
+            if (identifiant.isEmpty() || motDePasse.isEmpty() || nom.isEmpty() || prenom.isEmpty() ||prenom.isEmpty() ||adressemail.isEmpty()) {
                 vueInscription.afficherVide();
             } 
             else {
-                    vueInscription.setVisible(true);
-                    ModeleInscription membre = new ModeleInscription(identifiant, motDePasse, nom, prenom, adressemail);
-
+                vueInscription.setVisible(true);
+                ModeleMembre membre = new ModeleMembre(identifiant, motDePasse, nom, prenom, adressemail);
+                ModeleAccueil liste = new ModeleAccueil();
+                liste.ajouterMembre(membre);
+                System.out.println("Vous êtes inscrit vous pouvez vous connecter");
+                    
             }
         }
     }

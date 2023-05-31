@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import javax.swing.JFrame;
 
 import Controller.ControllerAccueil;
+import Controller.ControllerInscription;
 import Modele.ModeleCalendrier;
 import Modele.ModeleCartes;
 import Modele.ModeleEspacedetravail;
@@ -101,6 +102,7 @@ public class Application {
     VueInscription vueInscription = new VueInscription(inscription);
 
     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
+    ControllerInscription controllerInscription = new ControllerInscription(vueInscription);
     ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
     espacedetravail.ajouterProjet(projet);
@@ -187,10 +189,11 @@ public class Application {
     // fenetreEspacedetravail.add(vueEspacedetravail);
     // fenetreEspacedetravail.setVisible(true);
 
-    // fenetreInscription.add(vueInscription);
-    // fenetreInscription.setVisible(true);
+     //fenetreInscription.add(vueInscription);
+     //fenetreInscription.setVisible(true);
 
     vueAccueil.setVisible(true);
+    vueInscription.setVisible(true);
 
   }
 }
