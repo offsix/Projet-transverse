@@ -6,6 +6,7 @@ public class ModeleInscription {
     //constructeur
     public ModeleInscription(String Identifiant, String MotDePasse, String Nom, String Prenom, String Adresse) {
         ModeleMembre nouveauMembre = new ModeleMembre(Identifiant, MotDePasse, Nom, Prenom, Adresse);
+        
     }
     //constructeur 
  
