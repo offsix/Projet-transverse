@@ -36,7 +36,7 @@ public class VueAccueil extends JFrame {
         gloid.setBorder(new EmptyBorder(100, 100, 100, 100));
         
         glop.setLayout(new GridLayout(1, 2));        
-        glop.add(new JLabel(new ImageIcon("Trelo/Image/forme.png")));
+        glop.add(new JLabel(new ImageIcon("Trelo/Image/forme.png", "Logo acceuil")));
         
         // Cr�ation des composants
         JLabel identifiantLabel = new JLabel("Identifiant:");

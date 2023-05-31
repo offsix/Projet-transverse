@@ -59,14 +59,42 @@ public class Application {
 
   public static void main(String[] args) {
 
-    ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
-    VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
+    // ------------------------------------------------------Acceuil----------------------------------------------------//
+    ModeleAccueil modeleAccueil = new ModeleAccueil();
+    VueInscription vueInscription = new VueInscription();
+    ControllerInscription controllerInscription = new ControllerInscription(vueInscription);
+    VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
+    JFrame fenetreAccueil = new JFrame("VueAccueil");
+    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription);
 
+
+// ------------------------------------------------------Inscription----------------------------------------------------//
+
+    JFrame fenetreInscription = new JFrame("VueInscription");
+                         fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                         fenetreInscription.setLocationRelativeTo(null);
+                         fenetreInscription.setSize(750, 550);
+                         fenetreInscription.add(vueInscription);
+          
+     // ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
+    //     vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
+
+    // ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
+    // vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
+   // Creer un modele d'une inscription
+ 
+    
+
+
+
+//--------------------------------------------Autre------------------------------------------------------//
+ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
+VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
     ModeleAjout ajout = new ModeleAjout();
     VueAjoute vueAjoute = new VueAjoute(ajout);
 
-    ModeleAccueil modeleAccueil = new ModeleAccueil();
-    VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
+    
 
     ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
     VueCalendrier vueCalendier = new VueCalendrier(calendrier);
@@ -94,16 +122,9 @@ public class Application {
 
     VuePetitMembre vueMembre = new VuePetitMembre(firstmember);
 
-    ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
-        vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
+   
 
-    ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(),
-        vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
-    VueInscription vueInscription = new VueInscription(inscription);
-
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
-    ControllerInscription controllerInscription = new ControllerInscription(vueInscription);
-    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
+    ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(firstmember);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(espacedetravail);
     espacedetravail.ajouterProjet(projet);
 
@@ -118,10 +139,7 @@ public class Application {
     JFrame fenetreAjout = new JFrame("VueAjout");
     fenetreAjout.setSize(300, 200);
     fenetreAjout.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    // Creer un modele d'accueil
-    JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
 
     // Creer un modele de calendrier
     JFrame fenetreCelendrier = new JFrame("VueCalendrier");
@@ -154,11 +172,7 @@ public class Application {
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    // Creer un modele d'une inscription
-    JFrame fenetreInscription = new JFrame("VueInscription");
-    fenetreInscription.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    fenetreInscription.setLocationRelativeTo(null);
-    fenetreInscription.setSize(750, 550);
+ 
 
     // ----------------------------------------------------------Fenetre-----------------------------------------------------//
 
@@ -188,12 +202,6 @@ public class Application {
 
     // fenetreEspacedetravail.add(vueEspacedetravail);
     // fenetreEspacedetravail.setVisible(true);
-
-     //fenetreInscription.add(vueInscription);
-     //fenetreInscription.setVisible(true);
-
-    vueAccueil.setVisible(true);
-    vueInscription.setVisible(true);
 
   }
 }

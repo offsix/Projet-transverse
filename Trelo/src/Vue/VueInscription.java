@@ -13,7 +13,7 @@ public class VueInscription extends JPanel {
     private JTextField adresseField;
     private JButton inscrireButton;
 
-    public VueInscription(ModeleInscription inscription) {
+    public VueInscription() {
         setLayout(new GridBagLayout());
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(10, 10, 10, 10));

@@ -10,7 +10,6 @@ import Modele.*;
 import Vue.*;
 
 public class ControllerInscription {
-    private ModeleInscription modeleInscription;
     private VueInscription vueInscription;
 
     public ControllerInscription(VueInscription vueInscription) {
@@ -35,9 +34,8 @@ public class ControllerInscription {
             } 
             else {
                 vueInscription.setVisible(true);
-                ModeleMembre membre = new ModeleMembre(identifiant, motDePasse, nom, prenom, adressemail);
-                ModeleAccueil liste = new ModeleAccueil();
-                liste.ajouterMembre(membre);
+                ModeleInscription inscription = new ModeleInscription(identifiant, motDePasse, nom, prenom, adressemail);
+                modeleAccueil.ajouterMembre(inscription.getMembre());
                 System.out.println("Vous êtes inscrit vous pouvez vous connecter");
                     
             }

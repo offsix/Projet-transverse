@@ -3,6 +3,9 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JFrame;
+
 import java.awt.event.MouseAdapter;
 
 import Modele.*;
@@ -14,11 +17,12 @@ public class ControllerAccueil {
 
         private ModeleAccueil modeleAccueil;
         private VueAccueil vueAccueil;
+        private VueInscription vueInscription;
     
-        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil) {
+        public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil , VueInscription vueInscription) {
             this.modeleAccueil = modeleAccueil;
             this.vueAccueil = vueAccueil;
-
+            this.vueInscription = vueInscription;
             
     
             // Ajouter les listeners
@@ -36,8 +40,7 @@ public class ControllerAccueil {
                 if (identifiant.isEmpty() || motDePasse.isEmpty()) {
                     vueAccueil.afficherVide();
                 } else {
-                    boolean estMembre = modeleAccueil.estunmembre(identifiant, motDePasse);
-                    if (estMembre) {
+                    if (modeleAccueil.estunmembre(identifiant, motDePasse)) {
                         vueAccueil.afficherMessageBienvenue();
                         ModeleMembre membre = new ModeleMembre(vueAccueil.getIdentifiant(), vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(), vueAccueil.getadresseMail());
                         ModeleEspacedetravail espacedetravail = new ModeleEspacedetravail(membre);
@@ -55,13 +58,12 @@ public class ControllerAccueil {
          public class SInscrireListener extends MouseAdapter {
             
             public void mouseClicked(MouseEvent e) {
-                ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
-                        vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
-                        vueAccueil.getadresseMail());
-                        System.out.println("Veut s'inscrire");
-    
-                VueInscription vueInscription = new VueInscription(inscription);
-                vueInscription.setVisible(true);
+                // ModeleInscription inscription = new ModeleInscription(vueAccueil.getIdentifiant(),
+                //         vueAccueil.getMotDePasse(), vueAccueil.getName(), vueAccueil.getprenom(),
+                //         vueAccueil.getadresseMail());
+                         System.out.println("Veut s'inscrire");
+                         vueInscription.setVisible(true);
+                         
             }
         }
     }
