@@ -15,6 +15,7 @@ import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import Modele.ModeleAccueil;
 
+
 public class Application {
 
   public static ModeleProjet[] creationProjets(int iNum) { // Fonction pour cr�er des projets
@@ -57,17 +58,22 @@ public class Application {
     return tableauCartes;
   }
 
-  public static void main(String[] args) {
+/**
+ * Initialise l'application en créant et initialisant différents objets, notamment:
+ * un objet `ModeleAccueil`, un objet `VueAccueil`, un objet `VueInscription`,
+ * deux objets `ModeleMembre`, un objet `ModeleEspacedetravail`, un objet `VueEspacedetravail`,
+ * un objet `ControllerInscription`, un objet `ControllerAccueil` et un objet `JFrame`.
+ * L'objet `ControllerAccueil` est responsable de la gestion de tous les autres objets.
+ */
 
-    // ------------------------------------------------------Acceuil----------------------------------------------------//
+  public static void main(String[] args) {
     ModeleAccueil modeleAccueil = new ModeleAccueil();
     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
     VueInscription vueInscription = new VueInscription();
-
-     // Creation des membres manuellement et ajout au vecteur de l'acceuil
+    //creation des membres par defaut
      ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
      ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
- 
+    ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
 
     modeleAccueil.ajouterMembre(firstmember);
     modeleAccueil.ajouterMembre(secondmember);
@@ -78,18 +84,7 @@ public class Application {
     
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-
-// ------------------------------------------------------Inscription----------------------------------------------------//
-                  
-            
-          
-
-   // Creer un modele d'une inscription
- 
-    
-
-
+        
 
 //--------------------------------------------Autre------------------------------------------------------//
 ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();

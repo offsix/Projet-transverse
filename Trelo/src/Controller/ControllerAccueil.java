@@ -57,7 +57,6 @@ public class ControllerAccueil {
                         fenetreEspacedeTravail.setVisible(true);
                         fenetreEspacedeTravail.setLocationRelativeTo(null);
 
-
                         
                     } else {
                         vueAccueil.afficherMessageErreur();

@@ -118,7 +118,7 @@ public class VueEspacedetravail extends JPanel { //Coder par Mathieu Flesch
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
     //Récupération du nom du projet
-    String nomProjet = ("Voici les projets de : ") + espacedetravail.getProprietaire().getPseudo();
+    String nomProjet = ("Bienvenu sur votre espace de travail") + espacedetravail.getProprietaire().getPseudo();
 
     //Création du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
