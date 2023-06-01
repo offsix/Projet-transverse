@@ -67,28 +67,31 @@ public class Application {
  */
 
   public static void main(String[] args) {
-    ModeleAccueil modeleAccueil = new ModeleAccueil();
-    VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
-    VueInscription vueInscription = new VueInscription();
-    //creation des membres par defaut
-     ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
-     ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
-    ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
-    modeleAccueil.ajouterMembre(test);
-    modeleAccueil.ajouterMembre(firstmember);
-    modeleAccueil.ajouterMembre(secondmember);
-    ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
-    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
-    ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
-    ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
+    // ModeleAccueil modeleAccueil = new ModeleAccueil();
+    // VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
+    // VueInscription vueInscription = new VueInscription();
+    // //creation des membres par defaut
+      ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
+    //  ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
+    // ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
+    // modeleAccueil.ajouterMembre(test);
+    // modeleAccueil.ajouterMembre(firstmember);
+    // modeleAccueil.ajouterMembre(secondmember);
+
+    // ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
+    // ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
     
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
     // Creer un modele d'un espacedetravail
+    ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
+    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fenetreEspacedetravail.add(vueEspacedetravail);
+    fenetreEspacedetravail.setVisible(true);
     
 //--------------------------------------------Autre------------------------------------------------------//
 ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();

@@ -30,74 +30,107 @@ public class VueEspacedetravail extends JPanel {
   private static final long serialVersionUID = 1L;
 
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
-
+    MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
+    MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
+    MatteBorder rose = new MatteBorder(2, 2, 2, 2, Color.PINK);
+    MatteBorder jaune = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
+    MatteBorder rouge = new MatteBorder(2, 2, 2, 2, Color.RED);
     //Panel Global
     setLayout(new BorderLayout());
     JPanel panelglobal = new JPanel(new GridBagLayout());
     panelglobal.setPreferredSize(new Dimension(400, 300));
-    panelglobal.setBackground(Color.BLUE);
-    panelglobal.setBorder(new MatteBorder(2,2,2,2, Color.RED));
+    panelglobal.setBorder(rouge);
+    panelglobal.setBackground(Color.WHITE);
+
+
 
 
     //-----------------------------------------//
-    // 		        PANNEL GAUCHE 	 		  	   //
+    // 		        PANNEL GAUCHE 	BARRE NAV	  	   //
     //-----------------------------------------//
-    GridBagConstraints gbcFirst = new GridBagConstraints();
-    gbcFirst.gridx = 0;
-    gbcFirst.gridy = 0;
-    gbcFirst.weightx = 0.05;
-    gbcFirst.weighty = 1.0;
-    gbcFirst.gridwidth = 1; // Fixer la largeur � 1
-    gbcFirst.fill = GridBagConstraints.BOTH;
+    GridBagConstraints gbcbarrenav = new GridBagConstraints();
+    gbcbarrenav.gridx = 0;
+    gbcbarrenav.gridy = 0;
+    gbcbarrenav.weightx = 0.05;
+    gbcbarrenav.weighty = 1.0;
+    gbcbarrenav.gridwidth = 1; // Fixer la largeur � 1
+    gbcbarrenav.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
-    panelFirst.setBackground(Color.BLUE);
-    MatteBorder border2 = new MatteBorder(2, 2, 2, 2, Color.GREEN);
-    MatteBorder border = new MatteBorder(2, 2, 2, 2, Color.BLUE);
-    MatteBorder border3 = new MatteBorder(2, 2, 2, 2, Color.PINK);
-    MatteBorder border4 = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
-    panelFirst.setBorder(border2);
-    panelglobal.add(panelFirst, gbcFirst);
+    panelFirst.setBackground(Color.WHITE);
+    panelglobal.add(panelFirst, gbcbarrenav);
+    
     //-----------------------------------------//
-    // PANNEL PETIT GAUCHE//
+    //PANNEL LOGO
     //-----------------------------------------//
+
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
+    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
+    JLabel logoLabel = new JLabel(scaledLogoIcon);
+    JPanel section11 = new JPanel(new BorderLayout());
+
+    
+    ImageIcon logoIcon2 = new ImageIcon("Trelo/Image/profile.png"); 
+    //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage2 = logoIcon2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon2 = new ImageIcon(scaledImage2);
+    JLabel logoLabel2 = new JLabel(scaledLogoIcon2);
+    JPanel section122 = new JPanel(new BorderLayout());
+
+        
+    ImageIcon logoIcon3 = new ImageIcon("Trelo/Image/door-open.png");
+    //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage3 = logoIcon3.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon3 = new ImageIcon(scaledImage3);
+    JLabel logoLabel3 = new JLabel(scaledLogoIcon3);
+    JPanel section123 = new JPanel(new BorderLayout());
+
+    // ImageIcon logoIcon4 = new ImageIcon("Trelo/Image/door-open.png");
+    // //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    // Image scaledImage4 = logoIcon4.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    // ImageIcon scaledLogoIcon4 = new ImageIcon(scaledImage3);
+    // JLabel logoLabel4 = new JLabel(scaledLogoIcon3);
+    // JPanel section124 = new JPanel(new BorderLayout());
+    // section124.setBorder(rouge);
+
+
     GridBagConstraints gbcSection11 = new GridBagConstraints();
     gbcSection11.gridx = 0;
     gbcSection11.gridy = 0;
     gbcSection11.weightx = 1.0;
-    gbcSection11.weighty = 0.1;
+    gbcSection11.weighty = 0.05;
     gbcSection11.fill = GridBagConstraints.BOTH;
-
-    JPanel section11 = new JPanel(new BorderLayout());
-    section11.setBorder(border3);
-    section11.setBackground(Color.white);
-
-    // Chargement de l'image du logo
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
-
-    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
-    Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
-    JLabel logoLabel = new JLabel(scaledLogoIcon);
-
     section11.add(logoLabel, BorderLayout.CENTER);
-    section11.add(logoLabel, BorderLayout.CENTER);
-
     panelFirst.add(section11, gbcSection11);
-    //-----------------------------------------//
-    // 		       DESSOUS PANNEL GAUCHE		  	 //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection12 = new GridBagConstraints();
-    gbcSection12.gridx = 0;
-    gbcSection12.gridy = 1;
-    gbcSection12.weightx = 1.0;
-    gbcSection12.weighty = 0.9;
-    gbcSection12.fill = GridBagConstraints.BOTH;
 
-    JPanel section12 = new JPanel();
-    section12.setBorder(border4);
-    section12.setBackground(Color.white);
-    panelFirst.add(section12, gbcSection12);
+    gbcSection11.gridx = 0;
+    gbcSection11.gridy = 1;
+    gbcSection11.weightx = 1.0;
+    gbcSection11.weighty = 0;
+    gbcSection11.fill = GridBagConstraints.BOTH;
+    section122.add(logoLabel2, BorderLayout.CENTER);
+    panelFirst.add(section122, gbcSection11);
+
+    gbcSection11.gridx = 0;
+    gbcSection11.gridy = 2;
+    gbcSection11.weightx = 1.0;
+    gbcSection11.weighty = 1;
+    gbcSection11.fill = GridBagConstraints.BOTH;
+    section123.add(logoLabel3, BorderLayout.SOUTH);
+    panelFirst.add(section123, gbcSection11);
+
+    // gbcSection11.gridx = 0;
+    // gbcSection11.gridy = 3;
+    // gbcSection11.weightx = 1.0;
+    // gbcSection11.weighty = 0;
+    // gbcSection11.fill = GridBagConstraints.BOTH;
+    // section124.add(logoLabel4, BorderLayout.SOUTH);
+    // panelFirst.add(section124, gbcSection11);
+
+ 
+
 
     //-----------------------------------------//
     //              PANNEL MAIN                  //
@@ -111,7 +144,7 @@ public class VueEspacedetravail extends JPanel {
 
     JPanel panelSecond = new JPanel(new GridBagLayout());
     panelSecond.setBackground(Color.white);
-    panelSecond.setBorder(border);
+    panelSecond.setBorder(bleu);
     panelglobal.add(panelSecond, gbcSecond);
 
     //-----------------------------------------//
@@ -125,7 +158,7 @@ public class VueEspacedetravail extends JPanel {
     gbcSection21.fill = GridBagConstraints.BOTH;
 
     JPanel section21 = new JPanel();
-    section21.setBorder(border4);
+    section21.setBorder(bleu);
     section21.setBackground(Color.white);
     section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
 
@@ -183,5 +216,6 @@ public class VueEspacedetravail extends JPanel {
 
    
     add(panelglobal);
+    
   }
 }
