@@ -6,14 +6,9 @@ import java.time.LocalDate;
 
 import javax.swing.JFrame;
 
-import Controller.ControllerAccueil;
-import Controller.ControllerInscription;
-import Modele.ModeleCalendrier;
-import Modele.ModeleCartes;
-import Modele.ModeleEspacedetravail;
-import Modele.ModeleMembre;
-import Modele.ModeleProjet;
-import Modele.ModeleAccueil;
+import Modele.*;
+import Vue.*;
+import Controller.*;
 
 
 public class Application {
@@ -87,6 +82,7 @@ public class Application {
     // Creer un modele d'un espacedetravail
     ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
+    ControllerEspacedetravail controllerEspacedetravail = new ControllerEspacedetravail(modeleEspacedetravail, vueEspacedetravail);    
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -94,10 +90,10 @@ public class Application {
     fenetreEspacedetravail.setVisible(true);
     
 //--------------------------------------------Autre------------------------------------------------------//
-ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
-VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
-    ModeleAjout ajout = new ModeleAjout();
-    VueAjoute vueAjoute = new VueAjoute(ajout);
+// ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
+// VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
+//     ModeleAjout ajout = new ModeleAjout();
+//     VueAjoute vueAjoute = new VueAjoute(ajout);
 
     
 

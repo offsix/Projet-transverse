@@ -146,9 +146,9 @@ for (ModeleCartes carte : project.gettableauCarte()) {
     section1.add(vueCarte);
 }
 
-VueAjoute vueAjouteCarte = new VueAjoute(null);
-vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
-section1.add(vueAjouteCarte);
+//VueAjoute vueAjouteCarte = new VueAjoute(null);
+//vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
+//section1.add(vueAjouteCarte);
 
 // Création du JScrollPane avec le conteneur de la section 1
 JScrollPane scrollPane1 = new JScrollPane(section1);
@@ -234,9 +234,9 @@ panelSecond.add(section22, gbcSection22);
         gbcSection31.add(lignePanel);
       }
 
-      VueAjoute vueAjouteMembre = new VueAjoute(null);
-      vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
-      gbcSection31.add(vueAjouteMembre);
+      //VueAjoute vueAjouteMembre = new VueAjoute(null);
+      //vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
+      //gbcSection31.add(vueAjouteMembre);
 
       VuePetitMembre vueMembre = new VuePetitMembre(membre);
       Dimension smallerSize = new Dimension(120, 120);

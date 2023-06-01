@@ -3,6 +3,7 @@ package Vue;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -10,10 +11,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.List;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -26,9 +29,9 @@ import Modele.ModeleEspacedetravail;
 import Modele.ModeleProjet;
 
 public class VueEspacedetravail extends JPanel { 
-
-  private static final long serialVersionUID = 1L;
-
+  private JLabel logoAJoutProjet;
+  private ModeleEspacedetravail modeleEspacedetravail;
+  
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
@@ -64,7 +67,7 @@ public class VueEspacedetravail extends JPanel {
     //PANNEL LOGO
     //-----------------------------------------//
 
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/profile.png");
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
@@ -72,12 +75,16 @@ public class VueEspacedetravail extends JPanel {
     JPanel section11 = new JPanel(new BorderLayout());
 
     
-    ImageIcon logoIcon2 = new ImageIcon("Trelo/Image/profile.png"); 
+    ImageIcon logoIcon2 = new ImageIcon("Trelo/Image/plus-document.png"); 
     //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage2 = logoIcon2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon2 = new ImageIcon(scaledImage2);
-    JLabel logoLabel2 = new JLabel(scaledLogoIcon2);
+     logoAJoutProjet = new JLabel(scaledLogoIcon2);
+     logoAJoutProjet.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     JPanel section122 = new JPanel(new BorderLayout());
+    JLabel label2 = new JLabel("Creer un nouveau projet");
+    label2.setHorizontalAlignment(SwingConstants.CENTER);
+
 
         
     ImageIcon logoIcon3 = new ImageIcon("Trelo/Image/door-open.png");
@@ -100,7 +107,7 @@ public class VueEspacedetravail extends JPanel {
     gbcSection11.gridx = 0;
     gbcSection11.gridy = 0;
     gbcSection11.weightx = 1.0;
-    gbcSection11.weighty = 0.05;
+    gbcSection11.weighty = 0.1;
     gbcSection11.fill = GridBagConstraints.BOTH;
     section11.add(logoLabel, BorderLayout.CENTER);
     panelFirst.add(section11, gbcSection11);
@@ -110,8 +117,10 @@ public class VueEspacedetravail extends JPanel {
     gbcSection11.weightx = 1.0;
     gbcSection11.weighty = 0;
     gbcSection11.fill = GridBagConstraints.BOTH;
-    section122.add(logoLabel2, BorderLayout.CENTER);
+    section122.add(logoAJoutProjet, BorderLayout.CENTER);
+    section122.add(label2, BorderLayout.SOUTH);
     panelFirst.add(section122, gbcSection11);
+
 
     gbcSection11.gridx = 0;
     gbcSection11.gridy = 2;
@@ -135,87 +144,79 @@ public class VueEspacedetravail extends JPanel {
     //-----------------------------------------//
     //              PANNEL MAIN                  //
     //-----------------------------------------//
+
+    
+    JPanel panelSecond = new JPanel(new GridBagLayout());
+    panelSecond.setBackground(Color.white);
+    panelSecond.setBorder(bleu);
+ 
+
     GridBagConstraints gbcSecond = new GridBagConstraints();
     gbcSecond.gridx = 1;
     gbcSecond.gridy = 0;
     gbcSecond.weightx = 0.9;
     gbcSecond.weighty = 1.0;
     gbcSecond.fill = GridBagConstraints.BOTH;
-
-    JPanel panelSecond = new JPanel(new GridBagLayout());
-    panelSecond.setBackground(Color.white);
-    panelSecond.setBorder(bleu);
     panelglobal.add(panelSecond, gbcSecond);
+
+     JLabel labelNomProjet = new JLabel(("Bienvenu sur votre espace de travail ") + espacedetravail.getProprietaire().getPseudo());
+    labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
+    labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
+
+
+
+
+    JPanel section21 = new JPanel(new GridLayout(2, 0));
+    section21.setBorder(bleu);
+   
+
+   
+
+
+    GridBagConstraints gbctitleform = new GridBagConstraints();
+    gbctitleform.gridx = 0;
+    gbctitleform.gridy = 0;
+    gbctitleform.weightx = 1.0;
+    gbctitleform.weighty = 0.10;
+    gbctitleform.fill = GridBagConstraints.BOTH;
+    panelSecond.add(labelNomProjet, gbctitleform);
+
+    gbctitleform.gridx = 0;
+    gbctitleform.gridy = 1;
+    gbctitleform.weightx = 1.0;
+    gbctitleform.weighty = 0.90;
+    gbctitleform.fill = GridBagConstraints.BOTH;
+    panelSecond.add(section21, gbctitleform);
+
+
 
     //-----------------------------------------//
     // GBCSECOND 2.1 //
     //-----------------------------------------//
-    GridBagConstraints gbcSection21 = new GridBagConstraints();
-    gbcSection21.gridx = 0;
-    gbcSection21.gridy = 0;
-    gbcSection21.weightx = 1.0;
-    gbcSection21.weighty = 0.05;
-    gbcSection21.fill = GridBagConstraints.BOTH;
-
-    JPanel section21 = new JPanel();
-    section21.setBorder(bleu);
-    section21.setBackground(Color.white);
-    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
-
+    
     //Récupération du nom du projet
-    String nomProjet = ("Bienvenu sur votre espace de travail ") + espacedetravail.getProprietaire().getPseudo();
-
     //Création du JLabel pour afficher le nom du projet en grand au milieu
-    JLabel labelNomProjet = new JLabel(nomProjet);
-    labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
-    labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
-
-    //Ajout du JLabel dans la section21
-    section21.setLayout(new BorderLayout());
-    section21.add(labelNomProjet, BorderLayout.CENTER);
-
-    //Ajout de la section 21 dans panelSecond
-    panelSecond.add(section21, gbcSection21);
+   
 
     
-    //-----------------------------------------//
-    // GBCSECOND 2.2 //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection22 = new GridBagConstraints();
-    gbcSection22.gridx = 0;
-    gbcSection22.gridy = 1;
-    gbcSection22.weightx = 1.0;
-    gbcSection22.weighty = 0.95;
-    gbcSection22.fill = GridBagConstraints.BOTH;
+
+    
+
+
+    
 
     // Création du conteneur pour les cartes
-    JPanel section22 = new JPanel(new GridLayout(0, 4, 10, 10)); // GridLayout avec 4 colonnes et espacement de 10 pixels
-    section22.setBackground(Color.white);
-
-    // Ajout des cartes dans le conteneur
-    for (ModeleProjet projet: espacedetravail.getProject()) {
-      VuePetitProjet vuePetitProjet = new VuePetitProjet(projet);
-      Dimension carteSize = new Dimension(200, 150); // Définir la taille des cartes souhaitée
-      vuePetitProjet.setPreferredSize(carteSize);
-
-      Border border1 = new LineBorder(Color.BLACK, 1); // Crée une bordure avec une ligne noire d'épaisseur 1
-      vuePetitProjet.setBorder(border1);
-
-      section22.add(vuePetitProjet);
-    }
-    VueAjoute vueAjouteProjet = new VueAjoute(null);
-    vueAjouteProjet.setAlignmentX(Component.LEFT_ALIGNMENT);
-    section22.add(vueAjouteProjet);
-
-    // Création du JScrollPane avec le conteneur des cartes
-    JScrollPane scrollPane = new JScrollPane(section22);
-    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-    // Ajout du JScrollPane dans le panelSecond avec les contraintes
-    panelSecond.add(scrollPane, gbcSection22);
-
+  
    
     add(panelglobal);
+
+
+
     
   }
+  public void ajouterlisstenerNouveauprojet(MouseAdapter listener) {
+    logoAJoutProjet.addMouseListener(listener);
+}
+
+
 }
