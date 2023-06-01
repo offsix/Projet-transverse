@@ -13,6 +13,7 @@ import java.awt.event.MouseAdapter;
 
 import Modele.*;
 import Vue.*;
+import Controller.*;
 
 public class ControllerEspacedetravail {
     private ModeleEspacedetravail modeleEspacedetravail;
@@ -38,6 +39,14 @@ public class Decolistener extends MouseAdapter {
         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
     
         if (option == JOptionPane.YES_OPTION) {
+            // ModeleAccueil modeleAccueil = new ModeleAccueil();
+            // VueAccueil VueAccueil = new VueAccueil(modeleAccueil);
+            // JFrame fenetreAccueil = new JFrame("VueEspacedeTravail");
+            // fenetreAccueil.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            // fenetreAccueil.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            // fenetreAccueil.add(VueAccueil);   
+            // fenetreAccueil.setVisible(true);
+            // fenetreAccueil.setLocationRelativeTo(null);
           JFrame parent = (JFrame) vueEspacedetravail.getTopLevelAncestor();
           parent.dispose();
         } 
