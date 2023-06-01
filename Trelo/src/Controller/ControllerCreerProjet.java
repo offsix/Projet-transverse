@@ -23,7 +23,6 @@ public class ControllerCreerProjet {
 
             System.out.println("Ajouter projet");
             vueEspacedetravail.ajoutProjet(vueCreerProjet.getTitle(), vueCreerProjet.getDescription());
-
             vueCreerProjet.validate();
 
         }

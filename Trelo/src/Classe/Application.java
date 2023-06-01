@@ -64,36 +64,21 @@ public class Application {
   public static void main(String[] args) {
      ModeleAccueil modeleAccueil = new ModeleAccueil();
      VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
-     VueInscription vueInscription = new VueInscription();
+     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
+
     // //creation des membres par defaut
       ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
-    //  ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
-    // ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
-    ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
-    VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
-
-    ControllerEspacedetravail controllerEspacedetravail = new ControllerEspacedetravail(modeleEspacedetravail, vueEspacedetravail);    
-
-    // modeleAccueil.ajouterMembre(test);
-    // modeleAccueil.ajouterMembre(firstmember);
-    // modeleAccueil.ajouterMembre(secondmember);
-
-     ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
-     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
-    
+    ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
+     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
+    modeleAccueil.ajouterMembre(test);
+    modeleAccueil.ajouterMembre(firstmember);
+    modeleAccueil.ajouterMembre(secondmember);
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-    // Creer un modele d'un espacedetravail
-
-    JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
-    fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    //fenetreEspacedetravail.add(vueEspacedetravail);
-    //fenetreEspacedetravail.setVisible(true);
-
     
 
+    
     
 //--------------------------------------------Autre------------------------------------------------------//
 // ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
