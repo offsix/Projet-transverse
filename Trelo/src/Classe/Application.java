@@ -90,6 +90,9 @@ public class Application {
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     fenetreEspacedetravail.add(vueEspacedetravail);
     fenetreEspacedetravail.setVisible(true);
+
+    
+
     
 //--------------------------------------------Autre------------------------------------------------------//
 // ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();

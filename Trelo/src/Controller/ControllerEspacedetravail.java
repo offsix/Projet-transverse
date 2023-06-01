@@ -39,6 +39,13 @@ public class Decolistener extends MouseAdapter {
     public class NouveauprojetListener extends MouseAdapter {
         public void mouseClicked(MouseEvent e) {
             System.out.println("Nouveau projet");
+            VueCreerProjet VueCreerProjet = new VueCreerProjet();
+            JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
+            fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            fenetreCreerprojet.setSize(400,500);
+            fenetreCreerprojet.add(VueCreerProjet);
+            fenetreCreerprojet.setVisible(true);
+            fenetreCreerprojet.setLocationRelativeTo(null);
 
         }
         
