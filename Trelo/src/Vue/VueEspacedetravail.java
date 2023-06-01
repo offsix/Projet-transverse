@@ -266,6 +266,8 @@ public class VueEspacedetravail extends JPanel {
  }
  labeldesc.setHorizontalAlignment(SwingConstants.CENTER);
    JTextArea descProjet = new JTextArea(Description);
+   descProjet.setLineWrap(true);
+   descProjet.setWrapStyleWord(true);
    JButton btnaccederauprojet = new JButton("Acceder au projet");
    try {
      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
