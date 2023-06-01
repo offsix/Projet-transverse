@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 
 import javax.imageio.stream.MemoryCacheImageInputStream;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import java.awt.event.MouseAdapter;
 
@@ -33,8 +34,15 @@ public class ControllerEspacedetravail {
 }
 public class Decolistener extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Deco");
-    }
+        int option = JOptionPane.showOptionDialog(null, "Voulez-vous vraiment vous déconnecter ?", "Confirmation",
+        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+    
+        if (option == JOptionPane.YES_OPTION) {
+          JFrame parent = (JFrame) vueEspacedetravail.getTopLevelAncestor();
+          parent.dispose();
+        } 
+           }
+
 }
     public class NouveauprojetListener extends MouseAdapter {
         public void mouseClicked(MouseEvent e) {
