@@ -5,23 +5,30 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.List;
 import java.awt.event.MouseAdapter;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.naming.NoPermissionException;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
@@ -30,8 +37,11 @@ import Modele.ModeleProjet;
 
 public class VueEspacedetravail extends JPanel { 
   private JLabel logoAJoutProjet;
+  private JLabel logoDeco;
+  private JLabel logoMembre;
   private ModeleEspacedetravail modeleEspacedetravail;
-  
+  private Font customFont;
+
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
@@ -42,8 +52,6 @@ public class VueEspacedetravail extends JPanel {
     setLayout(new BorderLayout());
     JPanel panelglobal = new JPanel(new GridBagLayout());
     panelglobal.setPreferredSize(new Dimension(400, 300));
-    panelglobal.setBorder(rouge);
-    panelglobal.setBackground(Color.WHITE);
 
 
 
@@ -60,8 +68,8 @@ public class VueEspacedetravail extends JPanel {
     gbcbarrenav.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
-    panelFirst.setBackground(Color.WHITE);
     panelglobal.add(panelFirst, gbcbarrenav);
+
     
     //-----------------------------------------//
     //PANNEL LOGO
@@ -71,8 +79,10 @@ public class VueEspacedetravail extends JPanel {
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
-    JLabel logoLabel = new JLabel(scaledLogoIcon);
+    logoMembre = new JLabel(scaledLogoIcon);
+    logoMembre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     JPanel section11 = new JPanel(new BorderLayout());
+    section11.setBorder(new MatteBorder(0,0,0,3,Color.BLACK));
 
     
     ImageIcon logoIcon2 = new ImageIcon("Trelo/Image/plus-document.png"); 
@@ -84,6 +94,7 @@ public class VueEspacedetravail extends JPanel {
     JPanel section122 = new JPanel(new BorderLayout());
     JLabel label2 = new JLabel("Creer un nouveau projet");
     label2.setHorizontalAlignment(SwingConstants.CENTER);
+    section122.setBorder(new MatteBorder(0,0,0,3,Color.BLACK));
 
 
         
@@ -91,8 +102,11 @@ public class VueEspacedetravail extends JPanel {
     //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage3 = logoIcon3.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon3 = new ImageIcon(scaledImage3);
-    JLabel logoLabel3 = new JLabel(scaledLogoIcon3);
+    logoDeco = new JLabel(scaledLogoIcon3);
+    logoDeco.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     JPanel section123 = new JPanel(new BorderLayout());
+    section123.setBorder(new MatteBorder(0,0,0,3,Color.BLACK));
+
 
     // ImageIcon logoIcon4 = new ImageIcon("Trelo/Image/door-open.png");
     // //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
@@ -109,7 +123,7 @@ public class VueEspacedetravail extends JPanel {
     gbcSection11.weightx = 1.0;
     gbcSection11.weighty = 0.1;
     gbcSection11.fill = GridBagConstraints.BOTH;
-    section11.add(logoLabel, BorderLayout.CENTER);
+    section11.add(logoMembre, BorderLayout.CENTER);
     panelFirst.add(section11, gbcSection11);
 
     gbcSection11.gridx = 0;
@@ -127,7 +141,7 @@ public class VueEspacedetravail extends JPanel {
     gbcSection11.weightx = 1.0;
     gbcSection11.weighty = 1;
     gbcSection11.fill = GridBagConstraints.BOTH;
-    section123.add(logoLabel3, BorderLayout.SOUTH);
+    section123.add(logoDeco, BorderLayout.SOUTH);
     panelFirst.add(section123, gbcSection11);
 
     // gbcSection11.gridx = 0;
@@ -148,7 +162,6 @@ public class VueEspacedetravail extends JPanel {
     
     JPanel panelSecond = new JPanel(new GridBagLayout());
     panelSecond.setBackground(Color.white);
-    panelSecond.setBorder(bleu);
  
 
     GridBagConstraints gbcSecond = new GridBagConstraints();
@@ -160,15 +173,63 @@ public class VueEspacedetravail extends JPanel {
     panelglobal.add(panelSecond, gbcSecond);
 
      JLabel labelNomProjet = new JLabel(("Bienvenu sur votre espace de travail ") + espacedetravail.getProprietaire().getPseudo());
-    labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
+     labelNomProjet.setBorder(new MatteBorder(0,0,3,0,Color.BLACK));
+
+     try {
+         customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+         labelNomProjet.setFont(customFont.deriveFont(Font.PLAIN, 60));
+         
+     } catch (IOException | FontFormatException e) {
+         e.printStackTrace();
+     }
+     
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
 
 
 
+    JPanel wrapper = new JPanel(new GridLayout(1, 1));
+    JPanel mainproj = new JPanel(new GridLayout(0, 3));
+    
+     JPanel pangennewproj = new JPanel(new GridBagLayout());
+     wrapper.setBorder(new EmptyBorder(50, 100, 100, 100));
+     wrapper.add(pangennewproj);
+     JPanel nomProjet = new JPanel(new GridLayout(1, 1));
+     pangennewproj.setBorder(new MatteBorder(3,3,3,3,Color.BLACK));
+     nomProjet.setBorder(new EmptyBorder(10, 50, 10, 50));
+     
+     JLabel labelNomProjet1 = new JLabel("Nom du projet");
+     try {
+      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+      labelNomProjet1.setFont(customFont.deriveFont(Font.PLAIN, 30));
+      
+    } catch (IOException | FontFormatException e) {
+      e.printStackTrace();
+    }
 
-    JPanel section21 = new JPanel(new GridLayout(2, 0));
-    section21.setBorder(bleu);
-   
+     labelNomProjet1.setHorizontalAlignment(SwingConstants.CENTER);
+    nomProjet.setBackground(Color.WHITE);
+     nomProjet.add(labelNomProjet1);
+     mainproj.add(wrapper);
+
+     JPanel pannelinfoprojet = new JPanel();
+     pannelinfoprojet.setBorder(new MatteBorder(3, 0,0,0,Color.BLACK));
+     pannelinfoprojet.setBackground(Color.WHITE);
+
+
+     GridBagConstraints gbcnouveauprojet = new GridBagConstraints();
+    gbcnouveauprojet.gridx = 0;
+    gbcnouveauprojet.gridy = 0;
+    gbcnouveauprojet.weightx = 1.0;
+    gbcnouveauprojet.weighty = 0.05;
+    gbcnouveauprojet.fill = GridBagConstraints.BOTH;
+    pangennewproj.add(nomProjet, gbcnouveauprojet);
+
+  gbcnouveauprojet.gridx = 0;
+    gbcnouveauprojet.gridy = 1;
+    gbcnouveauprojet.weightx = 1.0;
+    gbcnouveauprojet.weighty = 1;
+    gbcnouveauprojet.fill = GridBagConstraints.BOTH;
+    pangennewproj.add(pannelinfoprojet, gbcnouveauprojet);
 
    
 
@@ -186,26 +247,11 @@ public class VueEspacedetravail extends JPanel {
     gbctitleform.weightx = 1.0;
     gbctitleform.weighty = 0.90;
     gbctitleform.fill = GridBagConstraints.BOTH;
-    panelSecond.add(section21, gbctitleform);
+    panelSecond.add(mainproj, gbctitleform);
 
 
 
-    //-----------------------------------------//
-    // GBCSECOND 2.1 //
-    //-----------------------------------------//
-    
-    //Récupération du nom du projet
-    //Création du JLabel pour afficher le nom du projet en grand au milieu
-   
-
-    
-
-    
-
-
-    
-
-    // Création du conteneur pour les cartes
+  
   
    
     add(panelglobal);
@@ -214,9 +260,20 @@ public class VueEspacedetravail extends JPanel {
 
     
   }
+  public void ajoutProjet (){
+  
+  
+
+  }
+
   public void ajouterlisstenerNouveauprojet(MouseAdapter listener) {
     logoAJoutProjet.addMouseListener(listener);
 }
-
+  public void ajouterlisstenerDeconexion(MouseAdapter listener) {
+  logoDeco.addMouseListener(listener);
+  }
+  public void ajouterlisstenerMembre(MouseAdapter listener) {
+  logoMembre.addMouseListener(listener);
+  }
 
 }
