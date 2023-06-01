@@ -71,6 +71,7 @@ public class Application {
     // ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
     ModeleEspacedetravail modeleEspacedetravail = new ModeleEspacedetravail(firstmember);
     VueEspacedetravail vueEspacedetravail = new VueEspacedetravail(modeleEspacedetravail);
+
     ControllerEspacedetravail controllerEspacedetravail = new ControllerEspacedetravail(modeleEspacedetravail, vueEspacedetravail);    
 
     // modeleAccueil.ajouterMembre(test);

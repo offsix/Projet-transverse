@@ -59,8 +59,14 @@ public class VueCreerProjet extends JPanel {
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.gridwidth = 2;
         add(CreerProjet, gbc);
-
-        
+       
 
 }
+            public String getImage() { return image.getText();}
+         public String getTitle() { return titleTextField.getText();}
+         public String getDescription() { return description.getText();}
+         
+         public void ajouterListenerAjouterProjet(ActionListener listener) {
+            CreerProjet.addActionListener(listener);
+        }
 }

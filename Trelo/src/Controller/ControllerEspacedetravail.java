@@ -17,10 +17,12 @@ import Vue.*;
 public class ControllerEspacedetravail {
     private ModeleEspacedetravail modeleEspacedetravail;
     private VueEspacedetravail vueEspacedetravail;
+    private VueCreerProjet vuecreerProjet;
 
     public ControllerEspacedetravail(ModeleEspacedetravail modeleEspacedetravail, VueEspacedetravail vueEspacedetravail) {
         this.modeleEspacedetravail = modeleEspacedetravail;
         this.vueEspacedetravail = vueEspacedetravail;
+        this.vuecreerProjet = vuecreerProjet;
     
     vueEspacedetravail.ajouterlisstenerNouveauprojet(new NouveauprojetListener());
     vueEspacedetravail.ajouterlisstenerMembre(new MembreListener());
@@ -46,14 +48,16 @@ public class Decolistener extends MouseAdapter {
 }
     public class NouveauprojetListener extends MouseAdapter {
         public void mouseClicked(MouseEvent e) {
-            System.out.println("Nouveau projet");
             VueCreerProjet VueCreerProjet = new VueCreerProjet();
+            ControllerCreerProjet controllerCreerProjet = new ControllerCreerProjet(VueCreerProjet, vueEspacedetravail);
+
             JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
             fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreCreerprojet.setSize(400,500);
             fenetreCreerprojet.add(VueCreerProjet);
             fenetreCreerprojet.setVisible(true);
             fenetreCreerprojet.setLocationRelativeTo(null);
+
 
         }
         

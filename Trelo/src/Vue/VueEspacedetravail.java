@@ -223,7 +223,7 @@ public class VueEspacedetravail extends JPanel {
 
     
   }
-  public void ajoutProjet (){   
+  public void ajoutProjet (String Nomprojet,String Description){   
     wrapper = new JPanel(new GridLayout(1, 1));
 
     JPanel pangennewproj = new JPanel(new GridBagLayout());
@@ -239,7 +239,7 @@ public class VueEspacedetravail extends JPanel {
    ImageIcon scaledlogoprojt = new ImageIcon(scaledlogoproj);
    JLabel Iconeprojet = new JLabel(scaledlogoprojt);
 
-    JLabel labelNomProjet1 = new JLabel("Nom du projet");
+    JLabel labelNomProjet1 = new JLabel(Nomprojet);
     try {
      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
      labelNomProjet1.setFont(customFont.deriveFont(Font.PLAIN, 30));
@@ -264,7 +264,7 @@ public class VueEspacedetravail extends JPanel {
      e.printStackTrace();
  }
  labeldesc.setHorizontalAlignment(SwingConstants.CENTER);
-   JTextArea descProjet = new JTextArea("mettre un getter");
+   JTextArea descProjet = new JTextArea(Description);
    JButton btnaccederauprojet = new JButton("Acceder au projet");
    try {
      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
@@ -320,9 +320,7 @@ public class VueEspacedetravail extends JPanel {
    mainproj.add(wrapper);
   revalidate();
   }
-  public void deco(){
-    
-  }
+
 
   public void ajouterlisstenerNouveauprojet(MouseAdapter listener) {
     logoAJoutProjet.addMouseListener(listener);
