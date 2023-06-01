@@ -45,10 +45,14 @@ public class VueCreerProjet extends JPanel {
         gbc.gridy++;
 
         // Description
+        
         JLabel DescriptionLabel = new JLabel("Description:");
         description = new JTextArea(15, 15);
         description.setPreferredSize(new Dimension(300, 100));
         description.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+        
+
+
         add(DescriptionLabel, gbc);
         gbc.gridy++;
         add(description, gbc);
@@ -62,7 +66,7 @@ public class VueCreerProjet extends JPanel {
        
 
 }
-            public String getImage() { return image.getText();}
+        public String getImage() { return image.getText();}
          public String getTitle() { return titleTextField.getText();}
          public String getDescription() { return description.getText();}
          

@@ -66,13 +66,9 @@ public class Application {
      VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
      ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
 
-    // //creation des membres par defaut
-      ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
-    ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
-     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
+    // //creation des membres par defaut (admin)
+    ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
     modeleAccueil.ajouterMembre(test);
-    modeleAccueil.ajouterMembre(firstmember);
-    modeleAccueil.ajouterMembre(secondmember);
 
     
 
@@ -105,7 +101,7 @@ public class Application {
         LocalDate.now().plusDays(7), "statue �tudiant", "436884");
     VueCarte vueCarte = new VueCarte(carte);
 
-    VuePetitMembre vueMembre = new VuePetitMembre(firstmember);
+   
 
    
 
