@@ -73,12 +73,10 @@ public class Application {
     modeleAccueil.ajouterMembre(test);
     modeleAccueil.ajouterMembre(firstmember);
     modeleAccueil.ajouterMembre(secondmember);
-    JFrame fenetreAccueil = new JFrame("VueAccueil");
-    fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-    
 
     
+
+
     
 //--------------------------------------------Autre------------------------------------------------------//
 // ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();

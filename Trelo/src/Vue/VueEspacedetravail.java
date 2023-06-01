@@ -48,6 +48,7 @@ public class VueEspacedetravail extends JPanel {
   private JPanel wrapper;
 
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
+    
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
     MatteBorder rose = new MatteBorder(2, 2, 2, 2, Color.PINK);

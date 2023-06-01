@@ -48,7 +48,6 @@ public class ControllerAccueil {
                         fenetreEspacedeTravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         fenetreEspacedeTravail.add(vueEspacedetravail);   
                         fenetreEspacedeTravail.setVisible(true);
-                        fenetreEspacedeTravail.setLocationRelativeTo(null);
                         vueAccueil.dispose();
 
                         
