@@ -62,9 +62,9 @@ public class Application {
  */
 
   public static void main(String[] args) {
-    // ModeleAccueil modeleAccueil = new ModeleAccueil();
-    // VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
-    // VueInscription vueInscription = new VueInscription();
+     ModeleAccueil modeleAccueil = new ModeleAccueil();
+     VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
+     VueInscription vueInscription = new VueInscription();
     // //creation des membres par defaut
       ModeleMembre firstmember = new ModeleMembre("2soum", "123", "dayssam", "boss", "dayssam@outlook.fr");
     //  ModeleMembre secondmember = new ModeleMembre("abdou", "troll", "abdou", "boss", "abdou@outlook.fr");
@@ -78,8 +78,8 @@ public class Application {
     // modeleAccueil.ajouterMembre(firstmember);
     // modeleAccueil.ajouterMembre(secondmember);
 
-    // ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
-    // ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
+     ControllerInscription controllerInscription = new ControllerInscription(vueInscription, modeleAccueil);
+     ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil, vueInscription,vueEspacedetravail);
     
     JFrame fenetreAccueil = new JFrame("VueAccueil");
     fenetreAccueil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,8 +89,8 @@ public class Application {
     JFrame fenetreEspacedetravail = new JFrame("VueEspacedetravail");
     fenetreEspacedetravail.setExtendedState(JFrame.MAXIMIZED_BOTH);
     fenetreEspacedetravail.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    fenetreEspacedetravail.add(vueEspacedetravail);
-    fenetreEspacedetravail.setVisible(true);
+    //fenetreEspacedetravail.add(vueEspacedetravail);
+    //fenetreEspacedetravail.setVisible(true);
 
     
 
