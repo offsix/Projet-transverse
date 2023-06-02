@@ -16,8 +16,16 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
   private static final long serialVersionUID = 1L;
 
   public VueProject(ModeleProjet project) {
+    MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
+    MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
+    MatteBorder rose = new MatteBorder(2, 2, 2, 2, Color.PINK);
+    MatteBorder jaune = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
+    MatteBorder rouge = new MatteBorder(2, 2, 2, 2, Color.RED);
+
     setLayout(new BorderLayout());
+    
     JPanel panel = new JPanel(new GridBagLayout());
+    panel.setBorder(rouge);
     panel.setPreferredSize(new Dimension(400, 300));
     //-----------------------------------------//
     // 		        GBCFIRST 	 		  	   //

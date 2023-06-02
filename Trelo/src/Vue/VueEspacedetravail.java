@@ -49,11 +49,7 @@ public class VueEspacedetravail extends JPanel {
 
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
     
-    MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
-    MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
-    MatteBorder rose = new MatteBorder(2, 2, 2, 2, Color.PINK);
-    MatteBorder jaune = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
-    MatteBorder rouge = new MatteBorder(2, 2, 2, 2, Color.RED);
+
     //Panel Global
     setLayout(new BorderLayout());
     JPanel panelglobal = new JPanel(new GridBagLayout());
