@@ -19,7 +19,7 @@ public class VuePetitMembre extends JPanel {
         pseudoLabel = new JLabel("Pseudo:");
         nomLabel = new JLabel("Nom:");
         prenomLabel = new JLabel("Prénom:");
-        adresseMailLabel = new JLabel("Addr:");
+        adresseMailLabel = new JLabel("Addresse mail:");
 
         add(pseudoLabel);
         add(new JLabel(membre.getPseudo()));

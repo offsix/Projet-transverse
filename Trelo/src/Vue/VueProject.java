@@ -10,6 +10,7 @@ import Modele.ModeleCartes;
 import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -21,6 +22,9 @@ public class VueProject extends JPanel {
   private JLabel logoAJoutProjet;
   private JLabel logoDeco;
   private JLabel logoMembre;
+  private JButton boutonSection1;
+  private JButton boutonSection2;
+  private JButton boutonSection3;
 
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
@@ -135,7 +139,6 @@ public class VueProject extends JPanel {
     JPanel section21 = new JPanel();
     section21.setBackground(Color.white);
     // section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
-    section21.setBorder(rouge);
     //R�cup�ration du nom du projet
     String nomProjet = project.getsNomProjet();
 
@@ -172,7 +175,6 @@ JPanel section1 = new JPanel();
 JPanel headersec1 = new JPanel();
 
 section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-section1.setBackground(Color.BLUE);
 // Titre de la section 1
 JLabel titreSection1 = new JLabel("Section 1");
 try {
@@ -182,20 +184,14 @@ try {
 } catch (IOException | FontFormatException e) {
   e.printStackTrace();
 }
-JButton boutonSection1 = new JButton("Nouvelle carte");
+boutonSection1 = new JButton("Nouvelle carte");
 headersec1.add(titreSection1);
 headersec1.add(boutonSection1);
 section1.add(headersec1);
 
-ModeleCartes carte = new ModeleCartes();
-VueCarte vueCarte = new VueCarte(carte);
-ModeleCartes carte2 = new ModeleCartes();
-VueCarte vueCarte2 = new VueCarte(carte2);
-ModeleCartes carte3 = new ModeleCartes();
-VueCarte vueCarte3 = new VueCarte(carte3);
-section1.add(vueCarte);
-section1.add(vueCarte2);
-section1.add(vueCarte3);  // Ajouter la carte à la section 1
+
+
+// Ajouter la carte à la section 1
 
 
 //VueAjoute vueAjouteCarte = new VueAjoute(null);
@@ -217,7 +213,6 @@ JPanel section2 = new JPanel();
 JPanel headersec2 = new JPanel();
 
 section2.setLayout(new BoxLayout(section2, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-section2.setBackground(Color.BLUE);
 // Titre de la section 2
 JLabel titreSection2 = new JLabel("Section 2");
 try {
@@ -227,7 +222,7 @@ try {
 } catch (IOException | FontFormatException e) {
   e.printStackTrace();
 }
-JButton boutonSection2 = new JButton("Nouvelle carte");
+boutonSection2 = new JButton("Nouvelle carte");
 headersec2.add(titreSection2);
 headersec2.add(boutonSection2);
 section2.add(headersec2);
@@ -246,16 +241,12 @@ scrollPane2.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la
 // Ajout du JScrollPane dans la section 2
 section22.add(scrollPane2);
 
-section2.add(vueCarte);
-section2.add(vueCarte2);
-section2.add(vueCarte3); 
 
 // Section 3
 JPanel section3 = new JPanel();
 JPanel headersec3 = new JPanel();
 
 section3.setLayout(new BoxLayout(section3, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-section3.setBackground(Color.BLUE);
 // Titre de la section 3
 JLabel titreSection3 = new JLabel("Section 3");
 try {
@@ -265,7 +256,7 @@ try {
 } catch (IOException | FontFormatException e) {
   e.printStackTrace();
 }
-JButton boutonSection3 = new JButton("Nouvelle carte");
+boutonSection3 = new JButton("Nouvelle carte");
 headersec3.add(titreSection3);
 headersec3.add(boutonSection3);
 section3.add(headersec3);
@@ -313,22 +304,16 @@ panelSecond.add(section22, gbcSection22);
 
     for (ModeleMembre membre: project.getTableauMembres()) {
       if (count % membresParLigne == 0) {
-        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        lignePanel.setBorder(new EmptyBorder(0, 0, 0, 0)); //Ajoute une marge vide autour du panel
+        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 100, 100));
         gbcSection31.add(lignePanel);
       }
 
       //VueAjoute vueAjouteMembre = new VueAjoute(null);
       //vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
       //gbcSection31.add(vueAjouteMembre);
-
       VuePetitMembre vueMembre = new VuePetitMembre(membre);
-      Dimension smallerSize = new Dimension(120, 120);
-      vueMembre.setPreferredSize(smallerSize);
-
       Border border1 = new LineBorder(Color.BLACK, 1); //Cr�e une bordure avec une ligne noire d'�paisseur 1
       vueMembre.setBorder(border1);
-
       lignePanel.add(vueMembre);
 
       count++;
@@ -382,4 +367,16 @@ panelSecond.add(section22, gbcSection22);
 //   section3.add(vueCarte);
 //}
   }
+
+  
+  public void ajouterListenerSection1butt(ActionListener listener) {
+    boutonSection1.addActionListener(listener);
+}
+public void ajouterListenerSection2butt(ActionListener listener) {
+  boutonSection2.addActionListener(listener);
+}
+public void ajouterListenerSection3butt(ActionListener listener) {
+  boutonSection3.addActionListener(listener);
+}
+
 }

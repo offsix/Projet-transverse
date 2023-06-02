@@ -69,14 +69,16 @@ public class Application {
     // //creation des membres par defaut (admin)
     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
     modeleAccueil.ajouterMembre(test);
+
     
-    // Creer un modele d'ajouter une carte
-    JFrame fenetreAjouteCarte = new JFrame("VueAjouterCarte");
-    fenetreAjouteCarte.setSize(400, 500);
-    fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
-    VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
-    fenetreAjouteCarte.add(vueAjouteCarte);
+
+    // // Creer un modele d'ajouter une carte
+    // JFrame fenetreAjouteCarte = new JFrame("VueAjouterCarte");
+    // fenetreAjouteCarte.setSize(400, 500);
+    // fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    // ModeleAjouterCarte ajoutCarte = new ModeleAjouterCarte();
+    // VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
+    // fenetreAjouteCarte.add(vueAjouteCarte);
 
     // Creer un modele de calendrier
     JFrame fenetreCelendrier = new JFrame("VueCalendrier");
@@ -92,6 +94,8 @@ public class Application {
     fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     ModeleProjet projet = new ModeleProjet();
     VueProject vueProject = new VueProject(projet);
+    
+    ControllerProjet controllerProjet = new ControllerProjet(vueProject, projet);
     fenetreProjet.add(vueProject);
     fenetreProjet.setVisible(true);
 

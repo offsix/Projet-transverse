@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import Modele.ModeleAjouterCarte;
+import Modele.ModeleCartes;
 
 public class VueAjouterCarte extends JPanel {
     private JTextField titreCarteField;
@@ -18,7 +19,7 @@ public class VueAjouterCarte extends JPanel {
     private JTextField couvertureCarteField;
     private JButton ajouterCarteButton;
 
-    public VueAjouterCarte(ModeleAjouterCarte ajoutCarte) {
+    public VueAjouterCarte(ModeleAjouterCarte modeleAjouterCarte) {
         setLayout(new GridBagLayout());
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(10, 10, 10, 10));

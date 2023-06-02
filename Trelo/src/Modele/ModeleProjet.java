@@ -52,5 +52,8 @@ public ArrayList<ModeleMembre> getTableauMembres() {
 public void setTableauMembres(ArrayList<ModeleMembre> tableauMembres) {
     this.tableauMembres = tableauMembres;
 }
+public void ajouterCarte(ModeleCartes carte) {
+    this.tableauCarte.add(carte);
+}
 
 }
