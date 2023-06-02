@@ -172,7 +172,7 @@ JPanel section1 = new JPanel();
 JPanel headersec1 = new JPanel();
 
 section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-section1.setBackground(Color.WHITE);
+section1.setBackground(Color.BLUE);
 // Titre de la section 1
 JLabel titreSection1 = new JLabel("Section 1");
 try {
@@ -187,15 +187,15 @@ headersec1.add(titreSection1);
 headersec1.add(boutonSection1);
 section1.add(headersec1);
 
-// ModeleCartes carte = new ModeleCartes();
-// VueCarte vueCarte = new VueCarte(carte);
-// ModeleCartes carte2 = new ModeleCartes();
-// VueCarte vueCarte2 = new VueCarte(carte2);
-// ModeleCartes carte3 = new ModeleCartes();
-// VueCarte vueCarte3 = new VueCarte(carte3);
-// section1.add(vueCarte);
-// section1.add(vueCarte2);
-// section1.add(vueCarte3);  // Ajouter la carte à la section 1
+ModeleCartes carte = new ModeleCartes();
+VueCarte vueCarte = new VueCarte(carte);
+ModeleCartes carte2 = new ModeleCartes();
+VueCarte vueCarte2 = new VueCarte(carte2);
+ModeleCartes carte3 = new ModeleCartes();
+VueCarte vueCarte3 = new VueCarte(carte3);
+section1.add(vueCarte);
+section1.add(vueCarte2);
+section1.add(vueCarte3);  // Ajouter la carte à la section 1
 
 
 //VueAjoute vueAjouteCarte = new VueAjoute(null);
@@ -214,12 +214,12 @@ section22.add(scrollPane1);
 
 // Section 2
 JPanel section2 = new JPanel();
-section2.setLayout(new BoxLayout(section2, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-section2.setBackground(Color.white);
+JPanel headersec2 = new JPanel();
 
+section2.setLayout(new BoxLayout(section2, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
+section2.setBackground(Color.BLUE);
 // Titre de la section 2
 JLabel titreSection2 = new JLabel("Section 2");
-
 try {
   customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
   titreSection2.setFont(customFont.deriveFont(Font.PLAIN, 30));
@@ -227,13 +227,18 @@ try {
 } catch (IOException | FontFormatException e) {
   e.printStackTrace();
 }
-titreSection2.setHorizontalAlignment(SwingConstants.CENTER);
-section2.add(titreSection2);
+JButton boutonSection2 = new JButton("Nouvelle carte");
+headersec2.add(titreSection2);
+headersec2.add(boutonSection2);
+section2.add(headersec2);
 
-// Création du JScrollPane avec la section 2 (sans barre de défilement)
+//VueAjoute vueAjouteCarte = new VueAjoute(null);
+//vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
+//section2.add(vueAjouteCarte);
+
+// Création du JScrollPane avec le conteneur de la section 2
 JScrollPane scrollPane2 = new JScrollPane(section2);
-scrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-scrollPane2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+scrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 // Définition de la taille de la section 2
 scrollPane2.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la section 2
@@ -241,10 +246,16 @@ scrollPane2.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la
 // Ajout du JScrollPane dans la section 2
 section22.add(scrollPane2);
 
+section2.add(vueCarte);
+section2.add(vueCarte2);
+section2.add(vueCarte3); 
+
 // Section 3
 JPanel section3 = new JPanel();
-section3.setBackground(Color.white);
+JPanel headersec3 = new JPanel();
 
+section3.setLayout(new BoxLayout(section3, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
+section3.setBackground(Color.BLUE);
 // Titre de la section 3
 JLabel titreSection3 = new JLabel("Section 3");
 try {
@@ -254,14 +265,18 @@ try {
 } catch (IOException | FontFormatException e) {
   e.printStackTrace();
 }
-section3.setLayout(new BoxLayout(section3, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
-titreSection3.setHorizontalAlignment(SwingConstants.CENTER);
-section3.add(titreSection3);
+JButton boutonSection3 = new JButton("Nouvelle carte");
+headersec3.add(titreSection3);
+headersec3.add(boutonSection3);
+section3.add(headersec3);
 
-// Création du JScrollPane avec la section 3 (sans barre de défilement)
+//VueAjoute vueAjouteCarte = new VueAjoute(null);
+//vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
+//section3.add(vueAjouteCarte);
+
+// Création du JScrollPane avec le conteneur de la section 3
 JScrollPane scrollPane3 = new JScrollPane(section3);
-scrollPane3.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-scrollPane3.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+scrollPane3.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 // Définition de la taille de la section 3
 scrollPane3.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la section 3

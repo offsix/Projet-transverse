@@ -12,7 +12,6 @@ public class VueCarte extends JPanel {
     private static final int BUTTON_SIZE = 13;
 
     public VueCarte(ModeleCartes modele) {
-    setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
 
         // Récupération des informations de la carte depuis le modèle
         String titre = modele.getTitreCarte();
