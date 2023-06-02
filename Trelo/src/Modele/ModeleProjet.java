@@ -1,17 +1,27 @@
 package Modele;
 
+import java.util.ArrayList;
+
 public class ModeleProjet {
 
-	private String proprietaire;
+	private ModeleMembre proprietaire;
     private String sNomProjet;
-    private ModeleCartes[] tableauCarte;
-    private ModeleMembre[] tableauMembres;
+    private ArrayList<ModeleCartes> tableauCarte;
+    private ArrayList < ModeleMembre> tableauMembres;
 
-    public ModeleProjet(String sNomProjet, ModeleCartes[] tableauCarte, ModeleMembre[] tableauMembres, String proprietaire) {
+    public ModeleProjet(String sNomProjet, ArrayList<ModeleCartes> tableauCarte, ArrayList<ModeleMembre> tableauMembres, ModeleMembre proprietaire) {
         this.sNomProjet = sNomProjet;
         this.proprietaire = proprietaire;
         this.tableauCarte = tableauCarte;
         this.tableauMembres = tableauMembres;
+        tableauMembres.add(proprietaire);
+    }
+    public ModeleProjet() {
+        this.sNomProjet = "Test";
+        this.proprietaire = new ModeleMembre();
+        this.tableauCarte = new ArrayList<ModeleCartes>();
+        this.tableauMembres = new ArrayList<ModeleMembre>();
+        tableauMembres.add(proprietaire);
     }
 
     public String getsNomProjet() {
@@ -22,34 +32,25 @@ public class ModeleProjet {
         this.sNomProjet = sNomProjet;
     }
 
-    public ModeleCartes[] gettableauCarte() {
-        return tableauCarte;
-    }
+public ModeleMembre getProprietaire() {
+    return proprietaire;
+}
+//getter et setter
+public void setProprietaire(ModeleMembre proprietaire) {
+    this.proprietaire = proprietaire;
+}
+public ArrayList<ModeleCartes> getTableauCarte() {
+    return tableauCarte;
+}
+public void setTableauCarte(ArrayList<ModeleCartes> tableauCarte) {
+    this.tableauCarte = tableauCarte;
+}
+public ArrayList<ModeleMembre> getTableauMembres() {
+    return tableauMembres;
 
-    public void settableauCarte(ModeleCartes[] tableauCarte) {
-        this.tableauCarte = tableauCarte;
-    }
+}
+public void setTableauMembres(ArrayList<ModeleMembre> tableauMembres) {
+    this.tableauMembres = tableauMembres;
+}
 
-    public ModeleMembre[] getTableauMembres() {
-        return tableauMembres;
-    }
-
-    public void setTableauMembres(ModeleMembre[] tableauMembres) {
-        this.tableauMembres = tableauMembres;
-    }
-
-	public String getProprietaire() {
-		return proprietaire;
-	}
-
-	public void setProprietaire(String proprietaire) {
-		this.proprietaire = proprietaire;
-	}
-
-    /*public void ajouterCarte(ModeleCartes carte) {
-    }
-
-    public void ajouterMembre(ModeleMembre membre) {
-    }
-    */
 }

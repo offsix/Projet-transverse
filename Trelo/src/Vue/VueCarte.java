@@ -5,13 +5,15 @@ import java.awt.*;
 import Modele.ModeleCartes;
 import java.time.format.DateTimeFormatter;
 
-public class VueCarte extends JPanel { // Codé par Mathieu Flesch
+public class VueCarte extends JPanel { 
 
     private static final long serialVersionUID = 1L;
     private static final Font LABEL_FONT = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
     private static final int BUTTON_SIZE = 13;
 
     public VueCarte(ModeleCartes modele) {
+    setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+
         // Récupération des informations de la carte depuis le modèle
         String titre = modele.getTitreCarte();
         String description = modele.getDescriptionCarte();

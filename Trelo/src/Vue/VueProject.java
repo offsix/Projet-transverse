@@ -10,10 +10,17 @@ import Modele.ModeleCartes;
 import Modele.ModeleMembre;
 import Modele.ModeleProjet;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDate;
 
-public class VueProject extends JPanel { //Coder par Mathieu Flesch
+public class VueProject extends JPanel { 
+  private Font customFont;
 
   private static final long serialVersionUID = 1L;
+  private JLabel logoAJoutProjet;
+  private JLabel logoDeco;
+  private JLabel logoMembre;
 
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
@@ -22,64 +29,86 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
     MatteBorder jaune = new MatteBorder(2, 2, 2, 2, Color.YELLOW);
     MatteBorder rouge = new MatteBorder(2, 2, 2, 2, Color.RED);
 
+
+
     setLayout(new BorderLayout());
-    
     JPanel panel = new JPanel(new GridBagLayout());
-    panel.setBorder(rouge);
     panel.setPreferredSize(new Dimension(400, 300));
+
+
+
+
     //-----------------------------------------//
-    // 		        GBCFIRST 	 		  	   //
+    // 		        PANNEL GAUCHE 	BARRE NAV	  	   //
     //-----------------------------------------//
-    GridBagConstraints gbcFirst = new GridBagConstraints();
-    gbcFirst.gridx = 0;
-    gbcFirst.gridy = 0;
-    gbcFirst.weightx = 0.05;
-    gbcFirst.weighty = 1.0;
-    gbcFirst.gridwidth = 1; // Fixer la largeur � 1
-    gbcFirst.fill = GridBagConstraints.BOTH;
+    GridBagConstraints gbcbarrenav = new GridBagConstraints();
+    gbcbarrenav.gridx = 0;
+    gbcbarrenav.gridy = 0;
+    gbcbarrenav.weightx = 0.05;
+    gbcbarrenav.weighty = 1.0;
+    gbcbarrenav.gridwidth = 1; // Fixer la largeur � 1
+    gbcbarrenav.fill = GridBagConstraints.BOTH;
 
     JPanel panelFirst = new JPanel(new GridBagLayout());
-    panelFirst.setBackground(Color.white);
-    MatteBorder border = new MatteBorder(0, 0, 0, 2, Color.BLACK);
-    panelFirst.setBorder(border);
-    panel.add(panelFirst, gbcFirst);
+    panel.add(panelFirst, gbcbarrenav);
+
+    
     //-----------------------------------------//
-    //     		        GBCFIRST 1.1 		   //
+    //PANNEL LOGO
     //-----------------------------------------//
+
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/profile.png");
+    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
+    logoMembre = new JLabel(scaledLogoIcon);
+    logoMembre.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    JPanel section11 = new JPanel(new BorderLayout());
+    section11.setBorder(new MatteBorder(0,0,0,3,Color.BLACK));
+
+    
+
+
+        
+    ImageIcon logoIcon3 = new ImageIcon("Trelo/Image/door-open.png");
+    //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    Image scaledImage3 = logoIcon3.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    ImageIcon scaledLogoIcon3 = new ImageIcon(scaledImage3);
+    logoDeco = new JLabel(scaledLogoIcon3);
+    logoDeco.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    JPanel section123 = new JPanel(new BorderLayout());
+    section123.setBorder(new MatteBorder(0,0,0,3,Color.BLACK));
+
+
+    // ImageIcon logoIcon4 = new ImageIcon("Trelo/Image/door-open.png");
+    // //Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
+    // Image scaledImage4 = logoIcon4.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    // ImageIcon scaledLogoIcon4 = new ImageIcon(scaledImage3);
+    // JLabel logoLabel4 = new JLabel(scaledLogoIcon3);
+    // JPanel section124 = new JPanel(new BorderLayout());
+    // section124.setBorder(rouge);
+
+
     GridBagConstraints gbcSection11 = new GridBagConstraints();
     gbcSection11.gridx = 0;
     gbcSection11.gridy = 0;
     gbcSection11.weightx = 1.0;
     gbcSection11.weighty = 0.1;
     gbcSection11.fill = GridBagConstraints.BOTH;
-
-    JPanel section11 = new JPanel(new BorderLayout());
-    section11.setBackground(Color.white);
-
-    // Chargement de l'image du logo
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/logo.jpg");
-
-    // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
-    Image scaledImage = logoIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-    ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
-    JLabel logoLabel = new JLabel(scaledLogoIcon);
-
-    section11.add(logoLabel, BorderLayout.CENTER);
-
+    section11.add(logoMembre, BorderLayout.CENTER);
     panelFirst.add(section11, gbcSection11);
-    //-----------------------------------------//
-    // 		        GBCFIRST 1.2 		  	   //
-    //-----------------------------------------//
-    GridBagConstraints gbcSection12 = new GridBagConstraints();
-    gbcSection12.gridx = 0;
-    gbcSection12.gridy = 1;
-    gbcSection12.weightx = 1.0;
-    gbcSection12.weighty = 0.9;
-    gbcSection12.fill = GridBagConstraints.BOTH;
 
-    JPanel section12 = new JPanel();
-    section12.setBackground(Color.white);
-    panelFirst.add(section12, gbcSection12);
+
+    gbcSection11.gridx = 0;
+    gbcSection11.gridy = 2;
+    gbcSection11.weightx = 1.0;
+    gbcSection11.weighty = 1;
+    gbcSection11.fill = GridBagConstraints.BOTH;
+    section123.add(logoDeco, BorderLayout.SOUTH);
+    panelFirst.add(section123, gbcSection11);
+
+
+
     //-----------------------------------------//
     //     			GBCSECOND 	 		  	   //
     //-----------------------------------------//
@@ -92,7 +121,6 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
 
     JPanel panelSecond = new JPanel(new GridBagLayout());
     panelSecond.setBackground(Color.white);
-    panelSecond.setBorder(border);
     panel.add(panelSecond, gbcSecond);
     //-----------------------------------------//
     //				GBCSECOND 2.1 	 		   //
@@ -106,8 +134,8 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
 
     JPanel section21 = new JPanel();
     section21.setBackground(Color.white);
-    section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
-
+    // section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
+    section21.setBorder(rouge);
     //R�cup�ration du nom du projet
     String nomProjet = project.getsNomProjet();
 
@@ -122,6 +150,9 @@ public class VueProject extends JPanel { //Coder par Mathieu Flesch
 
     //Ajout de la section 21 dans panelSecond
     panelSecond.add(section21, gbcSection21);
+
+
+
 //-----------------------------------------//
 //             GBCSECOND 2.2                //
 //-----------------------------------------//
@@ -138,21 +169,34 @@ section22.setBackground(Color.white);
 
 // Section 1
 JPanel section1 = new JPanel();
-section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
+JPanel headersec1 = new JPanel();
 
+section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
+section1.setBackground(Color.WHITE);
 // Titre de la section 1
 JLabel titreSection1 = new JLabel("Section 1");
-titreSection1.setHorizontalAlignment(SwingConstants.CENTER);
-section1.add(titreSection1);
-
-// Ajout des cartes dans la section 1
-for (ModeleCartes carte : project.gettableauCarte()) {
-    VueCarte vueCarte = new VueCarte(carte);
-    vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
-
-    // Ajouter la carte à la section 1
-    section1.add(vueCarte);
+try {
+  customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+  titreSection1.setFont(customFont.deriveFont(Font.PLAIN, 30));
+  
+} catch (IOException | FontFormatException e) {
+  e.printStackTrace();
 }
+JButton boutonSection1 = new JButton("Nouvelle carte");
+headersec1.add(titreSection1);
+headersec1.add(boutonSection1);
+section1.add(headersec1);
+
+// ModeleCartes carte = new ModeleCartes();
+// VueCarte vueCarte = new VueCarte(carte);
+// ModeleCartes carte2 = new ModeleCartes();
+// VueCarte vueCarte2 = new VueCarte(carte2);
+// ModeleCartes carte3 = new ModeleCartes();
+// VueCarte vueCarte3 = new VueCarte(carte3);
+// section1.add(vueCarte);
+// section1.add(vueCarte2);
+// section1.add(vueCarte3);  // Ajouter la carte à la section 1
+
 
 //VueAjoute vueAjouteCarte = new VueAjoute(null);
 //vueAjouteCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -160,7 +204,7 @@ for (ModeleCartes carte : project.gettableauCarte()) {
 
 // Création du JScrollPane avec le conteneur de la section 1
 JScrollPane scrollPane1 = new JScrollPane(section1);
-scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 // Définition de la taille de la section 1
 scrollPane1.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la section 1
@@ -170,10 +214,19 @@ section22.add(scrollPane1);
 
 // Section 2
 JPanel section2 = new JPanel();
+section2.setLayout(new BoxLayout(section2, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
 section2.setBackground(Color.white);
 
 // Titre de la section 2
 JLabel titreSection2 = new JLabel("Section 2");
+
+try {
+  customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+  titreSection2.setFont(customFont.deriveFont(Font.PLAIN, 30));
+  
+} catch (IOException | FontFormatException e) {
+  e.printStackTrace();
+}
 titreSection2.setHorizontalAlignment(SwingConstants.CENTER);
 section2.add(titreSection2);
 
@@ -194,6 +247,14 @@ section3.setBackground(Color.white);
 
 // Titre de la section 3
 JLabel titreSection3 = new JLabel("Section 3");
+try {
+  customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+  titreSection3.setFont(customFont.deriveFont(Font.PLAIN, 30));
+  
+} catch (IOException | FontFormatException e) {
+  e.printStackTrace();
+}
+section3.setLayout(new BoxLayout(section3, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
 titreSection3.setHorizontalAlignment(SwingConstants.CENTER);
 section3.add(titreSection3);
 
@@ -272,5 +333,38 @@ panelSecond.add(section22, gbcSection22);
 
     add(panel, BorderLayout.CENTER);
     setVisible(true);
+
+
+
+
+    
+// Ajout des cartes dans la section 1
+// for (ModeleCartes carte : project.gettableauCarte()) {
+//   VueCarte vueCarte = new VueCarte(carte);
+//   vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+
+//   // Ajouter la carte à la section 1
+//   section1.add(vueCarte);
+// }
+
+
+// // Ajout des cartes dans la section 1
+// for (ModeleCartes carte : project.gettableauCarte()) {
+//   VueCarte vueCarte = new VueCarte(carte);
+//   vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+
+//   // Ajouter la carte à la section 1
+//   section2.add(vueCarte);
+// }
+
+
+// // Ajout des cartes dans la section 1
+// for (ModeleCartes carte : project.gettableauCarte()) {
+//   VueCarte vueCarte = new VueCarte(carte);
+//   vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+
+//   // Ajouter la carte à la section 1
+//   section3.add(vueCarte);
+//}
   }
 }

@@ -24,6 +24,16 @@ public class ModeleCartes {
 		this.idCarte = INDEX_CARTE;
 		INDEX_CARTE++;
 	}
+	public ModeleCartes() {
+		this.CouvertureCarte = "#FBE0C3";
+		this.DateDebutCarte = LocalDate.now();
+		this.DateLimiteCarte = LocalDate.now();
+		this.DescriptionCarte = "Test";
+		this.StatutCarte = "Test";
+		this.titreCarte = "Test";
+		this.idCarte = INDEX_CARTE;
+		INDEX_CARTE++;
+	}
 	
 		
 	public final String getTitreCarte() {

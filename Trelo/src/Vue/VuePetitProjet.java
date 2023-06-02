@@ -46,12 +46,12 @@ public class VuePetitProjet extends JPanel {
     labelProprietaire.setHorizontalAlignment(SwingConstants.CENTER);
     panelCentral.add(labelProprietaire);
 
-    int nombreCartes = project.gettableauCarte().length;
+    int nombreCartes = project.getTableauCarte().size();
     JLabel labelNombreCartes = new JLabel("Nombre de cartes: " + nombreCartes);
     labelNombreCartes.setHorizontalAlignment(SwingConstants.CENTER);
     panelCentral.add(labelNombreCartes);
 
-    int nombreMembres = project.getTableauMembres().length;
+    int nombreMembres = project.getTableauMembres().size();
     JLabel labelNombreMembres = new JLabel("Nombre de membres: " + nombreMembres);
     labelNombreMembres.setHorizontalAlignment(SwingConstants.CENTER);
     panelCentral.add(labelNombreMembres);
