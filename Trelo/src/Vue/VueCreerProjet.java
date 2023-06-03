@@ -35,15 +35,7 @@ public class VueCreerProjet extends JPanel {
         add(titleTextField, gbc);
         gbc.gridy++;
 
-        // Image
-        JLabel imageLabel = new JLabel("Image:");
-        image = new JTextField(25);
-        
-        add(imageLabel, gbc);
-        gbc.gridy++;
-        add(image, gbc);
-        gbc.gridy++;
-
+    
         // Description
         
         JLabel DescriptionLabel = new JLabel("Description:");

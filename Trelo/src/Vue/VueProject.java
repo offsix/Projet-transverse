@@ -67,7 +67,7 @@ public class VueProject extends JPanel {
     //PANNEL LOGO
     //-----------------------------------------//
 
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/profile.png");
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);

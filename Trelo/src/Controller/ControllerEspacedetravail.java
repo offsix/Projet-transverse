@@ -23,9 +23,11 @@ public class ControllerEspacedetravail {
         this.modeleEspacedetravail = modeleEspacedetravail;
         this.vueEspacedetravail = vueEspacedetravail;
     
+    
     vueEspacedetravail.ajouterlisstenerNouveauprojet(new NouveauprojetListener());
     vueEspacedetravail.ajouterlisstenerMembre(new MembreListener());
     vueEspacedetravail.ajouterlisstenerDeconexion(new Decolistener());
+   // vueEspacedetravail.ajouterlisstenerAccederProjet(new AccederProjetListener());
     }
 
   public class MembreListener extends MouseAdapter {
@@ -57,7 +59,6 @@ public class Decolistener extends MouseAdapter {
         public void mouseClicked(MouseEvent e) {
             VueCreerProjet VueCreerProjet = new VueCreerProjet();
             ControllerCreerProjet controllerCreerProjet = new ControllerCreerProjet(VueCreerProjet, vueEspacedetravail);
-
             JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
             fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreCreerprojet.setSize(400,500);
@@ -69,4 +70,20 @@ public class Decolistener extends MouseAdapter {
         }
         
     }
+
+    // public class AccederProjetListener extends MouseAdapter {
+    //     private String nomProjet = vueEspacedetravail.getTitle();
+    //     private ModeleMembre proprietaire = vueEspacedetravail.getMembre();
+    //     public void mouseClicked(MouseEvent e) {
+    //         ModeleProjet modeleProjet = new ModeleProjet();
+    //         VueProject VueCreerProjet = new VueProject(modeleProjet);
+    //         JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
+    //         fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    //         fenetreCreerprojet.setSize(400,500);
+    //         fenetreCreerprojet.add(VueCreerProjet);
+    //         fenetreCreerprojet.setVisible(true);
+    //         fenetreCreerprojet.setLocationRelativeTo(null);
+    //         System.out.println("Acceder projet");
+    //     }
+    // }
 }
