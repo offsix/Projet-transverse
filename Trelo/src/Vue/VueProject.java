@@ -390,24 +390,17 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 // }
 
 
-// // Ajout des cartes dans la section 1
-// for (ModeleCartes carte : project.gettableauCarte()) {
-//   VueCarte vueCarte = new VueCarte(carte);
-//   vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+// Ajout des cartes dans la section 1
 
-//   // Ajouter la carte à la section 1
-//   section2.add(vueCarte);
-// }
+
 
 
 // // Ajout des cartes dans la section 1
-// for (ModeleCartes carte : project.gettableauCarte()) {
-//   VueCarte vueCarte = new VueCarte(carte);
-//   vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT); // Alignement à gauche
+ModeleCartes carte = new ModeleCartes();
+  VueCarte vueCarte = new VueCarte(carte);
+  // Ajouter la carte à la section 1
+  section3.add(vueCarte);
 
-//   // Ajouter la carte à la section 1
-//   section3.add(vueCarte);
-//}
   }
   public String getlabelinv() {
     return tfinv.getText();
@@ -418,20 +411,22 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
   public void ajouterCarte(ModeleCartes carte) {
     VueCarte vueCarte = new VueCarte(carte);
-    vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
     int a = carte.getSection();
-    switch (a) {
-      case 1:
-        section1.add(vueCarte);
-        break;
-      case 2:
-        section2.add(vueCarte);
-        break;
-      case 3:
-        section3.add(vueCarte);
-        break;
+    System.out.println(a);
+
+    switch (a){
+    case 1:
+    section1.add(vueCarte);
+    break;
+  case 2:
+    section2.add(vueCarte);
+    break;
+  case 3: 
+    section3.add(vueCarte);
+    break;
     }
 
+    
   }
   public void ajouterListenerSection1butt(ActionListener listener) {
     boutonSection1.addActionListener(listener);
