@@ -5,6 +5,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+import com.toedter.calendar.JCalendar;
 
 import Modele.ModeleCartes;
 import Modele.ModeleMembre;
@@ -290,13 +291,22 @@ panelSecond.add(section22, gbcSection22);
     gbcThird.fill = GridBagConstraints.BOTH;
 
     JPanel panelThird = new JPanel(new GridLayout(2, 1));
-    panelThird.setBackground(Color.white);
+    panelThird.setBackground(Color.WHITE);
     panel.add(panelThird, gbcThird);
     //-----------------------------------------//
     //				GBCTHIRD 3.1 	 		   //
     //-----------------------------------------//
-    JPanel gbcSection31 = new JPanel(new GridLayout(0, 1, 10, 10)); //GridLayout avec 1 colonne et espacement de 10 pixels
+    JPanel gbcSection31 = new JPanel(new GridBagLayout()); //GridLayout avec 1 colonne et espacement de 10 pixels
     gbcSection31.setBackground(Color.white);
+
+    GridBagConstraints gbchautdroite = new GridBagConstraints();
+    gbchautdroite.gridx = 0;
+    gbchautdroite.gridy = 0;
+    gbchautdroite.weightx = 1.0;
+    gbchautdroite.weighty = 0.90;
+    gbchautdroite.fill = GridBagConstraints.BOTH;
+
+
 
     int membresParLigne = 2; //D�fini le nombre de membres par ligne
     int count = 0;
@@ -304,8 +314,8 @@ panelSecond.add(section22, gbcSection22);
 
     for (ModeleMembre membre: project.getTableauMembres()) {
       if (count % membresParLigne == 0) {
-        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 100, 100));
-        gbcSection31.add(lignePanel);
+        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        gbcSection31.add(lignePanel, gbchautdroite);
       }
 
       //VueAjoute vueAjouteMembre = new VueAjoute(null);
@@ -318,7 +328,23 @@ panelSecond.add(section22, gbcSection22);
 
       count++;
     }
-    //Cr�ation du JScrollPane avec la sous-section des membres
+
+    gbchautdroite.gridy = 1;
+    gbchautdroite.gridx = 0;
+    gbchautdroite.weightx = 1.0;
+    gbchautdroite.weighty = 0.10;
+    JPanel paninv = new JPanel(new GridLayout(0, 3));
+    paninv.setBorder(new EmptyBorder(200, 50, 10, 10));
+    JLabel labelinv = new JLabel("Inviter des membres :");
+    labelinv.setHorizontalAlignment(SwingConstants.CENTER);
+    JButton boutoninv = new JButton("Envoyer");
+    JTextField textField = new JTextField();
+    paninv.add(labelinv);
+    paninv.add(textField);
+    paninv.add(boutoninv);
+    
+    gbcSection31.add(paninv, gbchautdroite);
+    // Cr�ation du JScrollPane avec la sous-section des membres
     JScrollPane scrollPane31 = new JScrollPane(gbcSection31);
     scrollPane31.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -328,7 +354,11 @@ panelSecond.add(section22, gbcSection22);
     //				GBCTHIRD 3.2 	 		               //
     //-----------------------------------------//
     JPanel gbcSection32 = new JPanel();
-    gbcSection32.setBackground(Color.white);
+    JCalendar dateChooser = new JCalendar();
+    dateChooser.setPreferredSize(new Dimension(510, 550));
+    dateChooser.setBackground(Color.WHITE);
+    gbcSection32.add(dateChooser);
+    gbcSection32.setBackground(Color.WHITE);
     panelThird.add(gbcSection32);
 
     add(panel, BorderLayout.CENTER);
