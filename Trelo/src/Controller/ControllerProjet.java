@@ -25,9 +25,25 @@ public class ControllerProjet {
         vueProject.ajouterListenerSection2butt(new Section2Listener());
         vueProject.ajouterListenerSection3butt(new Section3Listener());
         vueProject.ajouterlisstenerDeconexion(new DeconexionListener());
-
+        vueProject.ajouterListenerInvbutt(new InvListener());
     }
 
+
+
+    class InvListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        String content = vueProject.getlabelinv();
+        if(content.contains("@") && content.contains(".")){
+            JOptionPane.showMessageDialog(null, "Invitation bien envoyée ! ");
+          
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Veuillez saisir un mail valide !", "Erreur", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+    }
 
     class Section1Listener implements ActionListener {
         @Override
@@ -74,7 +90,7 @@ public class ControllerProjet {
         }
     }
 
-    
+
 
     class DeconexionListener extends MouseAdapter{
     public void mouseClicked(MouseEvent e) {

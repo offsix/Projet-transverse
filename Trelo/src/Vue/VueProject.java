@@ -27,6 +27,8 @@ public class VueProject extends JPanel {
   private JButton boutonSection2;
   private JButton boutonSection3;
   private JButton boutoninv;
+  private JTextField tfinv;
+
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
@@ -343,9 +345,9 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
     JLabel labelinv = new JLabel("Inviter des membres :");
     labelinv.setHorizontalAlignment(SwingConstants.CENTER);
     boutoninv = new JButton("Envoyer");
-    JTextField textField = new JTextField();
+    tfinv = new JTextField();
     paninv.add(labelinv);
-    paninv.add(textField);
+    paninv.add(tfinv);
     paninv.add(boutoninv);
     
     gbcSection31.add(paninv, gbchautdroite);
@@ -403,6 +405,9 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 //   // Ajouter la carte à la section 1
 //   section3.add(vueCarte);
 //}
+  }
+  public String getlabelinv() {
+    return tfinv.getText();
   }
 
   
