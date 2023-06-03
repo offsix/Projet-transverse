@@ -6,7 +6,6 @@ import javax.swing.border.MatteBorder;
 
 import java.awt.*;
 import Modele.ModeleCartes;
-import javafx.scene.layout.Border;
 
 import java.time.format.DateTimeFormatter;
 
