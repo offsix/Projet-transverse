@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import com.toedter.calendar.JCalendar;
-
+import java.awt.event.MouseAdapter;
 import Modele.ModeleCartes;
 import Modele.ModeleMembre;
 import Modele.ModeleProjet;
@@ -141,10 +141,8 @@ public class VueProject extends JPanel {
     section21.setBackground(Color.white);
     // section21.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // D�finir une marge vide autour du panneau
     //R�cup�ration du nom du projet
-    String nomProjet = project.getsNomProjet();
-
     //Cr�ation du JLabel pour afficher le nom du projet en grand au milieu
-    JLabel labelNomProjet = new JLabel(nomProjet);
+    JLabel labelNomProjet = new JLabel(project.getsNomProjet());
     try {
       customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
       labelNomProjet.setFont(customFont.deriveFont(Font.PLAIN, 60));
@@ -362,6 +360,8 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
     //-----------------------------------------//
     JPanel gbcSection32 = new JPanel();
     JCalendar dateChooser = new JCalendar();
+    //SI ERREUR SE RENDRE DANS LE FICHIER CALENDAR/calendar/JCalendar.java et le lancer fermer par la suite
+    //L'erreur ne devrais plus persister
     dateChooser.setPreferredSize(new Dimension(510, 550));
     dateChooser.setBackground(Color.WHITE);
     gbcSection32.add(dateChooser);
@@ -418,5 +418,10 @@ public void ajouterListenerSection3butt(ActionListener listener) {
 public void ajouterListenerInvbutt(ActionListener listener) {
   boutoninv.addActionListener(listener);
 }
-
+public void ajouterlisstenerDeconexion(MouseAdapter listener) {
+  logoDeco.addMouseListener(listener);
+  }
+  public void ajouterlisstenerMembre(MouseAdapter listener) {
+  logoMembre.addMouseListener(listener);
+  }
 }
