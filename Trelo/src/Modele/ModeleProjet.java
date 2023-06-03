@@ -9,11 +9,11 @@ public class ModeleProjet {
     private ArrayList<ModeleCartes> tableauCarte;
     private ArrayList < ModeleMembre> tableauMembres;
 
-    public ModeleProjet(String sNomProjet, ArrayList<ModeleCartes> tableauCarte, ArrayList<ModeleMembre> tableauMembres, ModeleMembre proprietaire) {
+    public ModeleProjet(String sNomProjet, ModeleMembre proprietaire) {
         this.sNomProjet = sNomProjet;
         this.proprietaire = proprietaire;
-        this.tableauCarte = tableauCarte;
-        this.tableauMembres = tableauMembres;
+        tableauCarte = new ArrayList<>(tableauCarte);
+        tableauMembres = new ArrayList<>(tableauMembres);
         tableauMembres.add(proprietaire);
     }
     public ModeleProjet() {

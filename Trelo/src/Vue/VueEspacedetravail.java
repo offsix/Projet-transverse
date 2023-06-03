@@ -222,7 +222,6 @@ public class VueEspacedetravail extends JPanel {
   }
   public void ajoutProjet (String Nomprojet,String Description){   
     wrapper = new JPanel(new GridLayout(1, 1));
-
     JPanel pangennewproj = new JPanel(new GridBagLayout());
     wrapper.setBorder(new EmptyBorder(50,50,175,50));
     wrapper.add(pangennewproj);
