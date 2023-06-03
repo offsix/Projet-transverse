@@ -48,10 +48,9 @@ public class ControllerProjet {
     class Section1Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
-            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);         
-            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
-            modeleAjouterCarte.getCarte().setSection(1); 
+            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte();         
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject,ModeleProjet);              
+            vueAjouterCarte.setSection(1);
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
@@ -65,10 +64,9 @@ public class ControllerProjet {
     class Section2Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
-            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);            
-            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
-            modeleAjouterCarte.getCarte().setSection(2); 
+            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte();            
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject,ModeleProjet);              
+            vueAjouterCarte.setSection(2);
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
@@ -83,11 +81,10 @@ public class ControllerProjet {
     class Section3Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
-            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte); 
-            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
+            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(); 
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject,ModeleProjet);              
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
-            modeleAjouterCarte.getCarte().setSection(3); 
+            vueAjouterCarte.setSection(3);
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
             fenetreAjouteCarte.setLocationRelativeTo(null);

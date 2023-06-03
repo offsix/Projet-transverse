@@ -1,8 +1,13 @@
 package Vue;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+
 import java.awt.*;
 import Modele.ModeleCartes;
+import javafx.scene.layout.Border;
+
 import java.time.format.DateTimeFormatter;
 
 public class VueCarte extends JPanel { 
@@ -12,7 +17,6 @@ public class VueCarte extends JPanel {
     private static final int BUTTON_SIZE = 13;
 
     public VueCarte(ModeleCartes modele) {
-
         // Récupération des informations de la carte depuis le modèle
         String titre = modele.getTitreCarte();
         String description = modele.getDescriptionCarte();
@@ -30,9 +34,10 @@ public class VueCarte extends JPanel {
 
         // Création du JLabel pour afficher le texte de la carte
         JLabel affichageCarte = new JLabel(labelText);
+        setBackground(Color.WHITE);
         affichageCarte.setFont(LABEL_FONT);
         affichageCarte.setHorizontalAlignment(SwingConstants.CENTER);
-
+        affichageCarte.setBorder(new EmptyBorder(30, 30, 30, 30));
         // Récupération de la couleur de fond de la carte depuis le modèle
 
         // Configuration du panneau de la carte

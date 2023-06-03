@@ -18,8 +18,9 @@ public class VueAjouterCarte extends JPanel {
     private JTextField statutCarteField;
     private JTextField couvertureCarteField;
     private JButton ajouterCarteButton;
+    private int section;
 
-    public VueAjouterCarte(ModeleAjouterCarte modeleAjouterCarte) {
+    public VueAjouterCarte() {
         setLayout(new GridBagLayout());
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -70,14 +71,7 @@ public class VueAjouterCarte extends JPanel {
         add(statutCarteField, gbc);
         gbc.gridy++;
 
-        // Couverture de la carte
-        JLabel couvertureCarteLabel = new JLabel("Couverture:");
-        couvertureCarteField = new JTextField(15);
-        add(couvertureCarteLabel, gbc);
-        gbc.gridy++;
-        add(couvertureCarteField, gbc);
-        gbc.gridy++;
-
+        
         // Bouton Ajouter Carte
         ajouterCarteButton = new JButton("Ajouter Carte");
         gbc.anchor = GridBagConstraints.CENTER;
@@ -114,4 +108,10 @@ public class VueAjouterCarte extends JPanel {
     public void ajouterListenerAjouterCarte(ActionListener listener) {
         ajouterCarteButton.addActionListener(listener);
     }
+public void setSection(int section) {
+    this.section = section;
+}
+public int getSection() {
+    return section;
+}
 }
