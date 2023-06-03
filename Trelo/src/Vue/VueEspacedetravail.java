@@ -34,6 +34,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 
 import Modele.ModeleEspacedetravail;
 import Modele.ModeleProjet;
@@ -46,7 +47,7 @@ public class VueEspacedetravail extends JPanel {
   private Font customFont;
   private JPanel mainproj;
   private JPanel wrapper;
-
+  private JButton btnaccederauprojet;
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
     
 
@@ -77,7 +78,7 @@ public class VueEspacedetravail extends JPanel {
     //PANNEL LOGO
     //-----------------------------------------//
 
-    ImageIcon logoIcon = new ImageIcon("Trelo/Image/profile.png");
+    ImageIcon logoIcon = new ImageIcon("Trelo/Image/testlogo.png");
     // Redimensionner l'image � une taille sp�cifique (par exemple, 50x50)
     Image scaledImage = logoIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
     ImageIcon scaledLogoIcon = new ImageIcon(scaledImage);
@@ -264,7 +265,7 @@ public class VueEspacedetravail extends JPanel {
    JTextArea descProjet = new JTextArea(Description);
    descProjet.setLineWrap(true);
    descProjet.setWrapStyleWord(true);
-   JButton btnaccederauprojet = new JButton("Acceder au projet");
+    btnaccederauprojet = new JButton("Acceder au projet");
    try {
      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
      btnaccederauprojet.setFont(customFont.deriveFont(Font.PLAIN, 30));
@@ -329,6 +330,9 @@ public class VueEspacedetravail extends JPanel {
   }
   public void ajouterlisstenerMembre(MouseAdapter listener) {
   logoMembre.addMouseListener(listener);
+  }
+  public void ajouterlisstenerAccederProjet(MouseAdapter listener) {
+    btnaccederauprojet.addMouseListener(listener);
   }
 
 }
