@@ -7,15 +7,14 @@ public class ModeleCartes {
 	private static int INDEX_CARTE = 0;//num des Cartes commence a 0 et +1 a chaque fois
 	
 	private String titreCarte;
-	private LocalDate DateDebutCarte;
+	private String DateDebutCarte;
 	private String DescriptionCarte;
-	private LocalDate DateLimiteCarte;
+	private String DateLimiteCarte;
 	private String StatutCarte;
-	private String CouvertureCarte;
 	private int idCarte;
-	
-	public ModeleCartes(String titreCarte,LocalDate DateDebutCarte, String DescriptionCarte, LocalDate DateLimiteCarte, String StatutCarte , String CouvertureCarte) {
-		this.CouvertureCarte = CouvertureCarte;
+	private int section;
+
+	public ModeleCartes(String titreCarte,String DateDebutCarte, String DescriptionCarte, String DateLimiteCarte, String StatutCarte ) {
 		this.DateDebutCarte = DateDebutCarte;
 		this.DateLimiteCarte = DateLimiteCarte;
 		this.DescriptionCarte = DescriptionCarte;
@@ -25,9 +24,8 @@ public class ModeleCartes {
 		INDEX_CARTE++;
 	}
 	public ModeleCartes() {
-		this.CouvertureCarte = "#FBE0C3";
-		this.DateDebutCarte = LocalDate.now();
-		this.DateLimiteCarte = LocalDate.now();
+		this.DateDebutCarte = LocalDate.now().toString();
+		this.DateLimiteCarte = LocalDate.now().toString();
 		this.DescriptionCarte = "Test";
 		this.StatutCarte = "Test";
 		this.titreCarte = "Test";
@@ -35,17 +33,22 @@ public class ModeleCartes {
 		INDEX_CARTE++;
 	}
 	
-		
+	public void setSection(int section) {
+        this.section = section;
+    }
+	public int getSection() {
+		return section;
+	}
 	public final String getTitreCarte() {
 		return titreCarte;
 	}
 	public final void setTitreCarte(String titreCarte) {
 		this.titreCarte = titreCarte;
 	}
-	public final LocalDate getDateDebutCarte() {
+	public final String getDateDebutCarte() {
 		return DateDebutCarte;
 	}
-	public final void setDateDebutCarte(LocalDate dateDebutCarte) {
+	public final void setDateDebutCarte(String dateDebutCarte) {
 		DateDebutCarte = dateDebutCarte;
 	}
 	public final String getDescriptionCarte() {
@@ -54,10 +57,10 @@ public class ModeleCartes {
 	public final void setDescriptionCarte(String descriptionCarte) {
 		DescriptionCarte = descriptionCarte;
 	}
-	public final LocalDate getDateLimiteCarte() {
+	public final String getDateLimiteCarte() {
 		return DateLimiteCarte;
 	}
-	public final void setDateLimiteCarte(LocalDate dateLimiteCarte) {
+	public final void setDateLimiteCarte(String dateLimiteCarte) {
 		DateLimiteCarte = dateLimiteCarte;
 	}
 	public final String getStatutCarte() {
@@ -66,21 +69,10 @@ public class ModeleCartes {
 	public final void setStatutCarte(String statutCarte) {
 		StatutCarte = statutCarte;
 	}
-	public final String getCouvertureCarte() {
-		return CouvertureCarte;
-	}
-	public final void setCouvertureCarte(String couvertureCarte) {
-		CouvertureCarte = couvertureCarte;
-	}
-	public final int getIdCarte() {
+		public final int getIdCarte() {
 		return idCarte;
 	}
 	public final void setIdCarte(int idCarte) {
 		this.idCarte = idCarte;
 	}
-	
-	public Color getCouvertureCarteColor() {
-        return Color.decode(CouvertureCarte);
-    }
-
 }

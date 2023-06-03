@@ -1,15 +1,16 @@
 package Modele;
 
 import java.awt.Color;
-import java.time.LocalDate;
-
 import Modele.*;
+import Vue.VueCarte;
 public class ModeleAjouterCarte {
 	private ModeleCartes nouvellecarte;
+
 	
-	public ModeleAjouterCarte(ModeleProjet modeleProjet, String titreCarte, LocalDate DateDebutCarte, String DescriptionCarte, LocalDate DateLimiteCarte, String StatutCarte, String CouvertureCarte) {
-		this.nouvellecarte = new ModeleCartes(titreCarte, DateDebutCarte, DescriptionCarte, DateLimiteCarte, StatutCarte, CouvertureCarte);
+	public ModeleAjouterCarte(ModeleProjet modeleProjet, String titreCarte, String DateDebutCarte, String DescriptionCarte, String DateLimiteCarte, String StatutCarte) {
+		this.nouvellecarte = new ModeleCartes(titreCarte, DateDebutCarte, DescriptionCarte, DateLimiteCarte, StatutCarte);
 		modeleProjet.ajouterCarte(nouvellecarte);
+
 	}
 	public	ModeleAjouterCarte(ModeleProjet modeleProjet) {
 		this.nouvellecarte = new ModeleCartes();
@@ -19,4 +20,9 @@ public class ModeleAjouterCarte {
 	
 
 
+	public ModeleCartes getCarte() {
+		return nouvellecarte;
+	}
+
 }
+

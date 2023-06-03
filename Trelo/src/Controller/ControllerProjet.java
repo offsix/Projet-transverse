@@ -36,7 +36,7 @@ public class ControllerProjet {
         String content = vueProject.getlabelinv();
         if(content.contains("@") && content.contains(".")){
             JOptionPane.showMessageDialog(null, "Invitation bien envoyée ! ");
-          
+            vueProject.setlabelinv("");
         }
         else{
             JOptionPane.showMessageDialog(null, "Veuillez saisir un mail valide !", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -49,7 +49,9 @@ public class ControllerProjet {
         @Override
         public void actionPerformed(ActionEvent e) {
             ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
-            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);            
+            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);         
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
+            modeleAjouterCarte.getCarte().setSection(1); 
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
@@ -65,6 +67,8 @@ public class ControllerProjet {
         public void actionPerformed(ActionEvent e) {
             ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
             VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);            
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
+            modeleAjouterCarte.getCarte().setSection(2); 
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
@@ -80,8 +84,10 @@ public class ControllerProjet {
         @Override
         public void actionPerformed(ActionEvent e) {
             ModeleAjouterCarte modeleAjouterCarte = new ModeleAjouterCarte(ModeleProjet);
-            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte);            
+            VueAjouterCarte vueAjouterCarte = new VueAjouterCarte(modeleAjouterCarte); 
+            ControllerAjouterCarte controllerAjouterCarte = new ControllerAjouterCarte(vueAjouterCarte, vueProject, modeleAjouterCarte,ModeleProjet);              
             JFrame fenetreAjouteCarte = new JFrame("VueAjouteCarte");
+            modeleAjouterCarte.getCarte().setSection(3); 
             fenetreAjouteCarte.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreAjouteCarte.setSize(750, 550);
             fenetreAjouteCarte.setLocationRelativeTo(null);

@@ -17,7 +17,7 @@ public class VueCarte extends JPanel {
         String titre = modele.getTitreCarte();
         String description = modele.getDescriptionCarte();
         String statut = modele.getStatutCarte();
-        String dateFin = modele.getDateLimiteCarte().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        String dateFin = modele.getDateLimiteCarte();
 
         // Construction du texte à afficher dans la carte
         String labelText = "<html><body>" +
@@ -34,12 +34,8 @@ public class VueCarte extends JPanel {
         affichageCarte.setHorizontalAlignment(SwingConstants.CENTER);
 
         // Récupération de la couleur de fond de la carte depuis le modèle
-        Color couleurFond = modele.getCouvertureCarteColor();
 
         // Configuration du panneau de la carte
-        setOpaque(true);
-        setBackground(couleurFond);
-
         // Création du bouton de suppression
         JButton boutonSupprimer = new JButton("Supprimer");
         boutonSupprimer.setPreferredSize(new Dimension(BUTTON_SIZE, BUTTON_SIZE));

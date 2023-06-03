@@ -80,14 +80,6 @@ public class Application {
     // VueAjouterCarte vueAjouteCarte = new VueAjouterCarte(ajoutCarte);
     // fenetreAjouteCarte.add(vueAjouteCarte);
 
-    // Creer un modele de calendrier
-    JFrame fenetreCelendrier = new JFrame("VueCalendrier");
-    fenetreCelendrier.setSize(300, 100);
-    ModeleCalendrier calendrier = new ModeleCalendrier(LocalDate.now(), LocalDate.now());
-    VueCalendrier vueCalendier = new VueCalendrier(calendrier);
-    fenetreCelendrier.add(vueCalendier);
-    fenetreCelendrier.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
     // Creer un modele d'un projet
     JFrame fenetreProjet = new JFrame("VueProjet");
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);

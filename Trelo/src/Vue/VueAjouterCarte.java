@@ -91,21 +91,17 @@ public class VueAjouterCarte extends JPanel {
         return titreCarteField.getText();
     }
 
-    public LocalDate getDateDebutCarte() {
-        String dateDebutText = dateDebutCarteField.getText();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return LocalDate.parse(dateDebutText, formatter);
+    public String getDateDebutCarte() {
+    return dateDebutCarteField.getText();
+    }
+    public String getDateLimiteCarte() {
+        return dateLimiteCarteField.getText();
     }
 
     public String getDescriptionCarte() {
         return descriptionCarteField.getText();
     }
 
-    public LocalDate getDateLimiteCarte() {
-        String dateLimiteText = dateLimiteCarteField.getText();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return LocalDate.parse(dateLimiteText, formatter);
-    }
 
     public String getStatutCarte() {
         return statutCarteField.getText();

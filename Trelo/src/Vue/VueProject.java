@@ -28,6 +28,9 @@ public class VueProject extends JPanel {
   private JButton boutonSection3;
   private JButton boutoninv;
   private JTextField tfinv;
+  private JPanel section1;
+  private JPanel section2;
+  private JPanel section3;
 
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
@@ -179,7 +182,7 @@ JPanel section22 = new JPanel(new GridLayout(1, 3, 10, 10)); // GridLayout avec 
 section22.setBackground(Color.white);
 
 // Section 1
-JPanel section1 = new JPanel();
+section1 = new JPanel();
 JPanel headersec1 = new JPanel();
 
 section1.setLayout(new BoxLayout(section1, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
@@ -217,7 +220,7 @@ scrollPane1.setPreferredSize(new Dimension(70, 500)); // Taille souhaitée de la
 section22.add(scrollPane1);
 
 // Section 2
-JPanel section2 = new JPanel();
+section2 = new JPanel();
 JPanel headersec2 = new JPanel();
 
 section2.setLayout(new BoxLayout(section2, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
@@ -251,7 +254,7 @@ section22.add(scrollPane2);
 
 
 // Section 3
-JPanel section3 = new JPanel();
+section3 = new JPanel();
 JPanel headersec3 = new JPanel();
 
 section3.setLayout(new BoxLayout(section3, BoxLayout.Y_AXIS)); // Utilisation d'un BoxLayout vertical
@@ -409,8 +412,27 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
   public String getlabelinv() {
     return tfinv.getText();
   }
+  public void setlabelinv(String tfinv) {
+    this.tfinv.setText(tfinv);
+  }
 
-  
+  public void ajouterCarte(ModeleCartes carte) {
+    VueCarte vueCarte = new VueCarte(carte);
+    vueCarte.setAlignmentX(Component.LEFT_ALIGNMENT);
+    int a = carte.getSection();
+    switch (a) {
+      case 1:
+        section1.add(vueCarte);
+        break;
+      case 2:
+        section2.add(vueCarte);
+        break;
+      case 3:
+        section3.add(vueCarte);
+        break;
+    }
+
+  }
   public void ajouterListenerSection1butt(ActionListener listener) {
     boutonSection1.addActionListener(listener);
 }
