@@ -26,7 +26,7 @@ public class VueProject extends JPanel {
   private JButton boutonSection1;
   private JButton boutonSection2;
   private JButton boutonSection3;
-
+  private JButton boutoninv;
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
@@ -145,11 +145,18 @@ public class VueProject extends JPanel {
 
     //Cr�ation du JLabel pour afficher le nom du projet en grand au milieu
     JLabel labelNomProjet = new JLabel(nomProjet);
-    labelNomProjet.setFont(new Font("Arial", Font.BOLD, 34));
+    try {
+      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Trelo/Fonts/BebasNeue-Regular.ttf"));
+      labelNomProjet.setFont(customFont.deriveFont(Font.PLAIN, 60));
+      
+    } catch (IOException | FontFormatException e) {
+      e.printStackTrace();
+    }
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
 
     //Ajout du JLabel dans la section21
     section21.setLayout(new BorderLayout());
+    section21.setBorder(new MatteBorder(0,0,3,0,Color.BLACK));
     section21.add(labelNomProjet, BorderLayout.CENTER);
 
     //Ajout de la section 21 dans panelSecond
@@ -278,7 +285,7 @@ section22.add(scrollPane3);
 
 // Ajout de la section 2.2 dans le panelSecond avec les contraintes
 panelSecond.add(section22, gbcSection22);
-
+panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
     //-----------------------------------------//
     //				GBCTHIRD 	 		  	   //
@@ -337,7 +344,7 @@ panelSecond.add(section22, gbcSection22);
     paninv.setBorder(new EmptyBorder(200, 50, 10, 10));
     JLabel labelinv = new JLabel("Inviter des membres :");
     labelinv.setHorizontalAlignment(SwingConstants.CENTER);
-    JButton boutoninv = new JButton("Envoyer");
+    boutoninv = new JButton("Envoyer");
     JTextField textField = new JTextField();
     paninv.add(labelinv);
     paninv.add(textField);
@@ -407,6 +414,9 @@ public void ajouterListenerSection2butt(ActionListener listener) {
 }
 public void ajouterListenerSection3butt(ActionListener listener) {
   boutonSection3.addActionListener(listener);
+}
+public void ajouterListenerInvbutt(ActionListener listener) {
+  boutoninv.addActionListener(listener);
 }
 
 }
