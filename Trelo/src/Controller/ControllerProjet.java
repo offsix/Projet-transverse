@@ -74,6 +74,8 @@ public class ControllerProjet {
         }
     }
 
+    
+
     class DeconexionListener extends MouseAdapter{
     public void mouseClicked(MouseEvent e) {
         System.out.println("mouse clicked");
