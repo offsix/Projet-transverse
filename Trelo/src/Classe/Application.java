@@ -91,7 +91,7 @@ public class Application {
     // Creer un modele d'un projet
     JFrame fenetreProjet = new JFrame("VueProjet");
     fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreProjet.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fenetreProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     ModeleProjet projet = new ModeleProjet();
     VueProject vueProject = new VueProject(projet);
     
