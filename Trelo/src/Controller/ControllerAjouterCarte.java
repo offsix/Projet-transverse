@@ -22,7 +22,7 @@ public class ControllerAjouterCarte {
         // Ajouter les listeners
         vueAjouterCarte.ajouterListenerAjouterCarte(new AjoutcarteListener());
     }
-
+    
     public class AjoutcarteListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
