@@ -358,9 +358,15 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
     //				GBCTHIRD 3.2 	 		               //
     //-----------------------------------------//
     JPanel gbcSection32 = new JPanel();
+
+
+    //-----------------------------------------//
     JCalendar dateChooser = new JCalendar();
     //SI ERREUR SE RENDRE DANS LE FICHIER CALENDAR/calendar/JCalendar.java et le lancer fermer par la suite
+    //Relancer Application.java
     //L'erreur ne devrais plus persister
+
+
     dateChooser.setPreferredSize(new Dimension(510, 550));
     dateChooser.setBackground(Color.WHITE);
     gbcSection32.add(dateChooser);

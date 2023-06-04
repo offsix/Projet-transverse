@@ -3,6 +3,8 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+
 import Modele.ModeleAjouterCarte;
 import Modele.ModeleProjet;
 import Vue.VueAjouterCarte;
@@ -42,6 +44,8 @@ public class ControllerAjouterCarte {
            vueProject.ajouterCarte(modeleAjouterCarte.getCarte());
            vueAjouterCarte.validate();
            vueProject.validate();
+           JFrame parent = (JFrame) vueAjouterCarte.getTopLevelAncestor();
+           parent.dispose();  
 
             }
     }

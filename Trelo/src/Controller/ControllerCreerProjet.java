@@ -29,6 +29,9 @@ public class ControllerCreerProjet {
             vueEspacedetravail.ajouternouveauProjet(modeleCreerProjet.getNouveauprojet());            
             vueEspacedetravail.validate();
             vueCreerProjet.validate();
+            
+            JFrame parent = (JFrame) vueCreerProjet.getTopLevelAncestor();
+            parent.dispose();        
         }
 }
 }

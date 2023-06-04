@@ -86,25 +86,11 @@ public class Decolistener extends MouseAdapter {
             fenetreCreerprojet.add(VueCreerProjet);
             fenetreCreerprojet.setVisible(true);
             fenetreCreerprojet.setLocationRelativeTo(null);
-
+            
 
         }
         
     }
 
-    // public class AccederProjetListener extends MouseAdapter {
-    //     private String nomProjet = vueEspacedetravail.getTitle();
-    //     private ModeleMembre proprietaire = vueEspacedetravail.getMembre();
-    //     public void mouseClicked(MouseEvent e) {
-    //         ModeleProjet modeleProjet = new ModeleProjet();
-    //         VueProject VueCreerProjet = new VueProject(modeleProjet);
-    //         JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
-    //         fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    //         fenetreCreerprojet.setSize(400,500);
-    //         fenetreCreerprojet.add(VueCreerProjet);
-    //         fenetreCreerprojet.setVisible(true);
-    //         fenetreCreerprojet.setLocationRelativeTo(null);
-    //         System.out.println("Acceder projet");
-    //     }
-    // }
+
 }
