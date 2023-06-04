@@ -7,7 +7,6 @@ import Modele.ModeleMembre;
 
 public class VuePetitMembre extends JPanel {
     private JLabel pseudoLabel;
-    private JLabel passwordLabel;
     private JLabel nomLabel;
     private JLabel prenomLabel;
     private JLabel adresseMailLabel;

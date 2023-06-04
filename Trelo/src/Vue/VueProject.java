@@ -318,26 +318,20 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
 
 
-    int membresParLigne = 2; //D�fini le nombre de membres par ligne
-    int count = 0;
-    JPanel lignePanel = null;
 
-    for (ModeleMembre membre: project.getTableauMembres()) {
-      if (count % membresParLigne == 0) {
-        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        gbcSection31.add(lignePanel, gbchautdroite);
-      }
+      JPanel lignePanel = null;
+      lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+      gbcSection31.add(lignePanel, gbchautdroite);
 
       //VueAjoute vueAjouteMembre = new VueAjoute(null);
       //vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
       //gbcSection31.add(vueAjouteMembre);
-      VuePetitMembre vueMembre = new VuePetitMembre(membre);
+      VuePetitMembre vueMembre = new VuePetitMembre(project.getProprietaire());
       Border border1 = new LineBorder(Color.BLACK, 1); //Cr�e une bordure avec une ligne noire d'�paisseur 1
       vueMembre.setBorder(border1);
       lignePanel.add(vueMembre);
 
-      count++;
-    }
+    
 
     gbchautdroite.gridy = 1;
     gbchautdroite.gridx = 0;
@@ -395,11 +389,7 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
 
 
-// // Ajout des cartes dans la section 1
-ModeleCartes carte = new ModeleCartes();
-  VueCarte vueCarte = new VueCarte(carte);
-  // Ajouter la carte à la section 1
-  section3.add(vueCarte);
+
 
   }
   public String getlabelinv() {

@@ -174,7 +174,7 @@ public class VueAccueil extends JFrame {
      * @return void
      */
     public void afficherMessageBienvenue() {
-        JOptionPane.showMessageDialog(this, "Bienvenue sur Trelo", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Bienvenue sur Future", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
