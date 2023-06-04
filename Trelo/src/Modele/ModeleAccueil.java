@@ -47,7 +47,7 @@ private ArrayList<ModeleMembre> membres;
 		return null;
 	}
 
-		/**
+	/**
 	 * Check if a member exists in the database.
 	 *
 	 * @param  pseudo	the username of the member
