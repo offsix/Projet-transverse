@@ -20,6 +20,8 @@ public class VueAjouterCarte extends JPanel {
     private JButton ajouterCarteButton;
     private int section;
 
+    /** @autor Mathieu Flesh **/
+    
     public VueAjouterCarte() {
         setLayout(new GridBagLayout());
         setBackground(Color.WHITE);

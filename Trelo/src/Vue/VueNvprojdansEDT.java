@@ -40,6 +40,9 @@ import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 import Modele.ModeleEspacedetravail;
 import Modele.ModeleProjet;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
+
 public class VueNvprojdansEDT extends JPanel {
     private JPanel wrapper;
     Font customFont;

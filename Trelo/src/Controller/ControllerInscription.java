@@ -8,7 +8,8 @@ import javax.swing.*;
 
 import Modele.*;
 import Vue.*;
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ControllerInscription {
     private VueInscription vueInscription;
     private ModeleAccueil modeleAccueil;

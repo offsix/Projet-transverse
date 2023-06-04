@@ -8,6 +8,8 @@ import Modele.ModeleProjet;
 import Vue.VueAjouterCarte;
 import Vue.VueProject;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ControllerAjouterCarte {
     private VueAjouterCarte vueAjouterCarte;
     private VueProject vueProject;

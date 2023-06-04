@@ -1,4 +1,5 @@
 package Modele;
+/** @autor Dayssam BAKAAR **/
 
 public class ModeleMembre {
 

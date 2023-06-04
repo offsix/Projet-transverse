@@ -11,7 +11,8 @@ import java.awt.event.MouseAdapter;
 import Modele.*;
 import Vue.*;
 
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ControllerAccueil {
   
 

@@ -23,6 +23,11 @@ public class VueAccueil extends JFrame {
     private JTextField nomField;
     private JTextField prenomField;
     private JTextField adresseField;
+
+    /** @autor Dayssam BAKAAR **/
+    /** @autor Abdoulaye WAGNE **/
+    /** @autor Mathieu Flesh **/
+    /** @autor Florian Gaubert **/
     
 	public VueAccueil(ModeleAccueil accueil) {
         // Configuration de la fen�tre

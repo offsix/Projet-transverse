@@ -1,7 +1,8 @@
 package Modele;
 
 import java.util.ArrayList;
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ModeleProjet {
 
 	private ModeleMembre proprietaire;

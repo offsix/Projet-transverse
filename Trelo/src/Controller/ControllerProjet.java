@@ -11,7 +11,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ControllerProjet {
     private VueProject vueProject;
     private ModeleProjet ModeleProjet;

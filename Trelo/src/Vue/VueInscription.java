@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import Modele.ModeleInscription;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
+
 public class VueInscription extends JPanel {
     private JTextField identifiantField;
     private JPasswordField motDePasseField;

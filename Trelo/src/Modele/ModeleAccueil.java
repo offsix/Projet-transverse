@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class ModeleAccueil {
 
+	/** @autor Dayssam BAKAAR **/
+	
 private ArrayList<ModeleMembre> membres;	
 
 	//contructeur avec l'arraylist de membre qui stockera tout les memebre inscrits

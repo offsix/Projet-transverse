@@ -50,6 +50,11 @@ public class VueEspacedetravail extends JPanel {
   private JPanel mainproj;
   private JPanel wrapper;
   private JButton btnaccederauprojet;
+
+  /** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
+/** @autor Mathieu Flesh **/
+
   public VueEspacedetravail(ModeleEspacedetravail espacedetravail) {
     
 

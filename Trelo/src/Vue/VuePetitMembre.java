@@ -11,6 +11,8 @@ public class VuePetitMembre extends JPanel {
     private JLabel prenomLabel;
     private JLabel adresseMailLabel;
 
+    /** @autor Mathieu Flesh **/
+
     public VuePetitMembre(ModeleMembre membre) {
         setLayout(new GridLayout(5, 2, 10, 10));
         setBackground(Color.WHITE);

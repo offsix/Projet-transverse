@@ -2,8 +2,9 @@ package Modele;
 
 import java.awt.Color;
 import java.time.LocalDate;
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ModeleCartes {
-
 	private static int INDEX_CARTE = 0;//num des Cartes commence a 0 et +1 a chaque fois
 	
 	private String titreCarte;

@@ -7,7 +7,8 @@ import javax.swing.*;
 
 import Modele.*;
 import Vue.*;
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ControllerCreerProjet {
     private VueCreerProjet vueCreerProjet;
     private VueEspacedetravail vueEspacedetravail;

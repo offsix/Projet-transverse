@@ -16,6 +16,9 @@ public class VueCreerProjet extends JPanel {
     private JButton CreerProjet;
     private BufferedImage imageFile;
 
+    /** @autor Dayssam BAKAAR **/
+    /** @autor Abdoulaye WAGNE **/
+
     public VueCreerProjet() {
         setLayout(new GridBagLayout());
         setBackground(Color.WHITE);

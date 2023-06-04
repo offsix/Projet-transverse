@@ -15,6 +15,9 @@ import Modele.*;
 import Vue.*;
 import Controller.*;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
+
 public class ControllerEspacedetravail {
     private ModeleEspacedetravail modeleEspacedetravail;
     private VueEspacedetravail vueEspacedetravail;

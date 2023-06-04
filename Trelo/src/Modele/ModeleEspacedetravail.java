@@ -2,6 +2,8 @@ package Modele;
 
 import java.util.ArrayList;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ModeleEspacedetravail {
 
 	private ArrayList<ModeleProjet> projectliste;

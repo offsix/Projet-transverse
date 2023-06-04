@@ -9,6 +9,9 @@ import Modele.ModeleCartes;
 
 import java.time.format.DateTimeFormatter;
 
+/** @author Mathieu Flesh * */
+ 
+
 public class VueCarte extends JPanel { 
 
     private static final long serialVersionUID = 1L;

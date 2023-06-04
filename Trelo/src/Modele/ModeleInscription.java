@@ -1,5 +1,6 @@
 package Modele;
-
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 public class ModeleInscription {
    private ModeleMembre nouveauMembre;
 
