@@ -2,8 +2,6 @@ package Classe;
 
 import Vue.*;
 import Modele.*;
-
-import java.awt.Frame;
 import java.time.LocalDate;
 
 import javax.swing.JFrame;
@@ -12,10 +10,12 @@ import Modele.*;
 import Vue.*;
 import Controller.*;
 
+/** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
 
 public class Application {
 
- 
+
 /**
  * Initialise l'application en créant et initialisant différents objets, notamment:
  * un objet `ModeleAccueil`, un objet `VueAccueil`, un objet `VueInscription`,
@@ -29,13 +29,10 @@ public class Application {
      VueAccueil vueAccueil = new VueAccueil(modeleAccueil);
      ControllerAccueil controllerAccueil = new ControllerAccueil(modeleAccueil, vueAccueil);
 
-    // //creation des membres par defaut (admin)
+    // //creation d'un membre par defaut (admin)
     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
     modeleAccueil.ajouterMembre(test);
 
-
-
-    
 
   }
 }
