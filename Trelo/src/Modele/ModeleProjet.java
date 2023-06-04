@@ -6,21 +6,16 @@ public class ModeleProjet {
 
 	private ModeleMembre proprietaire;
     private String sNomProjet;
+    private String description;
     private ArrayList<ModeleCartes> tableauCarte;
     private ArrayList < ModeleMembre> tableauMembres;
 
-    public ModeleProjet(String sNomProjet, ModeleMembre proprietaire) {
+    public ModeleProjet(String sNomProjet, ModeleMembre proprietaire, String description) {
         this.sNomProjet = sNomProjet;
         this.proprietaire = proprietaire;
-        tableauCarte = new ArrayList<>(tableauCarte);
-        tableauMembres = new ArrayList<>(tableauMembres);
-        tableauMembres.add(proprietaire);
-    }
-    public ModeleProjet() {
-        this.sNomProjet = "Test";
-        this.proprietaire = new ModeleMembre();
-        this.tableauCarte = new ArrayList<ModeleCartes>();
-        this.tableauMembres = new ArrayList<ModeleMembre>();
+        this.description = description;
+        tableauCarte = new ArrayList<ModeleCartes>();
+        tableauMembres = new ArrayList<ModeleMembre>();
         tableauMembres.add(proprietaire);
     }
 
@@ -55,5 +50,9 @@ public void setTableauMembres(ArrayList<ModeleMembre> tableauMembres) {
 public void ajouterCarte(ModeleCartes carte) {
     this.tableauCarte.add(carte);
 }
+public String getDescription() {
+    return description;
+}
+
 
 }

@@ -60,7 +60,6 @@ public class VueCreerProjet extends JPanel {
        
 
 }
-        public String getImage() { return image.getText();}
          public String getTitle() { return titleTextField.getText();}
          public String getDescription() { return description.getText();}
 

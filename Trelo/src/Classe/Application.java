@@ -2,6 +2,8 @@ package Classe;
 
 import Vue.*;
 import Modele.*;
+
+import java.awt.Frame;
 import java.time.LocalDate;
 
 import javax.swing.JFrame;
@@ -31,17 +33,6 @@ public class Application {
     ModeleMembre test = new ModeleMembre("a","a","a","a","a@outlook.fr");
     modeleAccueil.ajouterMembre(test);
 
-
-    // Creer un modele d'un projet
-    JFrame fenetreProjet = new JFrame("VueProjet");
-    fenetreProjet.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    fenetreProjet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    ModeleProjet projet = new ModeleProjet();
-    VueProject vueProject = new VueProject(projet);
-    
-    ControllerProjet controllerProjet = new ControllerProjet(vueProject, projet);
-    fenetreProjet.add(vueProject);
-    fenetreProjet.setVisible(true);
 
 
     

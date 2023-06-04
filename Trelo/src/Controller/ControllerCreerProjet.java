@@ -11,9 +11,10 @@ import Vue.*;
 public class ControllerCreerProjet {
     private VueCreerProjet vueCreerProjet;
     private VueEspacedetravail vueEspacedetravail;
-    
+    private ModeleEspacedetravail modeleEspacedetravail;
     // Constructeur controleur creer projet
-    public ControllerCreerProjet(VueCreerProjet vueCreerProjet,VueEspacedetravail vueEspacedetravail) {
+    public ControllerCreerProjet(VueCreerProjet vueCreerProjet,VueEspacedetravail vueEspacedetravail,ModeleEspacedetravail modeleEspacedetravail) {
+        this.modeleEspacedetravail = modeleEspacedetravail;
         this.vueEspacedetravail = vueEspacedetravail;
         this.vueCreerProjet = vueCreerProjet;
         vueCreerProjet.ajouterListenerAjouterProjet(new AddProjectlistener());
@@ -23,11 +24,10 @@ public class ControllerCreerProjet {
     class AddProjectlistener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
-            System.out.println("Ajouter projet");
-            vueEspacedetravail.ajoutProjet(vueCreerProjet.getTitle(), vueCreerProjet.getDescription());
+            ModeleCreerProjet modeleCreerProjet = new ModeleCreerProjet(modeleEspacedetravail,vueCreerProjet.getTitle(),vueCreerProjet.getDescription(),modeleEspacedetravail.getProprietaire());
+            vueEspacedetravail.ajouternouveauProjet(modeleCreerProjet.getNouveauprojet());            
+            vueEspacedetravail.validate();
             vueCreerProjet.validate();
-
         }
 }
 }

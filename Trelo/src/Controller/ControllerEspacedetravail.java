@@ -76,7 +76,7 @@ public class Decolistener extends MouseAdapter {
     public class NouveauprojetListener extends MouseAdapter {
         public void mouseClicked(MouseEvent e) {
             VueCreerProjet VueCreerProjet = new VueCreerProjet();
-            ControllerCreerProjet controllerCreerProjet = new ControllerCreerProjet(VueCreerProjet, vueEspacedetravail);
+            ControllerCreerProjet controllerCreerProjet = new ControllerCreerProjet(VueCreerProjet, vueEspacedetravail, modeleEspacedetravail);
             JFrame fenetreCreerprojet = new JFrame("VueCreerProjet");
             fenetreCreerprojet.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             fenetreCreerprojet.setSize(400,500);
