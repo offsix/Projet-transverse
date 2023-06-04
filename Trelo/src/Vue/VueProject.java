@@ -32,6 +32,10 @@ public class VueProject extends JPanel {
   private JPanel section2;
   private JPanel section3;
 
+  /** @autor Dayssam BAKAAR **/
+/** @autor Abdoulaye WAGNE **/
+/** @autor Mathieu Flesh **/
+
   public VueProject(ModeleProjet project) {
     MatteBorder vert = new MatteBorder(2, 2, 2, 2, Color.GREEN);
     MatteBorder bleu = new MatteBorder(2, 2, 2, 2, Color.BLUE);
@@ -318,20 +322,26 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
 
 
+    int membresParLigne = 2; //D�fini le nombre de membres par ligne
+    int count = 0;
+    JPanel lignePanel = null;
 
-      JPanel lignePanel = null;
-      lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
-      gbcSection31.add(lignePanel, gbchautdroite);
+    for (ModeleMembre membre: project.getTableauMembres()) {
+      if (count % membresParLigne == 0) {
+        lignePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        gbcSection31.add(lignePanel, gbchautdroite);
+      }
 
       //VueAjoute vueAjouteMembre = new VueAjoute(null);
       //vueAjouteMembre.setAlignmentX(Component.LEFT_ALIGNMENT);
       //gbcSection31.add(vueAjouteMembre);
-      VuePetitMembre vueMembre = new VuePetitMembre(project.getProprietaire());
+      VuePetitMembre vueMembre = new VuePetitMembre(membre);
       Border border1 = new LineBorder(Color.BLACK, 1); //Cr�e une bordure avec une ligne noire d'�paisseur 1
       vueMembre.setBorder(border1);
       lignePanel.add(vueMembre);
 
-    
+      count++;
+    }
 
     gbchautdroite.gridy = 1;
     gbchautdroite.gridx = 0;
@@ -358,15 +368,9 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
     //				GBCTHIRD 3.2 	 		               //
     //-----------------------------------------//
     JPanel gbcSection32 = new JPanel();
-
-
-    //-----------------------------------------//
     JCalendar dateChooser = new JCalendar();
     //SI ERREUR SE RENDRE DANS LE FICHIER CALENDAR/calendar/JCalendar.java et le lancer fermer par la suite
-    //Relancer Application.java
     //L'erreur ne devrais plus persister
-
-
     dateChooser.setPreferredSize(new Dimension(510, 550));
     dateChooser.setBackground(Color.WHITE);
     gbcSection32.add(dateChooser);
@@ -395,7 +399,11 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
 
 
 
-
+// // Ajout des cartes dans la section 1
+ModeleCartes carte = new ModeleCartes();
+  VueCarte vueCarte = new VueCarte(carte);
+  // Ajouter la carte à la section 1
+  section3.add(vueCarte);
 
   }
   public String getlabelinv() {
@@ -414,10 +422,10 @@ panelSecond.setBorder(new MatteBorder(0, 0, 0, 3, Color.BLACK));
     case 1:
     section1.add(vueCarte);
     break;
-  case 2:
+    case 2:
     section2.add(vueCarte);
     break;
-  case 3: 
+    case 3: 
     section3.add(vueCarte);
     break;
     }
