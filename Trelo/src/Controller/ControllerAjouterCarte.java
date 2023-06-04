@@ -14,6 +14,7 @@ public class ControllerAjouterCarte {
     private ModeleAjouterCarte modeleAjouterCarte;
     private ModeleProjet modeleProjet;
 
+    // Constructeur controlleur accueil
     public ControllerAjouterCarte(VueAjouterCarte vueAjouterCarte, VueProject vueProject, ModeleProjet modeleProjet) {
         this.vueAjouterCarte = vueAjouterCarte;
         this.vueProject = vueProject;
@@ -23,6 +24,14 @@ public class ControllerAjouterCarte {
         vueAjouterCarte.ajouterListenerAjouterCarte(new AjoutcarteListener());
     }
     
+    /**
+    * Méthode qui est appelée lorsqu'un événement se produit. Cette méthode crée un nouvel objet "ModeleAjouterCarte"
+    * et définit ses attributs en utilisant les valeurs de "vueAjouterCarte". Le nouvel objet est ensuite ajouté à "vueProject"
+    * et les deux objets "vueAjouterCarte" et "vueProject" sont validés.
+    *
+    * @param  e  l'événement d'action
+    */
+
     public class AjoutcarteListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

@@ -23,15 +23,16 @@ public class ModeleCartes {
 		this.idCarte = INDEX_CARTE;
 		INDEX_CARTE++;
 	}
-	public ModeleCartes() {
-		this.DateDebutCarte = LocalDate.now().toString();
-		this.DateLimiteCarte = LocalDate.now().toString();
-		this.DescriptionCarte = "Test";
-		this.StatutCarte = "Test";
+	
+	 public ModeleCartes() {
+	 	this.DateDebutCarte = LocalDate.now().toString();
+	 	this.DateLimiteCarte = LocalDate.now().toString();
+	 	this.DescriptionCarte = "Test";
+	 	this.StatutCarte = "Test";
 		this.titreCarte = "Test";
-		this.idCarte = INDEX_CARTE;
-		INDEX_CARTE++;
-	}
+	 	this.idCarte = INDEX_CARTE;
+	 	INDEX_CARTE++;
+	 }
 	
 	public void setSection(int section) {
         this.section = section;

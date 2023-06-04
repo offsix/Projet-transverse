@@ -107,11 +107,21 @@ public class VueInscription extends JPanel {
         adresseField.setText(adresse);
     }
 
-
+    /**
+     * Adds an ActionListener to the inscrireButton.
+     *
+     * @param  listener   the listener to be added to the button
+     */
     public void ajouterListenerInscrire(ActionListener listener) {
         inscrireButton.addActionListener(listener);
     }
-
+    
+    /**
+     * Empties all JTextFields in the GUI and displays a warning message dialog.
+     * 
+     * @param  None
+     * @return None
+     */
     public void afficherVide() {       
             motDePasseField.setText("");
             identifiantField.setText("");
@@ -121,6 +131,10 @@ public class VueInscription extends JPanel {
             JOptionPane.showMessageDialog(this, "Veuillez saisir un identifiant et un mot de passe valides", "Erreur", JOptionPane.WARNING_MESSAGE);
         }
 
+    /**
+     * This method clears the text fields and displays a success message when
+     * the registration is successful.
+     */    
     public void afficherCorrect(){
         motDePasseField.setText("");
         identifiantField.setText("");

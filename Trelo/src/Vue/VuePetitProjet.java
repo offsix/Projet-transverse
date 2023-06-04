@@ -37,7 +37,7 @@ public class VuePetitProjet extends JPanel {
 
     JPanel panelCentral = new JPanel(new GridLayout(4, 1, 5, 5));
     panelCentral.setBackground(Color.WHITE);
-
+    // Panneau centrale
     JLabel labelNomProjet = new JLabel("Nom du projet: " + project.getsNomProjet());
     labelNomProjet.setHorizontalAlignment(SwingConstants.CENTER);
     panelCentral.add(labelNomProjet);

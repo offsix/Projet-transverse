@@ -428,21 +428,58 @@ ModeleCartes carte = new ModeleCartes();
 
     
   }
+
+  /**
+ * Adds an ActionListener to the Section 1 button.
+ *
+ * @param  listener	the ActionListener to be added
+ */
   public void ajouterListenerSection1butt(ActionListener listener) {
     boutonSection1.addActionListener(listener);
 }
+
+/**
+ * Adds an ActionListener to the boutonSection2 JButton.
+ *
+ * @param  listener   the ActionListener to be added
+ * @return            N/A (void)
+ */
 public void ajouterListenerSection2butt(ActionListener listener) {
   boutonSection2.addActionListener(listener);
 }
+
+/**
+ * Adds an ActionListener to the button boutonSection3.
+ *
+ * @param  listener   the ActionListener to be added
+ */
 public void ajouterListenerSection3butt(ActionListener listener) {
   boutonSection3.addActionListener(listener);
 }
+
+/**
+ * Adds an ActionListener to the boutoninv button.
+ *
+ * @param  listener	the ActionListener to add
+ */
 public void ajouterListenerInvbutt(ActionListener listener) {
   boutoninv.addActionListener(listener);
 }
+
+/**
+ * Adds a MouseAdapter listener to the logoDeco component.
+ *
+ * @param  listener  the MouseAdapter listener to be added
+ */
 public void ajouterlisstenerDeconexion(MouseAdapter listener) {
   logoDeco.addMouseListener(listener);
   }
+
+  /**
+ * Adds a MouseAdapter listener to the logoMembre.
+ *
+ * @param  listener  the MouseAdapter listener to be added
+ */
   public void ajouterlisstenerMembre(MouseAdapter listener) {
   logoMembre.addMouseListener(listener);
   }

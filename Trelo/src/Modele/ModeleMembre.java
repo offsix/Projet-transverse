@@ -15,13 +15,14 @@ public class ModeleMembre {
 		this.prenom = prenom;
 		this.nom = nom;
 	}
-	public ModeleMembre() {
-		pseudo = "test";
-		password = "test";
-		adressemail = "test";
-		prenom = "test";
-		nom = "test";
-	}
+	 public ModeleMembre() {
+	 pseudo = "test";
+	 password = "test";
+	 adressemail = "test";
+	 prenom = "test";
+	 nom = "test";
+	 }
+
 	// getter
 	public String getPseudo() {
 		return pseudo;

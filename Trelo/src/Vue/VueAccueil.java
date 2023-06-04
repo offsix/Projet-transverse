@@ -140,19 +140,50 @@ public class VueAccueil extends JFrame {
         return adresseField.getText();
     }
 
+    /**
+     * Displays an error message dialog box with the message "Votre mot de passe ou votre identifiant est incorrect" and the title "Erreur".
+     *
+     * @param  this a reference to the calling object
+     */
     public void afficherMessageErreur() {
         JOptionPane.showMessageDialog(this, "Votre mot de passe ou votre identifiant est incorrect", "Erreur", JOptionPane.ERROR_MESSAGE);
     }
+
+    /**
+     * Adds an ActionListener to the seConnecterButton.
+     *
+     * @param  listener   the ActionListener to be added
+     */
     public void ajouterListenerSeConnecter(ActionListener listener) {
         seConnecterButton.addActionListener(listener);
     }
+
+    /**
+     * Adds a mouse listener to the "sInscrireLabel" label.
+     *
+     * @param listener	the MouseAdapter to be added as a listener
+     */
     public void ajouterListenerSInscrire(MouseAdapter listener) {
         sInscrireLabel.addMouseListener(listener);
     }
 
+    /**
+     * Displays a welcome message on the Trelo application.
+     *
+     * @param  none
+     * @return void
+     */
     public void afficherMessageBienvenue() {
         JOptionPane.showMessageDialog(this, "Bienvenue sur Trelo", "Bienvenue", JOptionPane.INFORMATION_MESSAGE);
     }
+
+    /**
+     * Displays a warning message and clears the password and username fields if either are empty.
+     * 
+     * @param  None
+     * @return None
+     */
+
     public void afficherVide() {
         if(motDePasseField.getText().isEmpty() || identifiantField.getText().isEmpty()) {
             motDePasseField.setText("");

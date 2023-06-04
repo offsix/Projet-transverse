@@ -17,7 +17,8 @@ public class ControllerAccueil {
 
         private ModeleAccueil modeleAccueil;
         private VueAccueil vueAccueil;
-    
+
+        // Constructeur controlleur accueil
         public ControllerAccueil(ModeleAccueil modeleAccueil, VueAccueil vueAccueil) {
             this.modeleAccueil = modeleAccueil;
             this.vueAccueil = vueAccueil;
@@ -25,7 +26,25 @@ public class ControllerAccueil {
             vueAccueil.ajouterListenerSeConnecter(new SeConnecterListener());
             vueAccueil.ajouterListenerSInscrire(new SInscrireListener());
         }
-    
+
+               
+        
+
+        /**
+        * Exécute l'événement actionPerformed lorsqu'il est déclenché. Récupère l'identifiant 
+        * et le motDePasse de l'objet VueAccueil et vérifie si l'un des deux est vide. S'il 
+        * est vide, il affiche un message à l'utilisateur, sinon il vérifie si le membre 
+        * existe et le connecte. S'il existe, il crée un nouvel objet ModeleMembre et un 
+        * objet ModeleEspacedetravail avec l'objet membre, crée un objet VueEspacedetravail 
+        * avec l'objet ModeleEspacedetravail, puis crée un objet ControllerEspacedetravail 
+        * avec l'objet ModeleEspacedetravail et l'objet VueEspacedetravail. Il définit ensuite 
+        * l'objet VueEspacedetravail comme visible, crée un nouvel objet JFrame avec l'objet 
+        * VueEspacedetravail et le définit comme visible, et ferme l'objet VueAccueil. Si le 
+        * membre n'existe pas, il affiche un message à l'utilisateur. 
+        *
+        * @param  e    ActionEvent object
+        */
+
         // Listener pour le bouton Se connecter
         public class SeConnecterListener implements ActionListener {
             @Override
@@ -57,6 +76,8 @@ public class ControllerAccueil {
                 }
             }
         }
+
+        
 
          // Ajout de la vue d'inscription dans la vue d'accueil
          public class SInscrireListener extends MouseAdapter {

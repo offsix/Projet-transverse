@@ -77,7 +77,7 @@ public class ControllerProjet {
     }
 
     
-
+    // 
     class Section3Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -94,7 +94,7 @@ public class ControllerProjet {
     }
 
 
-
+    // quand il est appelé ça fait affiché une fenetre si oui ou non il veut quitter l'appli
     class DeconexionListener extends MouseAdapter{
     public void mouseClicked(MouseEvent e) {
         System.out.println("mouse clicked");

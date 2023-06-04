@@ -22,6 +22,7 @@ public class ControllerInscription {
         vueInscription.ajouterListenerInscrire(new InscrireListener());
     }
 
+    // quand l'utilisateur clique sur le bouton s'inscrire un menus s'ouvre permet de s'inscrire
      class InscrireListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

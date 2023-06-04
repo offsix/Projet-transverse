@@ -63,7 +63,14 @@ public class VueCreerProjet extends JPanel {
         public String getImage() { return image.getText();}
          public String getTitle() { return titleTextField.getText();}
          public String getDescription() { return description.getText();}
-         
+
+
+        /**
+        * Adds a listener to the "CreerProjet" button, which triggers the 
+        * specified action when the button is clicked.
+        *
+        * @param  listener  the ActionListener to be added
+        */ 
          public void ajouterListenerAjouterProjet(ActionListener listener) {
             CreerProjet.addActionListener(listener);
         }

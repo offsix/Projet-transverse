@@ -105,13 +105,18 @@ public class VueAjouterCarte extends JPanel {
         return couvertureCarteField.getText();
     }
 
+    /**
+     * Adds an ActionListener to the ajouterCarteButton component.
+     *
+     * @param  listener  the ActionListener to add
+     */
     public void ajouterListenerAjouterCarte(ActionListener listener) {
         ajouterCarteButton.addActionListener(listener);
     }
-public void setSection(int section) {
+    public void setSection(int section) {
     this.section = section;
-}
-public int getSection() {
+    }
+    public int getSection() {
     return section;
-}
+    }
 }

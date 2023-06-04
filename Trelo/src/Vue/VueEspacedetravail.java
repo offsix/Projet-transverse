@@ -320,16 +320,37 @@ public class VueEspacedetravail extends JPanel {
   revalidate();
   }
 
-
+  /**
+   * Adds a MouseAdapter listener to the logoAJoutProjet component.
+   *
+   * @param listener  the MouseAdapter listener to be added
+   */
   public void ajouterlisstenerNouveauprojet(MouseAdapter listener) {
     logoAJoutProjet.addMouseListener(listener);
 }
+  /**
+   * Adds a MouseAdapter listener to the logoDeco component.
+   *
+   * @param  listener	the MouseAdapter listener to add
+   */
   public void ajouterlisstenerDeconexion(MouseAdapter listener) {
   logoDeco.addMouseListener(listener);
   }
+
+  /**
+ * Adds a listener to the logoMembre component.
+ *
+ * @param  listener  a mouse adapter to be added as a listener
+ */
   public void ajouterlisstenerMembre(MouseAdapter listener) {
   logoMembre.addMouseListener(listener);
   }
+
+  /**
+  * Adds a MouseAdapter listener to the btnaccederauprojet button.
+  *
+  * @param  listener   the MouseAdapter listener to be added
+  */
   public void ajouterlisstenerAccederProjet(MouseAdapter listener) {
     btnaccederauprojet.addMouseListener(listener);
   }
